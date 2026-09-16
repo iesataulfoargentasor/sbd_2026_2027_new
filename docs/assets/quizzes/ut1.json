@@ -1,0 +1,201 @@
+{
+  "unit": "UT1",
+  "title": "Autoevaluación SBD UT1",
+  "questions": [
+    {
+      "topic": "RA1",
+      "href": "../fundamentos/",
+      "prompt": "¿Qué coste tiene comparar cada reserva con todos los hoteles?",
+      "code": "",
+      "options": [
+        "O(nm)",
+        "O(1)",
+        "Siempre un segundo"
+      ],
+      "answer": 0,
+      "explain": "Con n reservas y m hoteles, el bucle anidado compara n por m pares."
+    },
+    {
+      "topic": "RA1",
+      "href": "../fundamentos/",
+      "prompt": "¿Un nulo representa siempre cero?",
+      "code": "",
+      "options": [
+        "Sí",
+        "No",
+        "Solo en CSV"
+      ],
+      "answer": 1,
+      "explain": "Ausencia y valor cero tienen significados distintos."
+    },
+    {
+      "topic": "RA1",
+      "href": "../fuentes/",
+      "prompt": "¿Qué significa granularidad?",
+      "code": "",
+      "options": [
+        "Tamaño del fichero",
+        "Qué representa cada fila",
+        "Número de nodos"
+      ],
+      "answer": 1,
+      "explain": "Reservas y eventos representan entidades diferentes."
+    },
+    {
+      "topic": "RA1",
+      "href": "../integracion/",
+      "prompt": "El catálogo repite una clave. ¿Qué puede ocurrir al unir?",
+      "code": "",
+      "options": [
+        "Nada",
+        "Multiplicar reservas",
+        "Borrar el CSV"
+      ],
+      "answer": 1,
+      "explain": "Cada coincidencia puede producir una fila adicional."
+    },
+    {
+      "topic": "RA1",
+      "href": "../integracion/",
+      "prompt": "¿Cómo buscas reservas sin hotel?",
+      "code": "",
+      "options": [
+        "left_anti",
+        "sum",
+        "orderBy"
+      ],
+      "answer": 0,
+      "explain": "El anti join conserva claves de la izquierda sin correspondencia."
+    },
+    {
+      "topic": "RA1",
+      "href": "../spark/",
+      "prompt": "¿Qué operación dispara ejecución?",
+      "code": "",
+      "options": [
+        "Definir un filtro",
+        "count()",
+        "Asignar un nombre a una variable"
+      ],
+      "answer": 1,
+      "explain": "Una acción materializa el cálculo; definirlo no mide su ejecución."
+    },
+    {
+      "topic": "RA1",
+      "href": "../spark/",
+      "prompt": "¿Qué riesgo tiene collect() sobre un conjunto enorme?",
+      "code": "",
+      "options": [
+        "Llevar todas las filas al conductor",
+        "Crear más discos",
+        "Cambiar las claves"
+      ],
+      "answer": 0,
+      "explain": "La memoria del conductor puede resultar insuficiente."
+    },
+    {
+      "topic": "RA1",
+      "href": "../analisis/",
+      "prompt": "Para la proporción de cancelación de un canal, ¿qué denominador usamos?",
+      "code": "",
+      "options": [
+        "Todos los eventos",
+        "Las reservas del canal analizado",
+        "Los hoteles"
+      ],
+      "answer": 1,
+      "explain": "Numerador y denominador deben pertenecer a la misma población."
+    },
+    {
+      "topic": "RA1",
+      "href": "../analisis/",
+      "prompt": "¿Los 1 660 euros son ingresos cobrados?",
+      "code": "",
+      "options": [
+        "Sí",
+        "No: importe nominal inicial",
+        "Beneficio neto"
+      ],
+      "answer": 1,
+      "explain": "La fuente no acredita cobros, costes ni reembolsos."
+    },
+    {
+      "topic": "RA1",
+      "href": "../streaming/",
+      "prompt": "¿Ocho eventos significan ocho reservas?",
+      "code": "",
+      "options": [
+        "Sí",
+        "No",
+        "Solo en Spark"
+      ],
+      "answer": 1,
+      "explain": "Una reserva puede tener confirmación y cancelación."
+    },
+    {
+      "topic": "RA1",
+      "href": "../streaming/",
+      "prompt": "¿La tabla de memoria del ensayo es almacenamiento de producción?",
+      "code": "",
+      "options": [
+        "Sí",
+        "No",
+        "Siempre si hay checkpoint"
+      ],
+      "answer": 1,
+      "explain": "Es una salida de demostración y no acredita recuperación duradera."
+    },
+    {
+      "topic": "RA1",
+      "href": "../coste-calidad/",
+      "prompt": "¿Basta medir el tiempo de definir un DataFrame?",
+      "code": "",
+      "options": [
+        "Sí",
+        "No: debemos incluir una ejecución comparable",
+        "Sí si son muchos datos"
+      ],
+      "answer": 1,
+      "explain": "La evaluación diferida exige medir acciones y declarar el alcance."
+    },
+    {
+      "topic": "RA1",
+      "href": "../problema/",
+      "prompt": "¿Cuándo se prepara el plan de tareas?",
+      "code": "",
+      "options": [
+        "Al final para justificar lo hecho",
+        "Al inicio y se revisa durante el trabajo",
+        "Nunca"
+      ],
+      "answer": 1,
+      "explain": "Objetivos, prioridades y seguimiento forman parte de CE e."
+    },
+    {
+      "topic": "RA1",
+      "href": "../ra1/",
+      "prompt": "¿Seis filas acreditan por sí solas análisis de grandes volúmenes?",
+      "code": "",
+      "options": [
+        "Sí",
+        "No",
+        "Si están en JSON"
+      ],
+      "answer": 1,
+      "explain": "Validan el cálculo; el ensayo ampliado necesita volumen y recursos documentados."
+    },
+    {
+      "topic": "RA1",
+      "href": "../coste-calidad/",
+      "prompt": "¿Un proceso más rápido siempre es mejor?",
+      "code": "",
+      "options": [
+        "Sí",
+        "No si pierde calidad o responde mal",
+        "Solo usando Spark"
+      ],
+      "answer": 1,
+      "explain": "Hay que valorar eficacia y eficiencia con criterios explícitos."
+    }
+  ]
+}
