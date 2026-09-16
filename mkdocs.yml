@@ -1,8 +1,8 @@
 site_name: Sistemas de Big Data
 site_description: Apuntes del módulo SBD (curso de especialización en IA y Big Data) — IES Ataúlfo Argenta
-site_url: https://iesataulfoargentasor.github.io/sbd_2026_2027/
-repo_url: https://github.com/iesataulfoargentasor/sbd_2026_2027
-repo_name: iesataulfoargentasor/sbd_2026_2027
+site_url: https://iesataulfoargentasor.github.io/sbd_2026_2027_new/
+repo_url: https://github.com/iesataulfoargentasor/sbd_2026_2027_new
+repo_name: iesataulfoargentasor/sbd_2026_2027_new
 edit_uri: edit/main/docs/
 
 theme:
@@ -82,14 +82,23 @@ extra_javascript:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/iesataulfoargentasor/sbd_2026_2027
+      link: https://github.com/iesataulfoargentasor/sbd_2026_2027_new
   generator: false
 
 copyright: IES Ataúlfo Argenta · SBD · curso 2026/2027
 
 nav:
   - Inicio: index.md
-  - U.T. 1. Integración, procesamiento y análisis de datos:
+  - UT1. Introducción al procesamiento y análisis:
+    - "Introducción al procesamiento y análisis de información": ut1/introduccion/index.md
+    - "1. Introducción: el valor de los datos": ut1/introduccion/valor-datos.md
+    - "2. Conceptos básicos": ut1/introduccion/conceptos-basicos.md
+    - "3. Arquitecturas de sistemas de datos (visión general)": ut1/introduccion/arquitecturas.md
+    - "4. Ejemplos de aplicación en la vida real": ut1/introduccion/ejemplos.md
+    - "5. Resumen del tema": ut1/introduccion/resumen.md
+    - "6. Actividad práctica (nivel inicial)": ut1/introduccion/actividad.md
+    - "Solución Profesor": ut1/introduccion/solucion-profesor.md
+  - UT1. Materiales anteriores:
     - La unidad: ut1/index.md
     - RA1 y criterios de evaluación: ut1/ra1.md
     - Preparar el entorno: ut1/entorno.md
