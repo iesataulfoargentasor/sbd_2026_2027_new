@@ -23,6 +23,7 @@ Portada del eXe *Técnicas de análisis de datos en Big Data*: consultar **este*
 | --- | --- | --- |
 | Técnicas de análisis / Introducción | **Inicio con Python** (ETL inicial: CSV sucio → limpio → recuento) | [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing) |
 | Fundamentos | Matemática discreta aplicada a datos | [1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing) |
+| Fundamentos (anexo Word Tema 2) | Cuaderno extra de apoyo | [1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx](https://colab.research.google.com/drive/1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx?usp=sharing) |
 | Fundamentos | Combinatoria | [1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing) |
 | Fundamentos | Miniproyecto del apartado (dataset, estructuras) | [1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj](https://colab.research.google.com/drive/1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj?usp=sharing) |
 | Fundamentos | Complejidad computacional | [1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu](https://colab.research.google.com/drive/1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu?usp=sharing) |
@@ -50,7 +51,8 @@ Estos enlaces están en las páginas *Solución Profesor* de los eXe. Úsalos **
 | --- | --- |
 | Inicio con Python (ETL inicial) | [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing) |
 | Fundamentos | [14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd](https://colab.research.google.com/drive/14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd?usp=sharing) |
-| Fundamentos (segunda solución) | [1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij](https://colab.research.google.com/drive/1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij?usp=sharing) |
+| Fundamentos (logística resuelta) | [1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij](https://colab.research.google.com/drive/1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij?usp=sharing) |
+| Formatos (Kaggle, profesorado) | [fork-of-trabajo-actividad-de-formato-de-datos](https://www.kaggle.com/code/dmiprof01/fork-of-trabajo-actividad-de-formato-de-datos) |
 
 El índice de cada apartado enlaza el mismo cuaderno junto a la teoría, para no tener que volver aquí.
 
@@ -60,7 +62,8 @@ El índice de cada apartado enlaza el mismo cuaderno junto a la teoría, para no
 | --- | --- |
 | Formato de datos | [Avro, Parquet y ORC](https://youtu.be/DafzYp5XRmA) |
 | GitHub Projects | [Issues en GitHub](https://youtu.be/7eeHBaPnUGM) |
-| Técnicas de análisis (Moodle) | Vídeo ETL en Colab (el cuaderno es el de [1.1](ciclo-analisis.md)) |
+| Técnicas de análisis (Moodle) | Vídeo ETL en Colab (el cuaderno es el de [Inicio con Python](inicio-python.md)) |
+| Manual Docker | [Hadoop con Docker (Tomás Fernández Pena)](https://youtu.be/f6FJ91f-qpA) |
 
 ## Datos de apoyo (fuera de este repo)
 

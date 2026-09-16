@@ -102,6 +102,9 @@ nav:
     - 1.5 Formatos de datos: ut1/formatos.md
     - 1.6 Planificación con GitHub Projects: ut1/planificacion.md
     - 1.7 Laboratorio AWS (S3, Glue, Athena): ut1/laboratorio-aws.md
-    - Entorno Docker: ut1/docker.md
+    - Modelado y resolución de problemas: ut1/modelado.md
+    - Análisis en tiempo real: ut1/tiempo-real.md
+    - Costes y calidad: ut1/costes-calidad.md
+    - Entorno Docker (Hadoop): ut1/docker.md
     - Autoevaluación: ut1/autoevaluacion.md
     - Continuidad con BDA y RA2–RA4: ut1/continuidad.md

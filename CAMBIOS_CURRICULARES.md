@@ -29,7 +29,8 @@ La asociación eXeLearning/PDF → CE se conserva. Los paquetes HTML, vídeos y 
 
 - Estilo y tema copiados del sitio de BDA (Material, paleta del centro, motor de test).
 - Frontera: BDA diseña el almacén y PDI; SBD ejecuta pandas, API, SQL Athena y justifica coste/calidad. El paquete *Introducción a Big Data* se publica como 1.0 (marco), no como copia del diseño de BDA.
-- Todos los enlaces de Google Colab de los eXe (alumnado y *Solución profesor*) están en `docs/ut1/cuadernos.md` y repetidos junto a la teoría.
+- Manual Docker: chuleta + actividad Hadoop + vídeo (ZIP de Moodle no entra en git).
+- Anexos Word del eXe combinado (Temas 4–7): modelado, tiempo real, costes/calidad y proyecto integrador.
 - Preproceso Spark se presenta como reconocimiento, no como laboratorio obligatorio de clúster.
 - El fallo `col1`…`col5` del crawler se documenta con classifier `Contains header: PRESENT`.
 - Autoevaluación: 20 preguntas. Entregas en Moodle.

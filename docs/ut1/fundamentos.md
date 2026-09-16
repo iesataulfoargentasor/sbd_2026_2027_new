@@ -14,6 +14,8 @@ tags:
 
 Los datos no solo se guardan: hay que **organizarlos, recorrerlos y analizarlos**. Para hacerlo con millones de filas hacen falta dos piezas (criterio **a)**):
 
+Al terminar serás capaz de: reconocer matemática discreta aplicada a datos; comprender lógica algorítmica; identificar complejidad (por qué un O(n²) no escala); aplicar un grafo o un filtro lógico sencillo.
+
 - **Matemática discreta:** representar el dato como conjuntos, relaciones, funciones y grafos.
 - **Algoritmos:** la secuencia de pasos. Su **complejidad** dice si el paso escala o se vuelve inviable.
 
@@ -140,13 +142,34 @@ Cuaderno: [vectores, matrices y estructuras](https://colab.research.google.com/d
 
 ## Actividades del eXe (hacer en Colab)
 
-**1. Conjuntos y lógica.** A = {Ana, Juan, Marta, Luis} compraron X; B = {Marta, Luis, Sofía, Pedro} compraron Y. Calcula A ∪ B, A ∩ B, A − B. Con una tabla de edad y compras, marca *Premium* si edad > 25 **y** compras > 10.
+**1. Conjuntos y lógica.** A = {Ana, Juan, Marta, Luis} compraron X; B = {Marta, Luis, Sofía, Pedro} compraron Y. Calcula A ∪ B, A ∩ B, A − B.
 
-**2. Matriz.** 4 clientes × 3 productos: ¿quién compró más en total? ¿qué producto es el más popular?
+Premium si edad > 25 **y** compras > 10:
 
-**3. Combinatoria.** Entrantes {Sopa, Ensalada, Gazpacho, Croquetas} × platos {Pollo, Pescado, Pasta}. ¿Cuántos menús (1+1)? Solución esperada: **12**.
+| Cliente | Edad | Compras |
+| --- | --- | --- |
+| Ana | 28 | 12 |
+| Juan | 22 | 15 |
+| Marta | 30 | 8 |
+| Luis | 35 | 20 |
+| Sofía | 24 | 5 |
 
-**4. Árbol.** Si edad > 25 y compras > 5 → descuento; si no, no. Dibuja el árbol y aplícalo a unos clientes.
+**2. Matriz** (Móvil / Portátil / Auriculares):
+
+| | Móvil | Portátil | Auriculares |
+| --- | --- | --- | --- |
+| Ana | 2 | 1 | 3 |
+| Juan | 0 | 2 | 1 |
+| Marta | 3 | 0 | 2 |
+| Luis | 1 | 1 | 4 |
+
+¿Quién compró más en total? ¿Qué producto es el más popular?
+
+**3. Combinatoria.** Entrantes {Sopa, Ensalada, Gazpacho, Croquetas} × platos {Pollo, Pescado, Pasta}. Escribe **todas** las combinaciones (1+1). Solución esperada: **12**.
+
+**4. Árbol.** Si edad > 25 y compras > 5 → descuento. Aplícalo a Ana 28/12, Juan 22/3, Marta 19/6, Luis 35/4.
+
+El anexo Word de *Técnicas de análisis* (Tema 2) incluye además este Colab de apoyo: [1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx](https://colab.research.google.com/drive/1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx?usp=sharing).
 
 ## Estudio de logística
 
@@ -160,3 +183,11 @@ Completa las celdas `# --- TU CÓDIGO AQUÍ ---` del cuaderno de conjuntos, rela
 - [1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij](https://colab.research.google.com/drive/1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij?usp=sharing)
 
 Índice de todos los cuadernos: [Cuadernos Colab](cuadernos.md).
+
+## Resumen del tema (eXe)
+
+- Matemática discreta (conjuntos, relaciones, combinatoria, grafos) modela el dato.
+- Un algoritmo es una secuencia finita de pasos con entradas y salidas.
+- La complejidad dice si el paso escala.
+- Estructuras: vectores, matrices, grafos, árboles, tablas de decisión.
+- El modelado sigue en [modelado](modelado.md); extraer, en [1.3](extraccion.md).

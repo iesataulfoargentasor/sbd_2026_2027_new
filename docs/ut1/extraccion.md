@@ -19,6 +19,8 @@ Los datos llegan en tres familias (las viste en BDA; aquí **las lees**):
 
 Idea clave: *sacar* lo que interesa de un volumen grande para una pregunta concreta. De una web de noticias: titular, fecha, autor → una tabla para contar noticias por día.
 
+Al terminar: extraer de estructurado / semi / no estructurado; reconocer SQL, API, scraping y minería de texto; limpiar, normalizar y transformar; dejar una tabla o un recuento.
+
 ## Métodos
 
 ### Consultas SQL
@@ -35,13 +37,13 @@ Filtrar, ordenar y agregar (`GROUP BY`) **es** extracción. Encaja cuando el ori
 
 ### APIs
 
-Una API es una puerta: pides (request) y te traen JSON (response). Datos **actualizados** y, si está bien hecha, estructurados. Encaja con Open-Meteo, pasarelas de pago, el canal de reservas. En el eXe: una API es un “camarero digital”.
+Una API es una puerta: pides (request) y te traen JSON (response). Datos **actualizados** y, si está bien hecha, estructurados. Encaja con Open-Meteo, OpenWeather, pasarelas de pago, el canal de reservas o (con cuenta y ToS) un hashtag en X/Twitter. En el eXe: una API es un “camarero digital”.
 
 Práctica profesional: **caché** (no pidas lo mismo cien veces) y **reintento** (la red falla). El cuaderno de Open-Meteo usa `openmeteo_requests`, `requests_cache` y `retry_requests`.
 
 ### Web scraping
 
-Lees el HTML. En Python: BeautifulSoup para parsear; Selenium si hay JavaScript. Extraer precios de varias tiendas es el caso típico.
+Lees el HTML. En Python: BeautifulSoup para parsear; Selenium si hay JavaScript. Extraer precios de varias tiendas o una tabla de resultados deportivos es el caso típico. El eXe propone un **Ejemplo 3** (opcional): HTML → producto/precio → CSV, o `pandas.read_html`.
 
 !!! warning "Límites"
     Respeta términos de uso, `robots.txt` y protección de datos. No todo se puede scrapear. Si hay API, **usa la API**.
@@ -66,7 +68,7 @@ Si el dato está mal, el gráfico miente. El criterio b) no se cierra con un JSO
 
 | Herramienta | Para qué en esta UT |
 | --- | --- |
-| Excel / Google Sheets | Filtros, buscar y reemplazar, tablas dinámicas sobre **pocas** filas |
+| Excel / Google Sheets | Filtros, buscar y reemplazar, **SI / CONTAR / SUMAR.SI**, tablas dinámicas sobre **pocas** filas |
 | **pandas** | Leer CSV/Excel/JSON, limpiar, `groupby`, escribir CSV/Parquet |
 | `requests` | Llamar a una API y obtener JSON |
 | BeautifulSoup | Parsear HTML (scraping) |
@@ -145,7 +147,7 @@ Planifica esta actividad en [1.6](planificacion.md) (esencial frente a gráfico 
 
 ## Actividad 2 — API (b)
 
-Pronóstico horario `temperature_2m` de **Santander** (lat. 43.4408, lon. −3.8224), un día. DataFrame con hora y temperatura; imprime máximo y mínimo.
+Pronóstico horario `temperature_2m` de **Santander** (lat. 43.4408, lon. −3.8224), un día. El Colab de aula usa `openmeteo_requests`, caché y reintentos (`response.Hourly()`). El fragmento de arriba es el mismo resultado con `urllib`. DataFrame con hora y temperatura; imprime máximo y mínimo.
 
 !!! success "Criterio b) en un examen"
     Fuente + método (SQL / API / fichero / scraping) + qué columnas te quedas + un resumen numérico. “He usado pandas” sin pregunta no puntúa.

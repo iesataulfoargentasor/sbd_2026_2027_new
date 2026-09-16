@@ -17,13 +17,13 @@ Esta unidad desarrolla el **RA1** del módulo *Sistemas de Big Data* (código **
 
 | CE | Criterio (texto oficial) | Dónde se trabaja en la UT1 |
 | --- | --- | --- |
-| **a)** | Se han identificado conceptos básicos de matemática discreta, lógica algorítmica y complejidad computacional, y su aplicación para el tratamiento automático de la información por medio de sistemas computacionales. | [1.2 Fundamentos](fundamentos.md) |
+| **a)** | Se han identificado conceptos básicos de matemática discreta, lógica algorítmica y complejidad computacional, y su aplicación para el tratamiento automático de la información por medio de sistemas computacionales. | [1.2 Fundamentos](fundamentos.md) y [modelado](modelado.md) |
 | **b)** | Se ha extraído de forma automática información y conocimiento a partir de grandes volúmenes de datos. | [1.1](ciclo-analisis.md), [1.3](extraccion.md) y [1.4](preproceso.md) — [cuadernos](cuadernos.md) |
 | **c)** | Se han combinado diferentes fuentes y tipos de datos. | [1.5 Formatos](formatos.md) (y joins en [1.4](preproceso.md)) |
 | **d)** | Se ha construido un conjunto de datos complejos y se han relacionado entre sí. | [1.3](extraccion.md) y [1.4](preproceso.md) |
 | **e)** | Se han establecido objetivos y prioridades, secuenciación y organización del tiempo de realización. | [1.6 Planificación](planificacion.md) |
 | **f)** | Se han seleccionado e integrado sistemas de información que satisfacen las necesidades del problema. | [1.7 Laboratorio AWS](laboratorio-aws.md) |
-| **g)** | Se han determinado criterios de coste y calidad necesarios para la eficacia y eficiencia de la implementación de un sistema Big Data. | [1.7](laboratorio-aws.md) (Athena, esquema, Parquet) |
+| **g)** | Se han determinado criterios de coste y calidad necesarios para la eficacia y eficiencia de la implementación de un sistema Big Data. | [1.7](laboratorio-aws.md) y [costes y calidad](costes-calidad.md) |
 
 ## Contenidos orientativos del Anexo VI que toca esta UT
 

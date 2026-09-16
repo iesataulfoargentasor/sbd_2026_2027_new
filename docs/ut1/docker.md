@@ -4,31 +4,58 @@ tags:
   - SBD
 ---
 
-# Entorno Docker (apoyo)
+# Entorno Docker (apoyo) y clúster Hadoop
 
-Docker **no** es un criterio del RA1. Es la forma habitual de **reproducir** un entorno de datos: misma versión de Python, mismo motor, en el portátil del aula y en el del compañero.
+Docker **no** es un criterio propio del RA1. El paquete de Moodle *Manual para Docker en Big Data* es un **laboratorio de Hadoop en contenedores**: NameNode, YARN, DataNodes y un MapReduce de ejemplo. Sirve para **reproducir** un entorno y para el criterio **f)** (elegir e integrar sistemas) cuando el profesor lo pide.
 
-En BDA ya viste contenedores para Hadoop o Mongo si el profesorado los usó. Aquí basta lo mínimo para no pelearte con “en mi máquina funciona”.
+El ZIP y el PDF del aula (`Hadoop_cluster_profesor.zip`, `Hadoop_con_Docker.pdf`) **no** se copian a git; se descargan desde Moodle. Aquí queda la chuleta, el vídeo y el enunciado.
 
 ## Qué problema resuelve
 
-Instalar pandas, Java, un cliente de AWS y tres versiones de Python en el sistema del centro termina en conflictos. Un **contenedor** empaqueta la receta. Un **Compose** levanta varias piezas con un fichero.
-
-## Ideas que sí debes manejar
+Instalar pandas, Java, Hadoop y tres versiones de Python en el sistema del centro termina en conflictos. Un **contenedor** empaqueta la receta. Un **Compose** levanta varias piezas (el clúster) con un fichero.
 
 | Concepto | En una frase |
 | --- | --- |
-| Imagen | La receta (`python:3.12-slim`) |
-| Contenedor | La receta **en marcha** |
-| Volumen | Carpeta del host montada (tus CSV) |
-| Puerto | Cómo entras desde el navegador |
+| Imagen | Receta inmutable (`ubuntu`, `python:3.12-slim`) |
+| Contenedor | Esa receta **en marcha** |
+| Dockerfile | Instrucciones `FROM` / `RUN` / `COPY` / `CMD` |
+| Volumen | Dato **fuera** del contenedor (tus CSV o HDFS local) |
+| Puerto | Cómo entras desde el navegador (HDFS `9870`, YARN `8088`) |
 | Compose | Varios servicios descritos juntos |
+| Red | Cómo se hablan NameNode, Resource Manager y workers |
 
-No memorices flags. Sí: **no guardes secretos** (claves AWS) en la imagen ni en el `compose` que subes a Moodle.
+No guardes secretos (claves AWS) en la imagen ni en el `compose` que subes a Moodle.
 
-## Flujo mínimo para esta UT
+## Chuleta (del eXe)
 
-Para pandas y el generador de logs, un venv local basta:
+```sh
+docker --version
+docker pull ubuntu
+docker images
+docker run -it ubuntu /bin/bash
+docker ps
+docker ps -a
+docker stop <id>
+docker rm <id>
+docker exec -it <id> /bin/bash
+docker logs <id>
+docker stats
+docker build -t mi-imagen .
+docker compose up -d
+docker compose down
+docker network create mi-red
+```
+
+Ejemplo de Dockerfile del eXe:
+
+```dockerfile
+FROM ubuntu:20.04
+RUN apt-get update && apt-get install -y python3
+COPY ./app /usr/src/app
+CMD [ "python3", "/usr/src/app/app.py" ]
+```
+
+Para pandas y el generador de logs de [1.7](laboratorio-aws.md), un venv local basta. Usa Docker cuando toque el clúster o un `compose.yaml` de aula.
 
 ```sh
 python -m venv .venv
@@ -36,19 +63,28 @@ source .venv/bin/activate
 pip install pandas pyarrow faker
 ```
 
-Usa Docker cuando el profesor entregue un `compose.yaml` (laboratorio, Spark local, etc.). El *Manual para Docker en Big Data* de Moodle permanece como referencia de capturas; no se duplica el ZIP aquí.
+## Vídeo de ayuda
 
-Comandos que sí verás en ese manual (memoriza el oficio, no la flag):
+[Instalación de Apache Hadoop con Docker](https://youtu.be/f6FJ91f-qpA) (Tomás Fernández Pena). Resume NameNode, DataNodes, YARN, Compose y una prueba MapReduce (cálculo de π).
+
+## Actividad — Montaje de un clúster Hadoop con Docker
+
+**Requisito:** ~8 GB de RAM y Docker Desktop (o Docker en Linux).
+
+1. Comprueba `docker --version`.
+2. Dockerfile sobre Ubuntu que instale Hadoop; configura **NameNode** y **Resource Manager (YARN)**.
+3. `docker-compose.yml` con NameNode, Resource Manager, DataNodes y NodeManagers, en una red Docker. Expón las UIs.
+4. Directorios HDFS; abre HDFS en `localhost:9870`.
+5. Workers que reciban tareas YARN y almacenen bloques.
+6. Prueba:
 
 ```sh
-docker pull python:3.12-slim
-docker run --rm -it -v "$PWD":/work -w /work python:3.12-slim bash
-docker compose up -d
-docker compose ps
-docker compose down
+hadoop jar /path/to/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples.jar pi 16 10000
 ```
 
-El volumen (`-v`) monta tus CSV. El contenedor se tira (`--rm`) cuando sales: el dato tiene que estar **fuera**, en el host o en S3.
+7. YARN: `localhost:8088`. Comprueba que los DataNodes participan.
+
+**Entrega (Moodle):** capturas HDFS y YARN, breve descripción, `Dockerfile`, `docker-compose.yml` y el resultado de π.
 
 !!! tip "Criterio f), sin marear"
-    Elegir S3 + Glue + Athena **es** integrar sistemas. Elegir Docker es **cómo** ejecutas el cliente. No los mezcles en la misma frase de examen como si fueran el mismo oficio.
+    Elegir S3 + Glue + Athena **es** integrar sistemas en el laboratorio de logs. Elegir Docker+Hadoop es **otro** sistema, el del manual. No los mezcles en la misma frase de examen como si fueran el mismo oficio.

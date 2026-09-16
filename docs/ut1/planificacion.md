@@ -42,7 +42,36 @@ Objetivo principal: limpiar [clientes_actividad.csv](../assets/practicas/cliente
 | Unificar fechas | Extra de API meteorológica |
 | Recuento por ciudad | |
 
-Si el reloj llega a cero, las esenciales tienen que estar **hechas**. Eisenhower, en una frase: importante y urgente primero; bonito y no urgente, después.
+Si el reloj llega a cero, las esenciales tienen que estar **hechas**.
+
+### Eisenhower (urgente × importante)
+
+```text
+                 URGENTE                    NO URGENTE
+IMPORTANTE       Cargar, deduplicar,        Documentar el recuento
+                 unificar ciudad            (si el resumen ya está)
+NO IMPORTANTE    Notificaciones del chat    Gráfico muy maquetado
+```
+
+Importante y urgente primero; bonito y no urgente, después.
+
+## Secuenciación (9 pasos del eXe)
+
+1. Cargar el CSV.  
+2. Explorar (`head`, nulos, tipos).  
+3. Duplicados.  
+4. Erratas (`Madird`).  
+5. Formatos de fecha.  
+6. Variables derivadas (si hacen falta).  
+7. `groupby` / recuento.  
+8. Visualización (deseable).  
+9. Conclusiones.
+
+El eXe pide **crear** un Colab con markdown y pandas siguiendo ese orden (no hay enlace fijo: lo abres tú).
+
+## Organización del tiempo
+
+Dos sesiones de ~55 min, por ejemplo 20 / 20 / 15 (cargar+explorar / limpiar / recuento). Si no cabe el gráfico, era deseable.
 
 ## Mini-sprints
 

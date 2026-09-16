@@ -34,6 +34,10 @@ Luego se añadieron **valor** (el dato tiene que mejorar una decisión) y **vera
 
 Eso es el mismo ciclo que planificarás en [1.6](planificacion.md) y ejecutarás en [1.3](extraccion.md)–[1.4](preproceso.md).
 
+## Almacenamiento (antes del warehouse)
+
+En cada etapa del ciclo hace falta un almacén. Además de relacionales (**MariaDB**, **Postgres**, **Oracle**), aparecen NoSQL (**MongoDB**, **Redis**, **Cassandra**) y búsqueda (**ElasticSearch**). El warehouse y el lake son recetas de **analítica**, no sustituyen a esos motores operativos.
+
 ## Analítica y BI
 
 Las aplicaciones Big Data **recogen** de muchas fuentes. La inteligencia de negocio (**BI**) se pregunta **cómo usa** la empresa esos datos.
@@ -74,7 +78,23 @@ El arquitecto elige el tablero; el ingeniero mueve el dato; el científico extra
 
 **Parte 1 — Reflexión.** ¿Cuál de las V te parece la más importante y por qué? ¿Qué servicio de tu día a día sería difícil de sustituir y qué V le duele?
 
-**Parte 2 — Landscape.** En el [mapa Firstmark](https://mad.firstmark.com/) (vista [card](https://mad.firstmark.com/card)), elige tres herramientas que vayan a salir en el ciclo (por ejemplo Kafka, Spark, Athena). Anota **categoría** y **una alternativa** de la misma fila.
+**Parte 2 — Landscape.** En el [mapa Firstmark](https://mad.firstmark.com/) (vista [card](https://mad.firstmark.com/card)), elige tres herramientas. Anota **categoría** y **una alternativa** de la misma fila. El eXe (solución profesorado) trabaja estas:
+
+| Herramienta | Categoría | Alternativa |
+| --- | --- | --- |
+| AWS S3 | Storage | Google Cloud Storage |
+| Databricks | Processing / Query / Streaming | Apache Spark |
+| Microsoft Power BI | Analytics / Visualization | Tableau |
+| Apache Kafka | Messaging / Streaming | RabbitMQ |
+| Apache Airflow | Workflow Orchestration | Prefect |
+| MongoDB | Database (NoSQL) | Couchbase |
+
+También valen Kafka, Spark o Athena si van a salir en el ciclo.
+
+## Bibliografía (eXe)
+
+- [Introducción al Big Data (Aitor Medrano)](https://aitor-medrano.github.io/iabd/de/bigdata.html)
+- [Introducing Data Science](https://www.manning.com/books/introducing-data-science) (Cielen, Meysman, Ali)
 
 !!! info "No sustituye a BDA"
     Las 5 V y el lake/warehouse se *imparten* como diseño en BDA. Aquí el paquete se recupera para no perder el material de Moodle y para hablar el mismo idioma cuando extraigas y consultes.

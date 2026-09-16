@@ -45,7 +45,10 @@ Del dato bruto a una consulta útil: marco Big Data, ciclo de análisis, fundame
 - [1.5 Formatos de datos](ut1/formatos.md)
 - [1.6 Planificación con GitHub Projects](ut1/planificacion.md)
 - [1.7 Laboratorio AWS](ut1/laboratorio-aws.md)
-- [Entorno Docker](ut1/docker.md)
+- [Modelado y resolución de problemas](ut1/modelado.md)
+- [Análisis en tiempo real](ut1/tiempo-real.md)
+- [Costes y calidad](ut1/costes-calidad.md)
+- [Entorno Docker (Hadoop)](ut1/docker.md)
 - [Autoevaluación](ut1/autoevaluacion.md)
 
 ## Cómo navegar

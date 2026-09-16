@@ -27,4 +27,8 @@ La frontera no es el logo. Hadoop, Spark, Kafka o AWS pueden aparecer en BDA y e
 5. Parquet de prueba, si lo generaste.
 6. Copias en Drive de los Colab que hayas ejecutado ([índice](cuadernos.md)).
 
-RA2 parte de **indicadores y gráficos** sobre esos datasets. RA3 profundiza en importar y almacenar para explotar. RA4, en visualizar y en programar transformaciones con más recorrido. No hace falta repetir la cabecera de Glue ni el `drop_duplicates` de clientes.
+RA2 parte de **indicadores y gráficos** sobre esos datasets. RA3 profundiza en importar y almacenar para explotar. RA4, en visualizar y en programar transformaciones con más recorrido.
+
+## Proyecto integrador (anexo Word Tema 7)
+
+El eXe combinado cierra UT1 con un pipeline opcional (invernadero u otro caso): objetivo → ETL → modelo → streaming o micro-lotes → almacén → Grafana → informe de coste/calidad → presentación de 10 min. Cubre **a)–g)**. En esta entrega se reconoce el mapa; la evidencia mínima de RA1 sigue siendo pandas + Athena + tablero, no un invernadero Kafka obligatorio.

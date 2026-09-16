@@ -34,6 +34,10 @@ Orden de magnitud que verás citado: 1 TB de CSV puede quedar en torno a **130 G
 
 Binario compacto; el **esquema va en JSON** en la cabecera del fichero. Partible. Típico en buses (Kafka) y cuando el esquema **evoluciona**.
 
+Tipos primitivos: `null`, `boolean`, `int`, `long`, `float`, `double`, `bytes`, `string`. Compuestos: `record`, `enum`, `array`, `map`, `union`, `fixed`. El `empleado.avsc` de aula usa el namespace `SeveroOchoa`.
+
+`pip install avro-python3` (referencia) o `pip install fastavro` (más rápido, Cython). Códecs: gzip/deflate comprimen más; **Snappy** prioriza velocidad (`pip install python-snappy`). Un CSV de ventas de ~6,9 MiB puede quedar ~1,9 MiB gzip y ~2,8 MiB Snappy.
+
 ```json
 {
   "type": "record",
@@ -122,5 +126,15 @@ Anota tamaños (`os.path.getsize`) y tiempos (`time.time()`) en una celda Markdo
 Si el portátil o Kaggle se quedan cortos, usa una muestra de 100 000 filas y **documenta** el recorte. El criterio c) es **elegir formato por la pregunta**, no completar el dataset entero.
 
 Entrega: captura del cuaderno o el `.ipynb` descargado (si Kaggle pide datos personales para compartir, adjunta el fichero en Moodle).
+
+Solución de referencia (profesorado): [notebook Kaggle dmiprof01](https://www.kaggle.com/code/dmiprof01/fork-of-trabajo-actividad-de-formato-de-datos).
+
+## Bibliografía (eXe)
+
+- [Introducción a formatos (Aitor Medrano)](https://aitor-medrano.github.io/iabd/de/formatos.html)
+- [An Introduction to Big Data Formats (Nexla, PDF)](https://webcdn.nexla.com/n3x_ctx/uploads/2018/05/An-Introduction-to-Big-Data-Formats-Nexla.pdf)
+- [Data serialization in Hadoop (XenonStack)](https://www.xenonstack.com/blog/data-serialization-hadoop)
+- [Handling Avro files in Python](https://www.perfectlyrandom.org/2019/11/29/handling-avro-files-in-python/)
+- [Big Data File Formats Demystified (Datanami)](https://www.datanami.com/2018/05/16/big-data-file-formats-demystified/)
 
 Índice: [Cuadernos Colab](cuadernos.md).

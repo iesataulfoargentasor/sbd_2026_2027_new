@@ -29,7 +29,10 @@ Empieza por **[Inicio con Python](inicio-python.md)** (el Colab de portada del e
 | [1.5 Formatos de datos](formatos.md) | **c)** | Filas frente a columnas; Avro, Parquet y ORC para **consultar** |
 | [1.6 Planificación con GitHub Projects](planificacion.md) | **e)** | Objetivos, prioridades, mini-sprints e issues |
 | [1.7 Laboratorio AWS](laboratorio-aws.md) | **f)** / **g)** | S3 + Glue + Athena; coste por dato escaneado y calidad del esquema |
-| [Entorno Docker](docker.md) | apoyo | Contenedores para reproducir el entorno, no un CE propio |
+| [Modelado](modelado.md) | **a)** | Diagramas, grafos, árboles (anexo Word Tema 4) |
+| [Tiempo real](tiempo-real.md) | reconocimiento | Kafka, MQTT, Grafana; el reloj del streaming (Tema 5) |
+| [Costes y calidad](costes-calidad.md) | **g)** | Dimensiones de calidad y coste on-prem/nube (Tema 6) |
+| [Entorno Docker](docker.md) | apoyo / **f)** | Chuleta Docker y clúster Hadoop del manual de aula |
 | [Cuadernos Colab](cuadernos.md) | prácticas | Todos los enlaces de los eXe (alumnado y solución de profesorado) |
 | [Autoevaluación](autoevaluacion.md) | — | 20 preguntas de la unidad (no puntúa en Moodle) |
 
@@ -41,7 +44,8 @@ Cada paquete eXeLearning (o PDF) de la UT1 de Moodle queda asociado al mismo CE.
 | --- | --- | --- |
 | Introducción a Big Data SBD | vocabulario | [1.0](marco-big-data.md) |
 | Introducción al procesamiento y análisis | **b)** | [1.1](ciclo-analisis.md) |
-| Técnicas de análisis de datos en Big Data (vídeo + eXe combinado) | **b)** / **a)** | [Inicio con Python](inicio-python.md), [1.1](ciclo-analisis.md), [1.2](fundamentos.md) y [Cuadernos](cuadernos.md) |
+| Técnicas de análisis de datos en Big Data (vídeo + eXe combinado + Word Temas 4–7) | **a)**–**g)** | [Inicio con Python](inicio-python.md), [1.1](ciclo-analisis.md), [1.2](fundamentos.md), [modelado](modelado.md), [tiempo real](tiempo-real.md), [costes](costes-calidad.md) |
+| Manual Docker (clúster Hadoop) | apoyo / **f)** | [Entorno Docker](docker.md) |
 | Fundamentos matemáticos y algoritmos | **a)** | [1.2](fundamentos.md) |
 | Técnicas y procesos de extracción | **b)** / **d)** | [1.3](extraccion.md) |
 | Preproceso de datos (PDF) | **b)** / **d)** | [1.4](preproceso.md) |
@@ -49,7 +53,6 @@ Cada paquete eXeLearning (o PDF) de la UT1 de Moodle queda asociado al mismo CE.
 | Planificación con GitHub Projects | **e)** | [1.6](planificacion.md) |
 | Laboratorio logs web AWS (S3, Glue, Athena) | **f)** / **g)** | [1.7](laboratorio-aws.md) |
 | Vídeo ETL en Colab | **b)** | Primer flujo en [1.1](ciclo-analisis.md) y [1.3](extraccion.md) |
-| Manual Docker | apoyo | [Entorno Docker](docker.md) |
 
 !!! info "Frontera con BDA"
     El diseño del lago y Pentaho se quedan en BDA. El paquete *Introducción a Big Data* se recupera en [1.0](marco-big-data.md) para no perder el material de Moodle. Aquí la evidencia es **código, consulta y justificación**, no un `.ktr`.

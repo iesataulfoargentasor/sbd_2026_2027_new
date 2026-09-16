@@ -101,7 +101,20 @@ En un clúster **no** haces el mismo `for`. Spark usa expresiones de columna, `d
 | Join | Broadcast vs sort-merge; *skew* en claves calientes |
 | `to_csv` | Parquet `partitionBy` fecha; evitar *small files* |
 
-`df.collect()` / `toPandas()` de 200 GB **tira** el monolito. Calidad (completitud, unicidad) y coste (shuffle, ficheros diminutos) son de primera clase. Structured Streaming y watermarks quedan para más adelante.
+`df.collect()` / `toPandas()` de 200 GB **tira** el monolito. Calidad (completitud, unicidad) y coste (shuffle, ficheros diminutos) son de primera clase. Structured Streaming y watermarks quedan para [tiempo real](tiempo-real.md).
+
+A escala **reconoces** (no despliegas en UT1): tablas **Delta / Iceberg / Hudi** (evolución de esquema, MERGE, *time travel*); calidad con Great Expectations o Deequ; `badRecordsPath` al leer; *salting* si hay *skew*.
+
+Pandas del PDF de aula (misma receta, más verbos):
+
+```python
+df.info()
+df.isna().mean() * 100
+df["edad"] = pd.to_numeric(df["edad"], errors="coerce")
+df["tramo"] = pd.cut(df["edad"], bins=[0, 25, 40, 99], labels=["joven", "media", "senior"])
+```
+
+Min-max y z-score tienen fórmula; `MinMaxScaler` / `StandardScaler` son la versión sklearn. No escales **antes** de separar train/test. El PDF reserva una página “Ejemplo en Google Colab” **sin URL**: usa el de [Inicio con Python](inicio-python.md) o [1.3](extraccion.md).
 
 !!! example "Actividad de ejemplo"
     1. Monolítico: limpia [clientes_actividad.csv](../assets/practicas/clientes_actividad.csv) y resume por ciudad (actividad de [1.3](extraccion.md)).  
