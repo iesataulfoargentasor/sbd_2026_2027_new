@@ -12,11 +12,6 @@ tags:
 
     **[14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página](inicio-python.md)
 
-<figure markdown="block">
-![Persona estudiando en una pantalla matemática discreta, lógica algorítmica, complejidad computacional y representación binaria de los datos.](../assets/practicas/fundamentos/portada-fundamentos.jpg){ width="100%" }
-<figcaption>Portada del eXe. Las fórmulas no son decoración: conjuntos y grafos modelan el dato, la lógica decide qué filas pasan y Big-O anticipa si el algoritmo sobrevivirá cuando crezca <em>n</em>.</figcaption>
-</figure>
-
 Los datos no solo se guardan: hay que **organizarlos, recorrerlos y analizarlos**. Para hacerlo con millones de filas hacen falta dos piezas (criterio **a)**):
 
 Al terminar serás capaz de:
@@ -322,7 +317,7 @@ Es la misma regla que `edad > 18 AND compras > 5`, expresada para que negocio pu
 
 ## Actividades del eXe (hacer en Colab)
 
-**1. Conjuntos y lógica.** A = {Ana, Juan, Marta, Luis} compraron X; B = {Marta, Luis, Sofía, Pedro} compraron Y. Calcula A ∪ B, A ∩ B, A − B.
+**1. Conjuntos y lógica.** Objetivo: practicar operaciones con conjuntos y aplicar una regla lógica a clientes. A = {Ana, Juan, Marta, Luis} compraron X; B = {Marta, Luis, Sofía, Pedro} compraron Y. Calcula A ∪ B, A ∩ B, A − B.
 
 Premium si edad > 25 **y** compras > 10:
 
@@ -334,7 +329,7 @@ Premium si edad > 25 **y** compras > 10:
 | Luis | 35 | 20 |
 | Sofía | 24 | 5 |
 
-**2. Matriz** (Móvil / Portátil / Auriculares):
+**2. Matriz** (Móvil / Portátil / Auriculares). Objetivo: representar datos bidimensionales y extraer totales por fila y columna:
 
 | | Móvil | Portátil | Auriculares |
 | --- | --- | --- | --- |
@@ -345,9 +340,9 @@ Premium si edad > 25 **y** compras > 10:
 
 ¿Quién compró más en total? ¿Qué producto es el más popular?
 
-**3. Combinatoria.** Entrantes {Sopa, Ensalada, Gazpacho, Croquetas} × platos {Pollo, Pescado, Pasta}. Escribe **todas** las combinaciones (1+1). Solución esperada: **12**.
+**3. Combinatoria.** Objetivo: contar y enumerar posibilidades en un caso real. Entrantes {Sopa, Ensalada, Gazpacho, Croquetas} × platos {Pollo, Pescado, Pasta}. Primero calcula cuántos menús pueden formarse y después escribe **todas** las combinaciones (1+1). Solución esperada: **12**.
 
-**4. Árbol.** Si edad > 25 y compras > 5 → descuento. Aplícalo a Ana 28/12, Juan 22/3, Marta 19/6, Luis 35/4.
+**4. Árbol.** Objetivo: representar una regla de negocio como árbol de decisión. Dibuja las dos decisiones y sus ramas. Si edad > 25 y compras > 5 → descuento. Aplícalo a Ana 28/12, Juan 22/3, Marta 19/6, Luis 35/4.
 
 ??? check "Autocorrección: abre después de intentarlo"
     **Actividad 1**
@@ -434,6 +429,7 @@ Evidencia:
 6. **Dataset.** El eXe repite dos veces el mismo párrafo y lo limita a filas y columnas. Una colección de imágenes o grafos también puede ser un dataset.
 7. **Gráfico de complejidad.** La curva O(n²) está dividida por 100 y el eje vertical corta las curvas al llegar a 100. Sirve como intuición, pero no para comparar valores reales; por eso aquí se dan órdenes y cifras explícitas.
 8. En la actividad de matriz, “quién compró más productos” significa **más unidades en total**, no más categorías distintas.
+9. **Portada del eXe.** Es decorativa y contiene texto deformado y fórmulas incoherentes; no se utiliza como referencia matemática en esta página.
 
 ## Referencias para consultar
 
