@@ -12,17 +12,20 @@ Apuntes del **módulo 5074**, Curso de Especialización en Inteligencia Artifici
 
 La referencia es la [Orden EDU/48/2024, Anexo VI](https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=410716#page=145). **135 horas y 6 ECTS corresponden al módulo completo**, no a esta unidad.
 
-## U.T. 1. Integración, procesamiento y análisis de datos
+## UT1. Introducción al procesamiento y análisis de información
 
-El hotel ya guarda reservas. Ahora necesita combinar fuentes, comprobar los datos y obtener respuestas que pueda explicar.
+Comenzamos con el material del profesor utilizado en clase: valor de los datos, integración y ETL, procesamiento batch y streaming, tipos de análisis y una visión general de arquitecturas. La teoría se acompaña de una actividad inicial y dos cuadernos originales de Google Colab.
 
-- [Empieza por la unidad](ut1/index.md).
-- [RA1 y criterios](ut1/ra1.md).
-- [Prepara el entorno y descarga el laboratorio](ut1/entorno.md).
-- [Práctica integradora](ut1/practica.md).
-- [Autoevaluación](ut1/autoevaluacion.md).
+[Comenzar el tema](ut1/introduccion/index.md){ .md-button .md-button--primary }
 
-Se publica inicialmente **solo UT1**. Las siguientes unidades se incorporarán conforme se desarrollen. Las entregas y fechas las indicará el profesor en Moodle.
+- [Actividad práctica e inicio con Python](ut1/introduccion/actividad.md).
+- [Solución del profesor en Colab](ut1/introduccion/solucion-profesor.md).
+
+Las entregas y fechas las indicará el profesor en Moodle. Se conserva el orden del material original y su licencia CC BY-SA 4.0.
+
+## Materiales anteriores de UT1
+
+El contenido previo sigue disponible en [el recorrido anterior](ut1/index.md), con su [referencia curricular](ut1/ra1.md). Para empezar este tema, sigue el botón «Comenzar el tema»; el laboratorio local del hotel pertenece al recorrido anterior.
 
 ## Continuidad con BDA
 
