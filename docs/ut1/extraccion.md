@@ -23,7 +23,18 @@ Eso desarrolla el criterio **b)**. Relacionar después varias fuentes extraídas
 <figcaption>La fuente puede ser un fichero, una base de datos, una API o una web; el resultado útil es una tabla verificable, no la descarga en bruto.</figcaption>
 </figure>
 
-Cuaderno de síntesis: [Técnicas y procesos de extracción de información](https://colab.research.google.com/drive/1JvpH-IoMbgZzOoRdAXq2zTusWKUXLk74?usp=sharing).
+### Cuaderno general de extracción
+
+Cuaderno de ejemplos y actividades: [Técnicas y procesos de extracción de información](https://colab.research.google.com/drive/1JvpH-IoMbgZzOoRdAXq2zTusWKUXLk74?usp=sharing).
+
+Este cuaderno incluye carga de CSV y Excel, exploración, limpieza, APIs, scraping, integración de datos y análisis sencillo de opiniones. Tiene ejemplos resueltos y espacios para practicar; varias secciones se repiten en su segunda mitad.
+
+- **Servicios reales:** JSONPlaceholder y Open-Meteo. Las consultas son peticiones puntuales, no un proceso de streaming.
+- **Datos simulados:** la función de clima con apariencia de OpenWeatherMap devuelve un diccionario fijo; la actividad de la tienda también simula una API.
+- **Scraping:** el ejemplo básico analiza HTML escrito en el cuaderno con BeautifulSoup. El avanzado consulta una ficha inmobiliaria con `httpx` y `parsel`, y exporta JSON.
+- **Integración:** el bloque llamado «Proceso completo ETL» combina fuentes simuladas y muestra resultados y gráficos; para completar una carga persistente hay que añadir una exportación.
+- **Actividades propias:** carga y exploración de inventario, limpieza de empleados y extracción de productos de una API simulada. Las actividades de clientes CSV y Santander que se plantean más abajo son ejercicios adicionales de estos apuntes.
+
 
 ## 1. Objetivos de aprendizaje
 
@@ -264,8 +275,10 @@ print("filas extraídas:", len(resultado))
 
 El `&` es la conjunción de [1.2](fundamentos.md). Se seleccionan **filas y columnas**, se ordena y se cuenta: eso es extracción verificable.
 
-- Cuaderno: [1CPaRcZNcPMXLAwHdfv6KEuQpBUz1G1j_](https://colab.research.google.com/drive/1CPaRcZNcPMXLAwHdfv6KEuQpBUz1G1j_?usp=sharing)
+- Ejemplo base resuelto: [Filtrar clientes de Madrid mayores de 30](https://colab.research.google.com/drive/1CPaRcZNcPMXLAwHdfv6KEuQpBUz1G1j_?usp=sharing)
 - Fuente RAW: [clientes.csv en GitHub](https://raw.githubusercontent.com/josedavidmi/iabd-sbd/refs/heads/main/clientes.csv)
+
+El Colab aplica la igualdad exacta `ciudad == "Madrid"` y el filtro `edad > 30`, y muestra todas las columnas. El código de esta página añade normalización de espacios y mayúsculas, selección de tres columnas, ordenación y recuento. Incorpora esas mejoras en tu copia si quieres reproducir este resultado.
 
 ## 7. Ejemplo 2 — Open-Meteo semiestructurado { #ejemplo-2-api-meteorologica-semiestructurado }
 
@@ -324,9 +337,11 @@ Qué se refuerza:
 2. Extracción = pedir solo `temperature_2m`.
 3. Transformación obligatoria = tiempo + valores → dos columnas.
 4. Fiabilidad = caché y reintentos.
-5. Validación = 24 horas y la misma longitud en fechas y temperaturas.
+5. Validación = misma longitud en fechas y temperaturas, y número de intervalos coherente con el día solicitado (el día local puede variar con el cambio de hora).
 
-Cuaderno: [13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H](https://colab.research.google.com/drive/13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H?usp=sharing).
+Cuaderno base: [Open-Meteo: temperatura horaria de Castro Urdiales](https://colab.research.google.com/drive/13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H?usp=sharing).
+
+El Colab consulta **Castro Urdiales**, usa fechas en **UTC** y termina al mostrar `hourly_dataframe`. El ejemplo de esta página añade `timezone="Europe/Madrid"`, la conversión de fechas y los cálculos de máxima y mínima. Para la actividad posterior debes añadir esos pasos y cambiar las coordenadas a **Santander**; el cuaderno enlazado no contiene esa entrega terminada.
 
 ## 8. Ejemplo 3 — Web no estructurada
 

@@ -10,7 +10,7 @@ tags:
 !!! warning "Cuaderno de inicio"
     Antes de los ejemplos de este tema, consulta el Colab **Inicio con Python**:
 
-    **[14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página](inicio-python.md)
+    **[Inicio con Python](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página](inicio-python.md)
 
 Los datos no solo se guardan: hay que **organizarlos, recorrerlos y analizarlos**. Para hacerlo con millones de filas hacen falta dos piezas (criterio **a)**):
 
@@ -30,9 +30,9 @@ Buscar un número en una lista de 10 elementos es fácil. En 10 millones ya no v
 
 Sigue el apartado en el cuaderno de Colab de *Fundamentos matemáticos y algoritmos*:
 
-- Matemática discreta: [1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing)
-- Combinatoria: [1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing)
-- Miniproyecto del tema: [1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj](https://colab.research.google.com/drive/1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj?usp=sharing)
+- Matemática discreta: [Matemática discreta aplicada a Big Data](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing)
+- Combinatoria: [Combinatoria con menús](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing)
+- Repaso y miniproyecto de compras (resuelto): [Miniproyecto de compras y relaciones entre productos](https://colab.research.google.com/drive/1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj?usp=sharing)
 
 ## Conjuntos
 
@@ -225,11 +225,16 @@ Para 16 elementos, binaria necesita como máximo unas 4 comparaciones; para un m
 !!! note "Tabla hash: O(1) esperado"
     `set` y `dict` suelen buscar en O(1), pero no garantizan literalmente un paso ni O(1) en el peor caso: hay colisiones, redimensionados y coste de calcular el *hash*. El coste constante es una intuición útil del caso promedio, no una garantía absoluta.
 
-Cuadernos de complejidad:
+### Cuadernos de complejidad
 
-- Teoría y notación: [1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu](https://colab.research.google.com/drive/1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu?usp=sharing)
-- Búsqueda lineal frente a binaria: [1QMJKYknyyv_-pyOQ5WaNdqCZZ2u8KyPS](https://colab.research.google.com/drive/1QMJKYknyyv_-pyOQ5WaNdqCZZ2u8KyPS?usp=sharing)
-- Tiempos en listas pequeñas y enormes: [1mZfjK-IH2qmyKHnUe2LU6kiarKepmveX](https://colab.research.google.com/drive/1mZfjK-IH2qmyKHnUe2LU6kiarKepmveX?usp=sharing)
+- [Big-O: teoría y curvas de crecimiento](https://colab.research.google.com/drive/1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu?usp=sharing): explicación de Big-O y curvas teóricas. La curva cuadrática está dividida por 100 y el eje vertical limitado a 100; el gráfico ilustra tendencias, no segundos medidos.
+- [Búsquedas en listas, conjuntos y diccionarios](https://colab.research.google.com/drive/1mZfjK-IH2qmyKHnUe2LU6kiarKepmveX?usp=sharing): búsqueda lineal y binaria en lista ordenada, seguida de búsquedas en `set` y `dict`.
+- [Búsquedas, memoria y alternativa con Dask](https://colab.research.google.com/drive/1QMJKYknyyv_-pyOQ5WaNdqCZZ2u8KyPS?usp=sharing): amplía la comparación con un caso de agotamiento de RAM, una versión que libera cada colección antes de crear la siguiente y un ejemplo con Dask. La parte sobre PySpark es explicativa; no contiene un laboratorio ejecutable de Spark.
+
+!!! warning "Ajusta el tamaño antes de ejecutar"
+    El cuaderno de listas empieza con `n = 200_000_000`; su segundo ejemplo usa `200_000_00`, que son **20 millones**, aunque el comentario dice 200 millones. El de memoria utiliza 100 y 80 millones. En tu copia, cambia **cada asignación de `n`** a `100_000` para la primera prueba. En el ejemplo Dask, reduce también `CHUNK_SIZE` a `10_000`. Ejecuta por bloques y aumenta el tamaño solo después de observar el consumo de memoria.
+
+En el ejemplo Dask, el acceso por índice no es una búsqueda hash. La llamada a `np.searchsorted` tampoco constituye por sí sola una medición comparable de búsqueda binaria distribuida. Utiliza las funciones explícitas sobre listas para comparar algoritmos, y el bloque Dask para observar el procesamiento por bloques.
 
 !!! failure "Trampa de aula"
     «Como pandas es rápido, la complejidad da igual.» pandas **esconde** el bucle. Si tu idea es O(n²), el clúster también pagará shuffle y tiempo. El criterio a) es elegir la operación, no el logo.
@@ -386,21 +391,27 @@ En una sola celda Markdown, antes del código:
 (valor obtenido y una comprobación)
 ```
 
-El anexo Word de *Técnicas de análisis* (Tema 2) incluye además este Colab de apoyo: [1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx](https://colab.research.google.com/drive/1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx?usp=sharing).
+El cuaderno de **tipos de datos y fundamentos** repasa tipos, mutabilidad y serialización JSON; después desarrolla conjuntos, lógica, grafos, matrices, combinatoria y búsquedas. Termina con **tres actividades distintas** de las cuatro anteriores: conjuntos de tiendas, matriz de recomendaciones 4×4 y suma de números pares con análisis de complejidad. El árbol de clasificación con scikit-learn es una ampliación. Enlace: [Tipos de datos y fundamentos en Python](https://colab.research.google.com/drive/1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx?usp=sharing).
+
+## Miniproyecto de compras
+
+El [Miniproyecto de compras y relaciones entre productos](https://colab.research.google.com/drive/1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj?usp=sharing) repite primero los ejemplos de matemática discreta y después presenta **«Mini-proyecto integrador: de transacciones a conocimiento»**. El código ya está resuelto: genera 5.000 cestas simuladas para 200 clientes y 12 productos, analiza intersecciones de clientes, construye un grafo de co-compra, calcula clientes VIP y representa ventas y productos.
+
+Una fila representa un producto de una cesta, por lo que habrá más de 5.000 filas. Para relacionar productos, el código agrupa por **cliente y fecha**, no por un identificador único de ticket. El criterio VIP utiliza gasto y número de **líneas** por encima del percentil 80. Ejecuta los bloques, modifica un parámetro y explica cómo afecta al resultado.
 
 ## Estudio de logística
 
 Completa las celdas `# --- TU CÓDIGO AQUÍ ---` del cuaderno de conjuntos, relaciones, funciones, lógica y grafos:
 
-[1cWbe73qRxhDEDg5FCM-Fdwj8GvIVLj58](https://colab.research.google.com/drive/1cWbe73qRxhDEDg5FCM-Fdwj8GvIVLj58?usp=sharing)
+[Logística: cuaderno de actividades](https://colab.research.google.com/drive/1cWbe73qRxhDEDg5FCM-Fdwj8GvIVLj58?usp=sharing)
 
 No conviertas el cuaderno en cinco ejercicios aislados. Cuenta una historia:
 
-1. **Conjuntos:** almacenes, pedidos o rutas sin duplicados.
-2. **Relaciones:** qué almacén sirve a qué destino.
-3. **Funciones:** coste o tiempo asignado a cada ruta.
-4. **Lógica:** reglas que aceptan o rechazan un envío.
-5. **Grafos:** nodos, aristas y pesos de la red.
+1. **Conjuntos:** pedidos atendidos por cada centro y operaciones entre ellos.
+2. **Relaciones:** asignación de camiones a rutas y propiedades de esa relación.
+3. **Funciones:** peso, coste y tarifa de los pedidos, con recargos.
+4. **Lógica:** pedidos urgentes, pesados, peligrosos y orden de prioridad.
+5. **Grafos:** centros conectados por carreteras y centralidad de grado; el grafo base no asigna pesos a las aristas.
 
 Evidencia:
 
@@ -412,8 +423,10 @@ Evidencia:
 
 ## Solución de referencia (profesorado)
 
-- Tema general: [14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd](https://colab.research.google.com/drive/14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd?usp=sharing).
-- Logística resuelta: [1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij](https://colab.research.google.com/drive/1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij?usp=sharing).
+- Las cuatro actividades de esta página (conjuntos, matriz, menús y descuento), resueltas: [Cuatro actividades resueltas de fundamentos](https://colab.research.google.com/drive/14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd?usp=sharing).
+- Logística resuelta: [Logística: tareas resueltas](https://colab.research.google.com/drive/1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij?usp=sharing).
+
+En la matriz de compras hay empate entre **Ana y Luis** (6 unidades). El cuaderno resuelto muestra un solo nombre con `idxmax()`; la respuesta completa debe mencionar a ambos.
 
 Úsalas **después** de intentar el problema. Una solución que se ejecuta pero que no puedes explicar no demuestra el criterio **a)**.
 

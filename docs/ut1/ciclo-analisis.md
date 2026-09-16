@@ -57,8 +57,10 @@ Eso convierte dato bruto en información útil. La evidencia no es “haber abie
 
 Crea un cuaderno nuevo en Colab para resolver esta actividad. El curso básico de Python sirve como preparación; el cuaderno resuelto de ETL permite contrastar tu trabajo.
 
-- Preparación: Python básico — [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)
-- Solución de referencia (profesorado): [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)
+- Preparación: Python básico — [Inicio con Python](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)
+- Solución de referencia (profesorado): [ETL de clientes resuelto](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)
+
+El cuaderno resuelto simula la extracción creando un diccionario y un DataFrame; no lee un CSV de entrada. Para cumplir el enunciado de esta actividad, añade la creación y lectura del CSV antes de aplicar la limpieza. La exportación con `to_csv` guarda el resultado en la sesión de Colab; descárgalo desde el panel de archivos para entregarlo.
 
 El listado completo de cuadernos de la unidad está en [Cuadernos Colab](cuadernos.md).
 

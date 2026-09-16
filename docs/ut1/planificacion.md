@@ -312,13 +312,15 @@ errores de ciudad—, fechas unificadas, y recuento de clientes por ciudad.)
 ```
 
 ??? example "Plantilla extra: mini-sprint Open-Meteo (actividad 2 de 1.3)"
-    Producto final: Colab que consume [Open-Meteo](extraccion.md#ejemplo-2-api-meteorologica-semiestructurado) para una ciudad, arma un DataFrame horario, calcula máxima y mínima del día e interpreta. Cuaderno: [13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H](https://colab.research.google.com/drive/13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H?usp=sharing).
+    Producto final: Colab que consume [Open-Meteo](extraccion.md#ejemplo-2-api-meteorologica-semiestructurado) para una ciudad, arma un DataFrame horario, calcula máxima y mínima del día e interpreta. Cuaderno: [Open-Meteo: temperatura horaria de Castro Urdiales](https://colab.research.google.com/drive/13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H?usp=sharing).
+
+    El cuaderno base obtiene la tabla horaria de **Castro Urdiales en UTC**. En tu copia debes adaptar las coordenadas a **Santander**, elegir y documentar la zona horaria, añadir máxima y mínima e interpretar los resultados. Esos pasos forman parte del mini-sprint.
 
     ```markdown
     # Mini-sprint – Actividad 2: API Open-Meteo
 
     ## 1. Objetivo
-    (2–3 frases. Ejemplo: consumir Open-Meteo para Castro Urdiales,
+    (2–3 frases. Ejemplo: consumir Open-Meteo para Santander,
     DataFrame de temperatura horaria, máxima y mínima del día, comentario.)
 
     ## 2. Tareas

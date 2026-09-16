@@ -155,8 +155,7 @@ Esquema de aula, [empleado.avsc](../assets/practicas/empleado.avsc):
 ### Avro y Python (librería de referencia)
 
 ```sh
-pip install avro-python3
-# con Anaconda: conda install -c conda-forge avro-python3
+pip install avro
 ```
 
 ```python
@@ -263,11 +262,13 @@ Copia cada cuaderno a tu Drive. En los dos primeros **adjunta** `empleado.avsc`;
 
 | Cuaderno | Qué haces | Enlace |
 | --- | --- | --- |
-| Avro (librería de referencia) | Serializar / deserializar con `avro-python3` y `empleado.avsc` | [1zxfPwEdHjaYHjkKjPOwXuj9fXGD8Anc1](https://colab.research.google.com/drive/1zxfPwEdHjaYHjkKjPOwXuj9fXGD8Anc1?usp=sharing) |
-| Fastavro | El mismo caso, más rápido | [1z0ZsCX2Ws-3kSFLQEJS74CDkkot--Y-n](https://colab.research.google.com/drive/1z0ZsCX2Ws-3kSFLQEJS74CDkkot--Y-n?usp=sharing) |
-| Fastavro + pandas | Leer `pdi_sales.csv`, filtrar Alemania y escribir Avro | [1zaM4132cmUIsOWL5rbiCre5dCIyVL1RC](https://colab.research.google.com/drive/1zaM4132cmUIsOWL5rbiCre5dCIyVL1RC?usp=sharing) |
+| Avro (librería de referencia) | Instalar `avro`, escribir dos empleados en `empleados.avro` y leer registros y esquema | [Avro: escritura y lectura de empleados](https://colab.research.google.com/drive/1zxfPwEdHjaYHjkKjPOwXuj9fXGD8Anc1?usp=sharing) |
+| Fastavro | El mismo caso con `fastavro`, en `empleadosf.avro`; sin cronometraje comparativo | [Fastavro: escritura y lectura de empleados](https://colab.research.google.com/drive/1z0ZsCX2Ws-3kSFLQEJS74CDkkot--Y-n?usp=sharing) |
+| Fastavro + pandas | Leer `pdi_sales.csv`, quitar espacios de `Zip`, filtrar Alemania y escribir `sales.avro` | [Pandas y fastavro: ventas de Alemania](https://colab.research.google.com/drive/1zaM4132cmUIsOWL5rbiCre5dCIyVL1RC?usp=sharing) |
 
-Esquema de apoyo: [empleado.avsc en el IABD de Aitor Medrano](https://aitor-medrano.github.io/iabd/de/resources/empleado.avsc).
+Usa el [esquema `empleado.avsc` de estos apuntes](../assets/practicas/empleado.avsc), con los campos `nombre`, `altura` y `edad` en minúscula. Ambos cuadernos lo leen desde la carpeta de trabajo; no lo descargan automáticamente. El tercer cuaderno necesita que subas [`pdi_sales.csv`](https://aitor-medrano.github.io/iabd/de/resources/pdi_sales.csv), con separador `;`.
+
+Son ejemplos de escritura y lectura, no pruebas comparativas de rendimiento. Si quieres comparar velocidad, añade mediciones con el mismo dataset y entorno. En el tercer cuaderno, «Ejercicio 3: Limpiar el fichero» deja una celda vacía para continuar: el código anterior ya recorta `Zip` y filtra Alemania; no realiza una limpieza general de nulos o duplicados.
 
 ## 5. Compresión
 
