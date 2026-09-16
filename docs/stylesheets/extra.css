@@ -80,3 +80,14 @@
 [data-md-color-scheme="slate"] .md-typeset a:hover {
   color: #f0a0a0;
 }
+
+.md-typeset figure {
+  margin: 1.25em 0 1.75em;
+}
+
+.md-typeset figcaption {
+  font-size: 0.85em;
+  color: var(--md-default-fg-color--light);
+  text-align: left;
+  margin-top: 0.5em;
+}

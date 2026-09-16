@@ -8,6 +8,7 @@ from faker import Faker
 
 fake = Faker()
 
+# URLs típicas del sitio web de la tienda
 URLS = [
     "/",
     "/home",
@@ -21,10 +22,12 @@ URLS = [
     "/registro",
 ]
 
+# Códigos ISO simplificados
 COUNTRIES = ["ES", "FR", "DE", "IT", "PT", "UK", "US"]
 
 
 def generar_timestamp_ultimos_dias(dias=7):
+    """Genera un timestamp aleatorio en los últimos `dias` días (UTC, ISO-8601)."""
     ahora = datetime.now(timezone.utc)
     delta = timedelta(
         days=random.randint(0, dias),
@@ -53,4 +56,4 @@ def generar_logs(num_filas=500, nombre_fichero="logs.csv"):
 
 
 if __name__ == "__main__":
-    generar_logs()
+    generar_logs(num_filas=500, nombre_fichero="logs.csv")
