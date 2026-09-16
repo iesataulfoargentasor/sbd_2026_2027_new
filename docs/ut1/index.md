@@ -5,6 +5,9 @@ tags: [SBD, RA1]
 
 # U.T. 1. Integración, procesamiento y análisis de datos
 
+!!! info "Inicio del tema con el material del profesor"
+    El nuevo punto de entrada es [Introducción al procesamiento y análisis de información](introduccion/index.md), con la teoría original y sus dos enlaces a Google Colab. Esta página conserva el recorrido anterior como material complementario.
+
 El grupo hotelero quiere conocer sus reservas y cancelaciones por hotel y canal. Tiene CSV, catálogos y eventos JSON, pero todavía no dispone de una respuesta fiable. Una suma puede ser correcta y responder a una pregunta equivocada: primero definiremos qué cuenta cada registro.
 
 ## Lo que aprenderás
