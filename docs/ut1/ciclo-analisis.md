@@ -55,7 +55,9 @@ Tenéis que desarrollar, en Google Colab, un ETL mínimo:
 
 Eso convierte dato bruto en información útil. La evidencia no es “haber abierto Colab”: es el fichero limpio y el resumen.
 
-- Cuaderno de alumnado: [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)
+Crea un cuaderno nuevo en Colab para resolver esta actividad. El curso básico de Python sirve como preparación; el cuaderno resuelto de ETL permite contrastar tu trabajo.
+
+- Preparación: Python básico — [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)
 - Solución de referencia (profesorado): [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)
 
 El listado completo de cuadernos de la unidad está en [Cuadernos Colab](cuadernos.md).

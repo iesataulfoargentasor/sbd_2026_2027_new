@@ -11,8 +11,8 @@ Esta entrega desarrolla **UT1 (SBD-RA1)**, alineada con la Orden EDU/48/2024, An
 
 Consulta este cuaderno de Google Colab **antes** de las prácticas del tema:
 
-- Alumnado: [https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)
-- Solución profesorado: [https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)
+- Curso básico de Python: [https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)
+- Práctica posterior: ETL de clientes resuelto (profesorado): [https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)
 - Página de los apuntes: [Inicio con Python](https://iesataulfoargentasor.github.io/sbd_2026_2027_new/ut1/inicio-python/)
 - Índice de todos los Colab: [Cuadernos](https://iesataulfoargentasor.github.io/sbd_2026_2027_new/ut1/cuadernos/)
 - Vídeo de aula (SharePoint, Educantabria): [técnicas de análisis / ETL](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/EeKBcqViPHZMn0uMthdtUJkBkyb1SHk3crRjD2Rrd8gEPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b1SA87)

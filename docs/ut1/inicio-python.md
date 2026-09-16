@@ -20,29 +20,34 @@ Cópialo a tu Drive (Archivo → Guardar una copia) con la cuenta de Educantabri
 
 ## Qué se hace en ese cuaderno
 
-Es un **flujo ETL mínimo** en Python (pandas), no un tutorial genérico de sintaxis:
+El cuaderno se titula **Curso básico de Python para Big Data (Google Colab)**. Combina explicaciones con ejemplos de código para preparar las prácticas de la unidad.
 
-1. Se genera un CSV de clientes con errores (fechas mezcladas, duplicados, valores faltantes).
-2. **Extracción:** abrir y leer el fichero.
-3. **Transformación:** unificar fechas, eliminar duplicados, corregir erratas.
-4. **Carga:** guardar un CSV limpio.
-5. Recuento: clientes por ciudad y edad media.
+1. **Variables y tipos básicos:** enteros, decimales, cadenas, booleanos y operaciones numéricas.
+2. **Colecciones:** listas, tuplas, diccionarios y conjuntos.
+3. **Control del programa:** condicionales `if/else` y bucles `for` y `while`.
+4. **Funciones:** definirlas, pasar argumentos y reutilizar cálculos.
+5. **Librerías:** primeros ejemplos con `math`, `random`, NumPy, pandas y Matplotlib.
+6. **Ampliación:** arrays y matrices con NumPy; selección de columnas, filtros y estadísticas con pandas; gráficos de líneas y barras con Matplotlib.
 
-Eso convierte dato bruto en información útil. La evidencia no es “haber abierto Colab”: es el fichero limpio y el resumen.
+Ejecuta las celdas en orden, modifica algunos valores y comprueba cómo cambia el resultado. Al terminar, deberías poder explicar un filtro de pandas, calcular una media y reconocer cómo se construye un gráfico sencillo.
 
-La teoría que envuelve esta práctica (valor del dato, ETL, batch/streaming, descriptivo/predictivo/prescriptivo) está en [1.1 Integrar, procesar y analizar](ciclo-analisis.md).
+## Siguiente paso: práctica ETL de clientes
+
+Con esa base, pasa a la [actividad ETL de 1.1 Integrar, procesar y analizar](ciclo-analisis.md). Allí trabajarás la extracción, limpieza, carga y análisis de datos de clientes en un cuaderno propio.
+
+El **cuaderno resuelto de ETL** enlazado más abajo corresponde a esa actividad posterior. Parte de datos de clientes simulados en un diccionario de Python, los convierte en un DataFrame, elimina duplicados, trata valores faltantes y formatos, guarda `clientes_limpio.csv` y calcula clientes por ciudad y edad media.
 
 ## Vídeo de aula (Moodle / SharePoint)
 
-Esta grabación sirve de apoyo al tema (cuenta Educantabria):
+Esta grabación acompaña la práctica posterior de análisis y ETL (cuenta Educantabria):
 
 **[Vídeo: técnicas de análisis y ETL en Colab](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/EeKBcqViPHZMn0uMthdtUJkBkyb1SHk3crRjD2Rrd8gEPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b1SA87)**
 
-## Solución de referencia (profesorado)
+## Solución de referencia: ETL de clientes (profesorado)
 
-Consulta la solución del profesor. Úsala **después** de intentar el cuaderno, o en corrección.
+Este segundo cuaderno se titula **RESUMEN DEL PROCESO ETL COMPLETADO**. Úsalo **después** de intentar la actividad ETL de clientes, o durante su corrección. No es una solución de los ejemplos del curso básico de Python.
 
-**[Solución profesorado](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)**
+**[Abrir el ETL de clientes resuelto](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)**
 
 `https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing`
 

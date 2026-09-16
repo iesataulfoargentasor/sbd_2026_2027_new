@@ -21,7 +21,7 @@ Consulta este cuaderno antes de las prácticas de análisis y fundamentos. Pági
 
 | Tema | Para qué | Cuaderno |
 | --- | --- | --- |
-| Técnicas de análisis / Introducción | **Inicio con Python** (ETL inicial: CSV sucio → limpio → recuento) | [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing) |
+| Técnicas de análisis / Introducción | **Inicio con Python** (sintaxis, colecciones, funciones y librerías) | [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing) |
 | Fundamentos | Matemática discreta aplicada a datos | [1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing) |
 | Fundamentos (anexo Word Tema 2) | Cuaderno extra de apoyo | [1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx](https://colab.research.google.com/drive/1zLLp2cZTXoTCLczo8ibElVPZX7eIZEPx?usp=sharing) |
 | Fundamentos | Combinatoria | [1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing) |
@@ -49,7 +49,7 @@ Estos cuadernos contienen las soluciones del profesor. Úsalos **después** de i
 
 | Tema | Cuaderno |
 | --- | --- |
-| Inicio con Python (ETL inicial) | [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing) |
+| ETL de clientes — solución de la actividad de [1.1](ciclo-analisis.md) | [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing) |
 | Fundamentos | [14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd](https://colab.research.google.com/drive/14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd?usp=sharing) |
 | Fundamentos (logística resuelta) | [1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij](https://colab.research.google.com/drive/1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij?usp=sharing) |
 | Formatos (Kaggle, profesorado) | [fork-of-trabajo-actividad-de-formato-de-datos](https://www.kaggle.com/code/dmiprof01/fork-of-trabajo-actividad-de-formato-de-datos) |

@@ -383,7 +383,7 @@ Del documento, más los que salen en clase:
 
 ## Ejemplo en Google Colab
 
-El documento reserva una página *Ejemplo sencillo en Google Colab* que se quedó **sin enlace**. Usa el cuaderno de [Inicio con Python](inicio-python.md), que hace este mismo recorrido (CSV sucio → limpio → recuento), o el [cuaderno de filtro de 1.3](extraccion.md).
+Para practicar este recorrido, realiza la [actividad ETL de clientes](ciclo-analisis.md) y contrasta tu trabajo con su [cuaderno resuelto](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing): datos simulados → limpieza → CSV exportado → recuento. También puedes trabajar con el [cuaderno de filtro de 1.3](extraccion.md). Si necesitas repasar la sintaxis y las librerías, empieza por [Inicio con Python](inicio-python.md).
 
 La limpieza de [clientes_actividad.csv](../assets/practicas/clientes_actividad.csv) **se planifica** en [1.6](planificacion.md) y **se ejecuta** en la actividad 1 de [1.3](extraccion.md). El ETL inicial está en [1.1](ciclo-analisis.md).
 
@@ -687,7 +687,7 @@ Revisa estos puntos antes de ejecutar el código:
 3. **«Es importante su eliminación» (outliers).** Demasiado tajante; el propio documento se corrige después con «cuidado con perder señal». Mira el caso antes de borrar.
 4. **`std()` frente a `std(ddof=0)`.** Elige una convención para calcular el z-score y úsala de forma consistente.
 5. **`AvroWriter`, `hdfs_client` y compañía** no aparecen aquí, pero sí en el apartado de [formatos](formatos.md#9-comprobaciones-y-errores-frecuentes): son de la API de HDFS, no de un fichero local.
-6. **Práctica inicial.** Utiliza el cuaderno [Inicio con Python](inicio-python.md) para comprobar el flujo de preparación.
+6. **Práctica inicial.** Realiza la [actividad ETL de clientes](ciclo-analisis.md) para comprobar el flujo de preparación.
 7. Erratas de tecleo del documento: «no podemos encontrar con dos posibles entornos» (*nos*), «peo en el que los datos», «Conviertimos a timestamp», «distribuídamente».
 
 !!! success "Al terminar 1.4"

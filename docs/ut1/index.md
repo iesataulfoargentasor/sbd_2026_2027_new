@@ -20,7 +20,7 @@ Empieza por **[Inicio con Python](inicio-python.md)** (cuaderno de preparación 
 
 | Apartado | Criterio | Qué te llevas |
 | --- | --- | --- |
-| [Inicio con Python](inicio-python.md) | **b)** | Cuaderno de inicio (ETL mínimo en pandas) |
+| [Inicio con Python](inicio-python.md) | **b)** | Python básico, colecciones, funciones y primeras operaciones con NumPy, pandas y Matplotlib |
 | [1.0 Marco Big Data](marco-big-data.md) | vocabulario | 3–7 V, ciencia de datos, BI, warehouse/lake, roles |
 | [1.1 Integrar, procesar y analizar](ciclo-analisis.md) | **b)** | Dato → información → decisión; ETL; batch/streaming; tipos de análisis |
 | [1.2 Fundamentos matemáticos y algoritmos](fundamentos.md) | **a)** | Conjuntos, lógica, grafos, combinatoria, estructuras y complejidad |
