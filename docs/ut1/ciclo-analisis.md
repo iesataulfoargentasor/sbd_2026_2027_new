@@ -7,6 +7,11 @@ tags:
 
 # 1.1. Integrar, procesar y analizar
 
+!!! warning "Inicio con Python (antes de seguir)"
+    El eXe *Técnicas de análisis de datos en Big Data* pide este cuaderno **en la portada**, antes de las prácticas:
+
+    **[Inicio con Python](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página del cuaderno](inicio-python.md)
+
 Un dato **aislado** no vale. Cada clic, cada reserva, cada lectura de un sensor solo se convierte en decisión cuando se **integra** con otros, se **procesa** y se **analiza**.
 
 Eso es el criterio **b)** empezando a trabajar: extraer información y conocimiento de volúmenes que no vas a leer a ojo.
@@ -36,7 +41,7 @@ El método más habitual sigue tres verbos. Las siglas **ETL** (extraer → tran
 
 ## Actividad práctica (nivel inicial) — ETL en Colab
 
-Paquete eXe *Introducción al procesamiento y análisis de información*, apartado 6. El vídeo de Moodle (*Técnicas de análisis de datos en Big Data*) explica el mismo flujo.
+Apartado 6 del eXe (*Inicio con Python*). El mismo cuaderno está en la **portada** de *Técnicas de análisis de datos en Big Data* y en la de *Fundamentos*. El vídeo de Moodle explica el mismo flujo.
 
 Tenéis que desarrollar, en Google Colab, un ETL mínimo:
 
@@ -57,7 +62,7 @@ El listado completo de cuadernos de la unidad está en [Cuadernos Colab](cuadern
 
 | Modalidad | Idea | Pregunta | Familia (nombres, no despliegue) |
 | --- | --- | --- | --- |
-| **Batch** (lotes) | Procesas un bloque al cabo de un periodo | *¿Qué pasó ayer?* | Spark en lote, un script pandas, un job nocturno |
+| **Batch** (lotes) | Procesas un bloque al cabo de un periodo | *¿Qué pasó ayer?* | Hadoop, Spark en lote, un script pandas, un job nocturno |
 | **Streaming** (flujo) | Procesas a medida que llega | *¿Qué está pasando ahora?* | Kafka, Flink, Spark Streaming |
 
 El lote encaja con el cierre de cobros del hotel. El flujo, con el fraude de una tarjeta o el semáforo de habitación libre. Streaming **no** es latencia cero: tiene un plazo objetivo.
@@ -91,6 +96,14 @@ Un `groupby` de pandas o un `GROUP BY` de Athena suelen ser **descriptivos**. No
 | Amazon | Personaliza búsquedas y compras | Variedad + descriptivo/predictivo |
 | Banca | Contrasta cada transacción | Flujo (fraude **ahora**) |
 | Industria 4.0 | El sensor avisa si la máquina se desvía | Flujo + prescriptivo (parar o no) |
+
+## Resumen del tema (eXe)
+
+- Los **datos** por sí solos no son útiles: hay que integrarlos, procesarlos y analizarlos.
+- La **integración** se hace con procesos como **ETL**.
+- El **procesamiento** puede ser en **lotes** (batch) o en **tiempo real** (streaming).
+- El **análisis** puede ser descriptivo, predictivo o prescriptivo.
+- El mismo ciclo se aplica en banca, entretenimiento, industria, etc.
 
 !!! success "Al terminar 1.1"
     Di, con un caso, las tres frases: qué fuentes unes, si el proceso es lote o flujo, y si el resultado describe, predice o prescribe. Después extraes de verdad en [1.3](extraccion.md).

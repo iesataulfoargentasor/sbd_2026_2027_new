@@ -7,6 +7,11 @@ tags:
 
 # 1.2. Fundamentos matemáticos y algoritmos
 
+!!! warning "Mismo cuaderno de arranque que el eXe"
+    Antes de los ejemplos de este tema, el eXe de *Técnicas de análisis* / *Fundamentos* pide el Colab **Inicio con Python**:
+
+    **[14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página](inicio-python.md)
+
 Los datos no solo se guardan: hay que **organizarlos, recorrerlos y analizarlos**. Para hacerlo con millones de filas hacen falta dos piezas (criterio **a)**):
 
 - **Matemática discreta:** representar el dato como conjuntos, relaciones, funciones y grafos.

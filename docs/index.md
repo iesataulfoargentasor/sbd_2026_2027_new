@@ -22,6 +22,11 @@ La referencia curricular en Cantabria es la [Orden EDU/48/2024, de 8 de octubre,
 
 El sitio desarrolla **UT1 (SBD-RA1)**. Consulta [qué retomaremos después](ut1/continuidad.md).
 
+!!! warning "Antes de las prácticas — Inicio con Python"
+    El eXe *Técnicas de análisis de datos en Big Data* abre con este cuaderno. Cópialo a tu Drive y ejecútalo **antes** de fundamentos, extracción o Avro.
+
+    **[Inicio con Python (Google Colab)](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página del cuaderno](ut1/inicio-python.md) · [todos los Colab](ut1/cuadernos.md)
+
 ## Unidad de trabajo
 
 ### U.T. 1. Integración, procesamiento y análisis de información
@@ -30,6 +35,7 @@ Del dato bruto a una consulta útil: marco Big Data, ciclo de análisis, fundame
 
 - [La unidad](ut1/index.md)
 - [RA1 y criterios de evaluación](ut1/ra1.md)
+- [Inicio con Python (Colab de arranque)](ut1/inicio-python.md)
 - [Cuadernos de Google Colab](ut1/cuadernos.md)
 - [1.0 Marco Big Data](ut1/marco-big-data.md)
 - [1.1 Integrar, procesar y analizar](ut1/ciclo-analisis.md)

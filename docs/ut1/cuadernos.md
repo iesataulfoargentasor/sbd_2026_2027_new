@@ -11,11 +11,17 @@ Todos los enlaces salen de los paquetes eXeLearning de Moodle. Ábrelos con la c
 
 La [autoevaluación](autoevaluacion.md) no sustituye estos cuadernos. Las entregas formales siguen en Moodle.
 
+## Primero: Inicio con Python
+
+Portada del eXe *Técnicas de análisis de datos en Big Data*: consultar **este** cuaderno antes de las prácticas. El mismo enlace está en la portada de fundamentos y en la actividad 6 (*Inicio con Python*). Página dedicada: [Inicio con Python](inicio-python.md).
+
+**[https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)**
+
 ## Alumnado (hacer en clase)
 
 | Paquete eXe | Para qué | Cuaderno |
 | --- | --- | --- |
-| Introducción al procesamiento | ETL inicial (CSV sucio → limpio → recuento) | [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing) |
+| Técnicas de análisis / Introducción | **Inicio con Python** (ETL inicial: CSV sucio → limpio → recuento) | [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing) |
 | Fundamentos | Matemática discreta aplicada a datos | [1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing) |
 | Fundamentos | Combinatoria | [1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing) |
 | Fundamentos | Miniproyecto del apartado (dataset, estructuras) | [1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj](https://colab.research.google.com/drive/1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj?usp=sharing) |
@@ -42,7 +48,7 @@ Estos enlaces están en las páginas *Solución Profesor* de los eXe. Úsalos **
 
 | Paquete | Cuaderno |
 | --- | --- |
-| Introducción (ETL inicial) | [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing) |
+| Inicio con Python (ETL inicial) | [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing) |
 | Fundamentos | [14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd](https://colab.research.google.com/drive/14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd?usp=sharing) |
 | Fundamentos (segunda solución) | [1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij](https://colab.research.google.com/drive/1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij?usp=sharing) |
 

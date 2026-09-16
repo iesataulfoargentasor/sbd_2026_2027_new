@@ -14,12 +14,13 @@ En BDA caracterizaste el almacén, la ingesta y el formato de la carga. Aquí el
 
 Lee cada apartado **en orden**. En todos hay un caso (hotel, clientes, logs de una tienda, meteorología de Castro Urdiales) y una pregunta del estilo “¿qué harías con el dato y por qué?”. Si puedes explicárselo a un compañero sin mirar la tabla, el apartado está asimilado. La [autoevaluación](autoevaluacion.md) comprueba vocabulario. Ninguna sustituye a Moodle.
 
-Los cuadernos de Google Colab de los eXe están en [Cuadernos Colab](cuadernos.md) y también junto a la teoría de cada apartado. Ábrelos en tu Drive antes de ejecutar.
+Empieza por **[Inicio con Python](inicio-python.md)** (el Colab de portada del eXe *Técnicas de análisis de datos en Big Data*). El resto de cuadernos está en [Cuadernos Colab](cuadernos.md) y junto a la teoría de cada apartado. Ábrelos en tu Drive antes de ejecutar.
 
 ## Qué vas a trabajar
 
 | Apartado | Criterio | Qué te llevas |
 | --- | --- | --- |
+| [Inicio con Python](inicio-python.md) | **b)** | Colab de arranque del eXe *Técnicas de análisis* (ETL mínimo en pandas) |
 | [1.0 Marco Big Data](marco-big-data.md) | vocabulario | 3–7 V, ciencia de datos, BI, warehouse/lake, roles (paquete *Introducción a Big Data*) |
 | [1.1 Integrar, procesar y analizar](ciclo-analisis.md) | **b)** | Dato → información → decisión; ETL; batch/streaming; tipos de análisis |
 | [1.2 Fundamentos matemáticos y algoritmos](fundamentos.md) | **a)** | Conjuntos, lógica, grafos y complejidad (por qué un algoritmo no escala) |
@@ -40,7 +41,7 @@ Cada paquete eXeLearning (o PDF) de la UT1 de Moodle queda asociado al mismo CE.
 | --- | --- | --- |
 | Introducción a Big Data SBD | vocabulario | [1.0](marco-big-data.md) |
 | Introducción al procesamiento y análisis | **b)** | [1.1](ciclo-analisis.md) |
-| Técnicas de análisis de datos en Big Data (vídeo + eXe combinado) | **b)** / **a)** | [1.1](ciclo-analisis.md), [1.2](fundamentos.md) y [Cuadernos](cuadernos.md) |
+| Técnicas de análisis de datos en Big Data (vídeo + eXe combinado) | **b)** / **a)** | [Inicio con Python](inicio-python.md), [1.1](ciclo-analisis.md), [1.2](fundamentos.md) y [Cuadernos](cuadernos.md) |
 | Fundamentos matemáticos y algoritmos | **a)** | [1.2](fundamentos.md) |
 | Técnicas y procesos de extracción | **b)** / **d)** | [1.3](extraccion.md) |
 | Preproceso de datos (PDF) | **b)** / **d)** | [1.4](preproceso.md) |

@@ -4,8 +4,17 @@ IES Ataúlfo Argenta · módulo **5074** · Cantabria · **135 horas y 6 ECTS** 
 
 Esta entrega desarrolla **UT1 (SBD-RA1)**, alineada con la Orden EDU/48/2024, Anexo VI.
 
-- [Apuntes](https://iesataulfoargentasor.github.io/sbd_2026_2027_new/)
+- [Apuntes (GitHub Pages)](https://iesataulfoargentasor.github.io/sbd_2026_2027_new/)
 - [Cambios curriculares](CAMBIOS_CURRICULARES.md)
+
+## Inicio con Python (cuaderno de arranque)
+
+El eXe *Técnicas de análisis de datos en Big Data* pide consultar **este** Google Colab **antes** de las prácticas del tema (portada del paquete, portada de fundamentos y actividad *Inicio con Python*):
+
+- Alumnado: [https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)
+- Solución profesorado: [https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)
+- Página de los apuntes: [Inicio con Python](https://iesataulfoargentasor.github.io/sbd_2026_2027_new/ut1/inicio-python/)
+- Índice de todos los Colab: [Cuadernos](https://iesataulfoargentasor.github.io/sbd_2026_2027_new/ut1/cuadernos/)
 
 ## Desarrollo local
 

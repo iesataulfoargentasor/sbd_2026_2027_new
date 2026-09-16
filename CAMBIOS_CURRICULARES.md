@@ -14,7 +14,7 @@ La asociación eXeLearning/PDF → CE se conserva. Los paquetes HTML, vídeos y 
 | --- | --- | --- |
 | Introducción a Big Data SBD | vocabulario | `docs/ut1/marco-big-data.md` |
 | Introducción al procesamiento y análisis | b | `docs/ut1/ciclo-analisis.md` |
-| Técnicas de análisis de datos en Big Data (eXe combinado + vídeo) | a, b | 1.1, 1.2 y `docs/ut1/cuadernos.md` |
+| Técnicas de análisis de datos en Big Data (eXe combinado + vídeo) | a, b | `docs/ut1/inicio-python.md`, 1.1, 1.2 y `docs/ut1/cuadernos.md` |
 | Fundamentos matemáticos y algoritmos | a | `docs/ut1/fundamentos.md` |
 | Técnicas y procesos de extracción | b, d | `docs/ut1/extraccion.md` |
 | Preproceso (PDF) | b, d | `docs/ut1/preproceso.md` |

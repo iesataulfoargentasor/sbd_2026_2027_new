@@ -92,6 +92,7 @@ nav:
   - U.T. 1. Integración, procesamiento y análisis:
     - La unidad: ut1/index.md
     - RA1 y criterios de evaluación: ut1/ra1.md
+    - Inicio con Python (Colab de arranque): ut1/inicio-python.md
     - Cuadernos de Google Colab: ut1/cuadernos.md
     - 1.0 Marco Big Data: ut1/marco-big-data.md
     - 1.1 Integrar, procesar y analizar: ut1/ciclo-analisis.md
