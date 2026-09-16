@@ -32,7 +32,7 @@ Empieza por **[Inicio con Python](inicio-python.md)** (el Colab de portada del e
 | [Modelado](modelado.md) | **a)** | Diagramas, grafos, árboles (anexo Word Tema 4) |
 | [Tiempo real](tiempo-real.md) | reconocimiento | Kafka, MQTT, Grafana; el reloj del streaming (Tema 5) |
 | [Costes y calidad](costes-calidad.md) | **g)** | Dimensiones de calidad y coste on-prem/nube (Tema 6) |
-| [Entorno Docker](docker.md) | apoyo / **f)** | Chuleta Docker y clúster Hadoop del manual de aula |
+| [Entorno Docker](docker.md) | apoyo / **f)** | Chuleta Docker, arquitectura HDFS/YARN, guion del PDF y actividad del clúster Hadoop |
 | [Cuadernos Colab](cuadernos.md) | prácticas | Todos los enlaces de los eXe (alumnado y solución de profesorado) |
 | [Autoevaluación](autoevaluacion.md) | — | 20 preguntas de la unidad (no puntúa en Moodle) |
 
