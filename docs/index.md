@@ -8,27 +8,46 @@ title: Inicio
 
 # Sistemas de Big Data
 
-Apuntes del **módulo 5074**, Curso de Especialización en Inteligencia Artificial y Big Data. IES Ataúlfo Argenta · Cantabria · 2026/2027.
+Apuntes del módulo **SBD** (código **5074**) del *Curso de especialización en Inteligencia Artificial y Big Data* del IES Ataúlfo Argenta (Cantabria).
 
-La referencia es la [Orden EDU/48/2024, Anexo VI](https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=410716#page=145). **135 horas y 6 ECTS corresponden al módulo completo**, no a esta unidad.
+Este sitio reúne la teoría de aula, reescrita para que puedas consultarla desde cualquier dispositivo: búsqueda, modo oscuro y ejemplos listos para copiar.
 
-## UT1. Introducción al procesamiento y análisis de información
+Las **entregas evaluables** y los cuestionarios siguen en el aula Moodle (educantabria).
 
-Comenzamos con el material del profesor utilizado en clase: valor de los datos, integración y ETL, procesamiento batch y streaming, tipos de análisis y una visión general de arquitecturas. La teoría se acompaña de una actividad inicial y dos cuadernos originales de Google Colab.
+## Qué módulo es
 
-[Comenzar el tema](ut1/introduccion/index.md){ .md-button .md-button--primary }
+La referencia curricular en Cantabria es la [Orden EDU/48/2024, de 8 de octubre, Anexo VI](https://boc.cantabria.es/boces/verAnuncioAction.do?idAnuBlob=410716#page=148). El módulo **5074 Sistemas de Big Data** tiene **135 horas y 6 ECTS**. Esta duración corresponde al módulo completo, no a la UT1. El [Real Decreto 279/2021](https://www.boe.es/eli/es/rd/2021/04/20/279) se mantiene como marco estatal de origen.
 
-- [Actividad práctica e inicio con Python](ut1/introduccion/actividad.md).
-- [Solución del profesor en Colab](ut1/introduccion/solucion-profesor.md).
+**SBD no es BDA.** En BDA diseñas y operas la solución de almacenamiento. Aquí **integras, procesas y analizas** el dato: extraer, limpiar, combinar, consultar y justificar coste y calidad. Hadoop, Spark, Kafka o AWS pueden aparecer en los dos; cambia la competencia.
 
-Las entregas y fechas las indicará el profesor en Moodle. Se conserva el orden del material original y su licencia CC BY-SA 4.0.
+El sitio desarrolla **UT1 (SBD-RA1)**. Consulta [qué retomaremos después](ut1/continuidad.md).
 
-## Materiales anteriores de UT1
+## Unidad de trabajo
 
-El contenido previo sigue disponible en [el recorrido anterior](ut1/index.md), con su [referencia curricular](ut1/ra1.md). Para empezar este tema, sigue el botón «Comenzar el tema»; el laboratorio local del hotel pertenece al recorrido anterior.
+### U.T. 1. Integración, procesamiento y análisis de información
 
-## Continuidad con BDA
+Del dato bruto a una consulta útil: ciclo de análisis, fundamentos, extracción, preproceso, formatos, planificación y laboratorio en la nube.
 
-Reutilizamos el caso del hotel de los [apuntes de Big Data Aplicado](https://iesataulfoargentasor.github.io/bda_2026_2027_new/). Aquí aplicamos transformaciones, relaciones y análisis; consulta [el reparto de aprendizajes](ut1/continuidad.md).
+- [La unidad](ut1/index.md)
+- [RA1 y criterios de evaluación](ut1/ra1.md)
+- [1.1 Integrar, procesar y analizar](ut1/ciclo-analisis.md)
+- [1.2 Fundamentos matemáticos y algoritmos](ut1/fundamentos.md)
+- [1.3 Extracción de información](ut1/extraccion.md)
+- [1.4 Preproceso de datos](ut1/preproceso.md)
+- [1.5 Formatos de datos](ut1/formatos.md)
+- [1.6 Planificación con GitHub Projects](ut1/planificacion.md)
+- [1.7 Laboratorio AWS](ut1/laboratorio-aws.md)
+- [Entorno Docker](ut1/docker.md)
+- [Autoevaluación](ut1/autoevaluacion.md)
 
-Los materiales se elaboran con ejemplos y datos sintéticos propios, apoyados en referencias técnicas de Aitor Medrano y documentación oficial. Consulta [fuentes y atribución](ut1/referencias.md).
+## Cómo navegar
+
+- Usa el **menú lateral** para saltar entre apartados.
+- La **tabla de contenidos** de la derecha recorre los epígrafes de cada página.
+- La **búsqueda** del encabezado localiza un concepto (`Parquet`, `Athena`, `pandas`…).
+
+!!! tip "Cómo estudiar"
+    Lee el apartado, ejecuta los fragmentos (Colab o local), cierra el [laboratorio AWS](ut1/laboratorio-aws.md) y responde la [autoevaluación](ut1/autoevaluacion.md). El test no sustituye a las pruebas del aula.
+
+!!! info "Origen del material"
+    Estos apuntes parten del temario de aula (eXeLearning UT1, PDF de preproceso, laboratorio AWS, GitHub Projects; licencia de partida [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) en los paquetes eXe). Se han reorganizado para el curso **2026/2027**.

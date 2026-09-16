@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "namespace": "sbd.ut1",
+  "name": "Empleado",
+  "fields": [
+    { "name": "nombre", "type": "string" },
+    { "name": "altura", "type": "float" },
+    { "name": "edad", "type": ["null", "int"], "default": null }
+  ]
+}

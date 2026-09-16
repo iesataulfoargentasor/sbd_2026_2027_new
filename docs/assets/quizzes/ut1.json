@@ -1,201 +1,286 @@
 {
   "unit": "UT1",
-  "title": "Autoevaluación SBD UT1",
+  "title": "Autoevaluación de la UT1",
   "questions": [
     {
-      "topic": "RA1",
+      "topic": "1.1 Valor del dato",
+      "href": "../ciclo-analisis/",
+      "prompt": "Un clic a las 13:04, el dato de que el 60 % de los clics es por la tarde y la decisión de publicar anuncios entonces. ¿Qué secuencia es?",
+      "code": "",
+      "options": [
+        "Conocimiento → dato → información.",
+        "Dato bruto → información → conocimiento (y luego una decisión).",
+        "Solo Big Data: sin procesar ya hay valor.",
+        "ETL: las tres frases son tres productos distintos."
+      ],
+      "answer": 1,
+      "explain": "El dato aislado no vale. Se organiza (información) y de ahí sale una regla o decisión (conocimiento). ETL es el procedimiento, no esos tres peldaños."
+    },
+    {
+      "topic": "1.1 Batch y streaming",
+      "href": "../ciclo-analisis/",
+      "prompt": "Calcular las ventas del supermercado al cerrar el día frente a detectar fraude al pasar la tarjeta. ¿Qué par encaja?",
+      "code": "",
+      "options": [
+        "Las dos en streaming: todo Big Data es tiempo real.",
+        "Lote (¿qué pasó ayer?) frente a flujo (¿qué está pasando ahora?).",
+        "Lote = Hadoop; flujo = pandas. La herramienta define el reloj.",
+        "Las dos en batch: el fraude puede esperar al informe de las 8."
+      ],
+      "answer": 1,
+      "explain": "El criterio es el plazo del cliente. Las marcas son paisaje, no la definición."
+    },
+    {
+      "topic": "1.1 Tipos de análisis",
+      "href": "../ciclo-analisis/",
+      "prompt": "«El 30 % de las reservas de agosto entraron por la web.» ¿Qué tipo de análisis es?",
+      "code": "",
+      "options": [
+        "Prescriptivo: ya dice qué tarifa subir.",
+        "Predictivo: estima Navidad.",
+        "Descriptivo: resume lo que ya ocurrió.",
+        "Lambda: es una arquitectura."
+      ],
+      "answer": 2,
+      "explain": "Descriptivo = lo ya pasado. Predictivo anticipa. Prescriptivo propone acción."
+    },
+    {
+      "topic": "1.2 Complejidad",
       "href": "../fundamentos/",
-      "prompt": "¿Qué coste tiene comparar cada reserva con todos los hoteles?",
+      "prompt": "Comparar cada reserva con todas las demás para buscar duplicados en 5 millones de filas. ¿Qué orden es y qué haces?",
       "code": "",
       "options": [
-        "O(nm)",
-        "O(1)",
-        "Siempre un segundo"
+        "O(1): un dict lo resuelve sin pensar la clave.",
+        "O(n²): inviable a esa escala; usa hash, drop_duplicates o una ventana por clave.",
+        "O(log n): búsqueda binaria sobre el CSV desordenado.",
+        "Da igual: Spark convierte cualquier doble bucle en O(1)."
       ],
-      "answer": 0,
-      "explain": "Con n reservas y m hoteles, el bucle anidado compara n por m pares."
+      "answer": 1,
+      "explain": "El doble bucle es cuadrático. El clúster no perdona un algoritmo malo; cambia la operación."
     },
     {
-      "topic": "RA1",
+      "topic": "1.2 Conjuntos",
       "href": "../fundamentos/",
-      "prompt": "¿Un nulo representa siempre cero?",
+      "prompt": "Reservas sin cobro. En lenguaje de conjuntos, ¿qué es?",
       "code": "",
       "options": [
-        "Sí",
-        "No",
-        "Solo en CSV"
+        "Unión de reservas y cobros.",
+        "Intersección: solo las cobradas.",
+        "Diferencia: reservas menos las que tienen cobro.",
+        "Producto cartesiano de las dos tablas."
       ],
-      "answer": 1,
-      "explain": "Ausencia y valor cero tienen significados distintos."
+      "answer": 2,
+      "explain": "A − B: en reservas y no en cobros. El inner join sería la intersección."
     },
     {
-      "topic": "RA1",
-      "href": "../fuentes/",
-      "prompt": "¿Qué significa granularidad?",
+      "topic": "1.2 Lógica",
+      "href": "../fundamentos/",
+      "prompt": "df[(df['ciudad']=='Madrid') & (df['edad']>30)] aplica…",
       "code": "",
       "options": [
-        "Tamaño del fichero",
-        "Qué representa cada fila",
-        "Número de nodos"
+        "Solo estadística descriptiva, no lógica.",
+        "Conjunción (AND) de dos proposiciones: es lógica algorítmica sobre la tabla.",
+        "Un grafo de amistades.",
+        "Complejidad O(n²) porque hay dos condiciones."
       ],
       "answer": 1,
-      "explain": "Reservas y eventos representan entidades diferentes."
+      "explain": "Dos predicados unidos por AND. El coste es un pase (lineal), no cuadrático por tener dos filtros."
     },
     {
-      "topic": "RA1",
-      "href": "../integracion/",
-      "prompt": "El catálogo repite una clave. ¿Qué puede ocurrir al unir?",
+      "topic": "1.3 Extracción",
+      "href": "../extraccion/",
+      "prompt": "¿Qué es extraer información en esta unidad?",
       "code": "",
       "options": [
-        "Nada",
-        "Multiplicar reservas",
-        "Borrar el CSV"
+        "Guardar todos los PDF de internet en un disco.",
+        "Localizar fuentes, quedarte con lo que responde a la pregunta y dejarlo analizable.",
+        "Entrenar una red neuronal.",
+        "Instalar Hadoop."
       ],
       "answer": 1,
-      "explain": "Cada coincidencia puede producir una fila adicional."
+      "explain": "Extracción = seleccionar y tabular para una pregunta. No es almacenar el mundo ni modelar IA."
     },
     {
-      "topic": "RA1",
-      "href": "../integracion/",
-      "prompt": "¿Cómo buscas reservas sin hotel?",
+      "topic": "1.3 API frente a scraping",
+      "href": "../extraccion/",
+      "prompt": "Hay API JSON documentada y también la web pública. ¿Qué haces?",
       "code": "",
       "options": [
-        "left_anti",
-        "sum",
-        "orderBy"
+        "Scraping siempre: es más Big Data.",
+        "La API, salvo que no cubra el dato; el scraping tiene límites legales y de HTML.",
+        "Solo SQL: las API no son fuentes.",
+        "Descargar a mano cada día en Excel."
+      ],
+      "answer": 1,
+      "explain": "La API es el contrato. Scraping es el plan B, con términos de uso."
+    },
+    {
+      "topic": "1.3 Wrangling",
+      "href": "../extraccion/",
+      "prompt": "Aparecen Madird, Mdrid y Madrid. ¿Qué oficio es?",
+      "code": "",
+      "options": [
+        "Análisis prescriptivo.",
+        "Normalización / limpieza (wrangling) antes de agregar.",
+        "Complejidad O(1) de un grafo.",
+        "Criterio e): un sprint de diseño gráfico."
+      ],
+      "answer": 1,
+      "explain": "Unificar la ciudad es limpieza. Si agregas antes, cuentas tres ciudades inventadas."
+    },
+    {
+      "topic": "1.4 Join",
+      "href": "../preproceso/",
+      "prompt": "Quieres reservas cobradas: reservas ⋈ cobros por id_reserva. ¿Qué join?",
+      "code": "",
+      "options": [
+        "Inner: solo coincidencias.",
+        "Concatenar filas: es lo mismo.",
+        "Producto cartesiano sin clave.",
+        "Left y borrar a mano en Excel las nulas, sin documentar."
       ],
       "answer": 0,
-      "explain": "El anti join conserva claves de la izquierda sin correspondencia."
+      "explain": "Inner deja las que tienen cobro. Concatenar apila el mismo esquema; no cruza."
     },
     {
-      "topic": "RA1",
-      "href": "../spark/",
-      "prompt": "¿Qué operación dispara ejecución?",
+      "topic": "1.4 Clúster",
+      "href": "../preproceso/",
+      "prompt": "Un compañero hace toPandas() de 200 GB en el driver. ¿Qué pasa?",
       "code": "",
       "options": [
-        "Definir un filtro",
-        "count()",
-        "Asignar un nombre a una variable"
+        "Spark lo comprime solo y cabe.",
+        "Intentas meter el clúster en la RAM de una máquina: no es el preproceso a escala.",
+        "Es la forma correcta de imputar nulos.",
+        "Athena lo exige."
       ],
       "answer": 1,
-      "explain": "Una acción materializa el cálculo; definirlo no mide su ejecución."
+      "explain": "collect/toPandas del volumen entero rompe el monolito. Se opera con APIs distribuidas."
     },
     {
-      "topic": "RA1",
-      "href": "../spark/",
-      "prompt": "¿Qué riesgo tiene collect() sobre un conjunto enorme?",
+      "topic": "1.5 Columnar",
+      "href": "../formatos/",
+      "prompt": "Athena cobra por dato escaneado. El informe usa 2 de 40 columnas. ¿Qué carga encaja?",
       "code": "",
       "options": [
-        "Llevar todas las filas al conductor",
-        "Crear más discos",
-        "Cambiar las claves"
+        "CSV: Excel lo abre y Athena lee igual de barato.",
+        "Parquet (columnar): lee esas columnas.",
+        "Un JSON con un array de 40 GB: es lo más partible.",
+        "ORC como caja registradora (OLTP)."
+      ],
+      "answer": 1,
+      "explain": "Columnar reduce escaneo y factura. El JSON monolítico no se parte; ORC/Parquet no son el TPV."
+    },
+    {
+      "topic": "1.5 Avro",
+      "href": "../formatos/",
+      "prompt": "El dato viaja por un bus y el esquema añade campos. ¿Qué formato cita la unidad?",
+      "code": "",
+      "options": [
+        "Solo CSV sin cabecera.",
+        "Avro: filas + esquema en la cabecera, evolución.",
+        "Parquet por cada mensaje de 200 bytes.",
+        "Excel .xlsx porque es binario."
+      ],
+      "answer": 1,
+      "explain": "Avro es el clásico de ingesta/Kafka. Parquet brilla en lecturas analíticas del lago."
+    },
+    {
+      "topic": "1.6 Prioridades",
+      "href": "../planificacion/",
+      "prompt": "Queda media sesión. ¿Qué dejas para el final?",
+      "code": "",
+      "options": [
+        "El recuento por ciudad: es ornamentación.",
+        "El gráfico de barras y los comentarios largos; el CSV limpio y el resumen son esenciales.",
+        "La carga del CSV: pandas la adivina.",
+        "Unificar ciudades: el groupby corrige Madird solo."
+      ],
+      "answer": 1,
+      "explain": "Esencial = sin ello no hay práctica. El gráfico es deseable. groupby no arregla erratas."
+    },
+    {
+      "topic": "1.6 GitHub Projects",
+      "href": "../planificacion/",
+      "prompt": "¿Qué evidencia encaja con el criterio e)?",
+      "code": "",
+      "options": [
+        "Un issue por tarea y un tablero Por hacer / En progreso / Hecho.",
+        "Un único issue «el trabajo» sin mover.",
+        "Solo el vídeo de Scrum de YouTube.",
+        "No planificar: el notebook es el plan."
       ],
       "answer": 0,
-      "explain": "La memoria del conductor puede resultar insuficiente."
+      "explain": "Objetivo, tareas y movimiento en el tiempo. Un cajón único no secuencia nada."
     },
     {
-      "topic": "RA1",
-      "href": "../analisis/",
-      "prompt": "Para la proporción de cancelación de un canal, ¿qué denominador usamos?",
+      "topic": "1.7 S3",
+      "href": "../laboratorio-aws/",
+      "prompt": "¿Qué es S3 en este laboratorio?",
       "code": "",
       "options": [
-        "Todos los eventos",
-        "Las reservas del canal analizado",
-        "Los hoteles"
+        "Una base relacional con ACID.",
+        "Almacén de objetos (el CSV como fichero) que Glue y Athena leen.",
+        "El motor SQL que sustituye a Athena.",
+        "Un crawler de esquemas."
       ],
       "answer": 1,
-      "explain": "Numerador y denominador deben pertenecer a la misma población."
+      "explain": "S3 guarda el objeto. El catálogo pone columnas; Athena consulta."
     },
     {
-      "topic": "RA1",
-      "href": "../analisis/",
-      "prompt": "¿Los 1 660 euros son ingresos cobrados?",
+      "topic": "1.7 Glue",
+      "href": "../laboratorio-aws/",
+      "prompt": "La tabla aparece como col1…col5. ¿Qué ha pasado y qué haces?",
       "code": "",
       "options": [
-        "Sí",
-        "No: importe nominal inicial",
-        "Beneficio neto"
+        "S3 ha perdido la cabecera: hay que repetir el bucket.",
+        "El crawler no tomó la primera fila como cabecera; classifier Contains header PRESENT (o renombrar) y relanzar.",
+        "Athena no admite CSV: pasa a EC2.",
+        "Es normal: col1 es el nombre oficial en AWS."
       ],
       "answer": 1,
-      "explain": "La fuente no acredita cobros, costes ni reembolsos."
+      "explain": "Fallo de calidad de esquema. El classifier PRESENT es el arreglo correcto."
     },
     {
-      "topic": "RA1",
-      "href": "../streaming/",
-      "prompt": "¿Ocho eventos significan ocho reservas?",
+      "topic": "1.7 Athena y coste",
+      "href": "../laboratorio-aws/",
+      "prompt": "¿Por qué Athena encaja en el criterio g) de este caso?",
       "code": "",
       "options": [
-        "Sí",
-        "No",
-        "Solo en Spark"
+        "Porque es gratis siempre, da igual el formato.",
+        "SQL sin administrar servidores; en producción pagas por dato escaneado, así que el formato y el esquema importan.",
+        "Porque sustituye a S3.",
+        "Porque Glue ya ejecutó el SELECT."
       ],
       "answer": 1,
-      "explain": "Una reserva puede tener confirmación y cancelación."
+      "explain": "Eficacia = consulta sin DBA. Eficiencia = no escanear de más. Glue cataloga; no sustituye a Athena."
     },
     {
-      "topic": "RA1",
-      "href": "../streaming/",
-      "prompt": "¿La tabla de memoria del ensayo es almacenamiento de producción?",
+      "topic": "RA1 frontera BDA",
+      "href": "../continuidad/",
+      "prompt": "¿Qué distingue SBD UT1 de BDA RA1 con el mismo CSV de reservas?",
       "code": "",
       "options": [
-        "Sí",
-        "No",
-        "Siempre si hay checkpoint"
+        "Nada: hay que repetir Pentaho y las 5 V.",
+        "BDA diseña almacén e ingesta; SBD extrae, limpia, cruza y consulta (pandas/Athena).",
+        "SBD instala HDFS; BDA solo pinta gráficos.",
+        "SBD prohíbe AWS."
       ],
       "answer": 1,
-      "explain": "Es una salida de demostración y no acredita recuperación duradera."
+      "explain": "Misma tecnología posible; distinta evidencia. Aquí no se reimparte el diseño del lago."
     },
     {
-      "topic": "RA1",
-      "href": "../coste-calidad/",
-      "prompt": "¿Basta medir el tiempo de definir un DataFrame?",
+      "topic": "Docker",
+      "href": "../docker/",
+      "prompt": "¿Docker es un criterio de evaluación del RA1?",
       "code": "",
       "options": [
-        "Sí",
-        "No: debemos incluir una ejecución comparable",
-        "Sí si son muchos datos"
+        "Sí: f) es únicamente Docker Compose.",
+        "No: es apoyo para reproducir el entorno; f) es integrar sistemas (p. ej. S3+Glue+Athena).",
+        "Sí: g) se demuestra con un Dockerfile vacío.",
+        "Sustituye a pandas."
       ],
       "answer": 1,
-      "explain": "La evaluación diferida exige medir acciones y declarar el alcance."
-    },
-    {
-      "topic": "RA1",
-      "href": "../problema/",
-      "prompt": "¿Cuándo se prepara el plan de tareas?",
-      "code": "",
-      "options": [
-        "Al final para justificar lo hecho",
-        "Al inicio y se revisa durante el trabajo",
-        "Nunca"
-      ],
-      "answer": 1,
-      "explain": "Objetivos, prioridades y seguimiento forman parte de CE e."
-    },
-    {
-      "topic": "RA1",
-      "href": "../ra1/",
-      "prompt": "¿Seis filas acreditan por sí solas análisis de grandes volúmenes?",
-      "code": "",
-      "options": [
-        "Sí",
-        "No",
-        "Si están en JSON"
-      ],
-      "answer": 1,
-      "explain": "Validan el cálculo; el ensayo ampliado necesita volumen y recursos documentados."
-    },
-    {
-      "topic": "RA1",
-      "href": "../coste-calidad/",
-      "prompt": "¿Un proceso más rápido siempre es mejor?",
-      "code": "",
-      "options": [
-        "Sí",
-        "No si pierde calidad o responde mal",
-        "Solo usando Spark"
-      ],
-      "answer": 1,
-      "explain": "Hay que valorar eficacia y eficiencia con criterios explícitos."
+      "explain": "El manual de Docker ayuda a ejecutar. No acredita por sí solo los CE f o g."
     }
   ]
 }

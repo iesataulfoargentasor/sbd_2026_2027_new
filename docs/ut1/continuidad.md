@@ -1,42 +1,29 @@
 ---
-title: "Continuidad con BDA y otros RA de SBD"
-tags: [SBD, RA1]
+title: Continuidad con BDA y RA2–RA4
+tags:
+  - SBD
+  - RA1
 ---
 
-# Continuidad con BDA y otros RA de SBD
+# Continuidad con BDA y con el resto de SBD
 
-| Material previo | En esta UT | Continuidad |
-| --- | --- | --- |
-| BDA-UT1: fuentes, formatos, Pentaho | Reutilizamos el diseño y ampliamos el conjunto sintético | No repetimos el tutorial de Spoon |
-| BDA-UT2: Hadoop y sistemas distribuidos | Aplicamos transformaciones sobre fuentes disponibles | Administración y tolerancia a fallos siguen coordinadas con BDA |
-| MongoDB del hotel | Lectura programática y cruce de datos | Gestión y programación más amplia en SBD-RA3 |
-| Calidad | Comprobamos significado, claves y resultados | BDA-RA3 conserva mecanismos de integridad |
-| Tiempo y recursos | Medición de un ensayo | BDA-RA4 desarrolla monitorización sostenida |
-| Tablas de resultados | Entregamos información comprobada | Cuadros de mando y visualización en SBD-RA2 y RA4 |
-| Análisis empresarial | Definimos y verificamos preguntas | BDA-RA5 conserva su validación de BI |
-| Streaming | Primera observación de llegada incremental | Ventanas sencillas aquí; datos tardíos avanzados y flujos complejos después |
+La frontera no es el logo. Hadoop, Spark, Kafka o AWS pueden aparecer en BDA y en SBD. Cambia **la competencia**.
 
-Las tecnologías pueden reaparecer cuando cambia la competencia. Se guardan fuentes, esquema, reglas y resultados para no repetir instalaciones sin un objetivo nuevo.
+| Tema | BDA (diseñar / operar el sistema) | SBD UT1 (esta unidad) | Después en SBD |
+| --- | --- | --- | --- |
+| 5 V, lake, warehouse | Caracterizar el problema y el almacén | Recuperas el vocabulario, no lo reimpartes | — |
+| Ingesta / ETL | Procedimiento y PDI | pandas / API / SQL: **transformar** de verdad | Flume, Sqoop, pipelines de RA3 |
+| Formatos | Elegir la carga | Leer, convertir, coste de escaneo | Particionado y motores de RA3 |
+| Procesamiento | Etapa del pipeline; lote vs flujo | Extraer conocimiento; complejidad | Ventanas, streaming, Spark a fondo (RA4 e) |
+| Presentación | Tabla clara al cliente | Consulta Athena / resumen pandas | Cuadros de mando (RA2) y visualización (RA4) |
+| Cloud | Destino posible (S3, Glue) | Integrar S3+Glue+Athena y hablar de coste | Otros servicios según el RA |
 
-Los datos de esta UT son una extensión sintética del caso didáctico, no una modificación de los ficheros de BDA. Si los módulos avanzan en paralelo, utiliza el paquete autónomo y retoma las conexiones cuando se hayan trabajado en BDA.
+## Qué guardas al terminar UT1
 
-[Apuntes BDA](https://iesataulfoargentasor.github.io/bda_2026_2027_new/).
+1. CSV originales y el limpio (clientes, logs).
+2. Notebook o script de extracción y preproceso.
+3. Tablero de GitHub Project (objetivo y prioridades).
+4. Capturas Athena + párrafo de coste/calidad.
+5. Parquet de prueba, si lo generaste.
 
-## Frontera de esta ampliación
-
-**CE de referencia:** a–g, como orientación de alcance. **Al terminar:** podrás explicar qué competencia trabajas al reutilizar una tecnología, sin asignarle un módulo únicamente por su nombre.
-
-| Tecnología o problema | Aquí, en SBD-RA1 | Coordinación con BDA |
-| --- | --- | --- |
-| CSV, JSON, Parquet, Avro, ORC | Lectura, contrato, proyección y coste de consulta | Selección profunda del formato y diseño de almacenamiento |
-| Spark | DataFrames/SQL, transformaciones, joins, agregaciones y coste | Despliegue y administración del clúster |
-| Datos en movimiento | `readStream`, salidas y ventanas simples | Brokers, réplicas y operación de la plataforma |
-| Calidad analítica | Nulos, claves, granularidad y validez del resultado | Integridad, tolerancia a fallos y recuperación de sistemas |
-| Eficiencia | Tiempo, memoria, bytes y shuffle de una ejecución | Monitorización continua y dimensionamiento de plataforma |
-| Docker | Abrir el entorno suministrado | Manual completo de contenedores y Hadoop |
-| AWS | S3 + catálogo + SQL como sistemas integrados | Diseño y operación de infraestructura |
-
-Es un acuerdo didáctico para evitar duplicaciones, no una prohibición tecnológica derivada literalmente de la norma. Otros RA de SBD mantienen su propio alcance; esta actualización solo desarrolla RA1.
-
-!!! example "Comprobación de frontera"
-    Clasifica dos tareas: corregir un join que duplica importes y configurar réplicas de un broker. La primera aporta evidencias de integración/calidad aquí; la segunda corresponde al trabajo de plataforma coordinado con BDA.
+RA2 parte de **indicadores y gráficos** sobre esos datasets. RA3 profundiza en importar y almacenar para explotar. RA4, en visualizar y en programar transformaciones con más recorrido. No hace falta repetir la cabecera de Glue ni el `drop_duplicates` de clientes.

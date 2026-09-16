@@ -1,63 +1,78 @@
 ---
-title: "1.3. Planificación del proyecto de análisis"
-tags: [SBD, RA1]
+title: 1.6 Planificación con GitHub Projects
+tags:
+  - SBD
+  - RA1
 ---
 
-# 1.3. Planificación del proyecto de análisis
+# 1.6. Planificar el análisis (GitHub Projects)
 
-**CE que se trabajan:** e. Consulta el [texto oficial](ra1.md).
+El criterio **e)** no pregunta “¿sabes Scrum de memoria?”. Pregunta si **cierras un trabajo de datos a tiempo**: objetivo, prioridades, orden y reloj.
 
-**Al terminar:** convertir preguntas en tareas priorizadas con dependencias, estimaciones y seguimiento real.
+En un proyecto de análisis siempre hay más ideas que sesiones. Si no priorizas, el cuaderno queda a medias y el resumen —lo único que el cliente usa— no existe.
 
-## Un objetivo que se pueda cerrar
+## Por qué planificar
 
-«Analizar reservas» no permite saber cuándo hemos terminado. Un objetivo útil es: «obtener reservas y cancelaciones por hotel y canal para septiembre de 2026, verificadas con la muestra y con un ensayo de volumen documentado». El resultado esperado incluye corrección y límites, no solo un fichero.
+Limpiar `clientes_actividad.csv` parece “una tarde”. Sin plan: tres personas pican el mismo `replace`, nadie genera el recuento por ciudad y el gráfico se come el tiempo. Con plan: el grupo sabe qué es **imprescindible** y qué es **ornamento**.
 
-Separa lo imprescindible (claves válidas, indicador correcto, ejecución repetible) de lo deseable (una segunda fuente opcional o una presentación más elaborada). Si falta tiempo, protege primero la respuesta verificable.
+## Ciclo mínimo
 
-| Tarea | Prioridad | Dependencia | Estimación inicial | Criterio de cierre |
-| --- | --- | --- | ---: | --- |
-| Definir indicadores | Alta | Encargo | 30 min | Fichas con población y denominador |
-| Inventariar fuentes | Alta | Indicadores | 45 min | Diccionario con claves y unidades |
-| Preparar y validar | Alta | Inventario | 90 min | Rechazos explicados y copia original |
-| Integrar | Alta | Validación | 90 min | Recuentos e importes conservados |
-| Calcular y contrastar | Alta | Integración | 60 min | Resultado manual y automático coinciden |
-| Ensayar escala | Alta | Resultado correcto | 60 min | Filas, bytes, tiempo y entorno registrados |
-| Ampliar preguntas | Media | Resultado correcto | 45 min | Nuevo indicador con límites |
-| Defender | Alta | Mediciones | 30 min | Conclusión y revisión del plan |
+1. **Objetivo.** Una frase que se puede dar por hecha o no. *“Dataset limpio y clientes por ciudad.”*
+2. **Tareas.** Cargar, deduplicar, unificar ciudades, fechas, resumen, gráfico, comentarios.
+3. **Prioridad.** Esencial vs deseable.
+4. **Secuencia.** No grafiques antes de limpiar: el gráfico de `Madird` miente.
+5. **Tiempo.** Un mini-sprint (1–2 sesiones). Al final: qué está hecho, qué no, por qué.
 
-Son estimaciones para organizar el trabajo del equipo, no duración oficial ni reparto de toda la UT. Añade margen para incidencias y registra después el tiempo real.
+## Objetivos que se pueden comprobar
 
-## GitHub Issues y Projects como evidencia
+Mal: “trabajar los datos”.  
+Bien: “dejar el CSV sin duplicados, ciudades unificadas y una tabla de clientes por ciudad”.
 
-1. Crea un Project del equipo y vincula el repositorio de la práctica.
-2. Usa un tablero con «Por hacer», «En progreso», «Bloqueado» y «Hecho».
-3. Crea una Issue por resultado verificable. Añade responsable, prioridad, estimación y enlace a las tareas de las que depende.
-4. Usa campos de fecha o iteración para situar el trabajo. Si el centro emplea otra configuración de Projects, conserva la misma información.
-5. Vincula la Issue con el código, informe o resultado que demuestra su cierre. Mover una tarjeta no sustituye la evidencia.
+Eso es el *definition of done* del sprint de aula.
 
-Ejemplo de contenido de una Issue:
+## Esencial frente a deseable
+
+Objetivo principal: limpiar [clientes_actividad.csv](../assets/practicas/clientes_actividad.csv) y resumir por ciudad.
+
+| Esencial (sin esto no hay práctica) | Deseable (si sobra tiempo) |
+| --- | --- |
+| Cargar el CSV | Gráfico de barras |
+| Eliminar duplicados | Comentarios largos en cada celda |
+| Corregir `ciudad` | Informe muy maquetado |
+| Unificar fechas | Extra de API meteorológica |
+| Recuento por ciudad | |
+
+Si el reloj llega a cero, las esenciales tienen que estar **hechas**. Eisenhower, en una frase: importante y urgente primero; bonito y no urgente, después.
+
+## Mini-sprints
+
+Un *sprint* profesional dura 1–4 semanas. En clase usamos **mini-sprints** (una o dos sesiones):
+
+- Al inicio: objetivo + lista priorizada.
+- Durante: el tablero se mueve.
+- Al final: revisión (qué, qué no, qué cambia mañana).
+
+Tres columnas bastan:
 
 ```text
-Título: Integrar reservas con el catálogo sin multiplicar filas
-Objetivo: una fila por id_reserva con hotel y localidad.
-Depende de: validación de claves del catálogo.
-Prioridad: alta. Responsable: integrante asignado. Estimación: 90 min.
-Aceptación:
-- Cero claves huérfanas y catálogo único por id_hotel.
-- Mismo número de reservas y mismo importe antes/después.
-- Ejecución y controles enlazados.
+POR HACER          EN PROGRESO         HECHO
+- Cargar datos     - Limpiar ciudades  - Importar pandas
+- Crear gráfico
+- Documentar
 ```
 
-Consulta las [funciones de Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects). El CE e se evidencia con las decisiones y el seguimiento; no depende de automatizaciones avanzadas de GitHub.
+## Issues y GitHub Projects
 
-## Mini-sprints y revisión
+Cuando el trabajo vive en un repositorio:
 
-Un mini-sprint es un intervalo corto de trabajo con un resultado concreto. Primero cierra una muestra correcta; después, integración y análisis; por último, escala y defensa. Al comenzar cada sesión revisa bloqueos. Al terminar, actualiza tiempo real y siguiente paso.
+1. Un **issue** por tarea (“Unificar ciudades”, no “el trabajo”).
+2. Un **Project** (tablero) con *Por hacer / En progreso / Hecho*.
+3. Mover la tarjeta, no reescribir el enunciado en un chat.
 
-Si el catálogo tiene claves duplicadas, registra la incidencia, quién debe resolverla y qué tareas quedan bloqueadas. Puedes avanzar el diccionario o el contraste manual mientras se aclara la fuente. Evita mantener todas las tareas «En progreso».
+Así el criterio e) deja rastro: se ve el objetivo, el orden y el tiempo. No hace falta la API GraphQL de Projects; el tablero de la clase vale.
 
-!!! example "Práctica y comprobación"
-    Crea al menos seis Issues con dependencias y criterios de cierre, y conserva una vista inicial y otra final del tablero. Introduce una incidencia real o simulada y explica qué tarea reprogramaste y por qué. Un tablero creado al final con todo en «Hecho» no demuestra seguimiento.
+!!! tip "Enlace con 1.3"
+    La actividad de limpieza de clientes **se planifica aquí** y se ejecuta en pandas. Entrega típica: enlace al Project (o captura del tablero) + notebook o script + CSV limpio + recuento.
 
-Para la [práctica integradora](practica.md), entrega el enlace al tablero y una comparación de tres estimaciones con sus tiempos reales. Explica una desviación sin modificar retrospectivamente el plan inicial.
+!!! success "Al terminar 1.6"
+    Eres capaz de decir, en un minuto: objetivo, tres tareas esenciales, una deseable y en qué orden las harías esta semana.
