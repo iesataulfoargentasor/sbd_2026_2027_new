@@ -23,7 +23,7 @@ Empieza por **[Inicio con Python](inicio-python.md)** (el Colab de portada del e
 | [Inicio con Python](inicio-python.md) | **b)** | Colab de arranque del eXe *Técnicas de análisis* (ETL mínimo en pandas) |
 | [1.0 Marco Big Data](marco-big-data.md) | vocabulario | 3–7 V, ciencia de datos, BI, warehouse/lake, roles (paquete *Introducción a Big Data*) |
 | [1.1 Integrar, procesar y analizar](ciclo-analisis.md) | **b)** | Dato → información → decisión; ETL; batch/streaming; tipos de análisis |
-| [1.2 Fundamentos matemáticos y algoritmos](fundamentos.md) | **a)** | Conjuntos, lógica, grafos y complejidad (por qué un algoritmo no escala) |
+| [1.2 Fundamentos matemáticos y algoritmos](fundamentos.md) | **a)** | Conjuntos, lógica, grafos, combinatoria, estructuras y complejidad |
 | [1.3 Extracción de información](extraccion.md) | **b)** / **d)** | SQL, API, scraping, texto y dos prácticas completas con pandas |
 | [1.4 Preproceso de datos](preproceso.md) | **b)** / **d)** | Limpieza, integración y transformación en pandas, y la misma receta a escala en PySpark |
 | [1.5 Formatos de datos](formatos.md) | **c)** | Filas frente a columnas; Avro, Parquet, ORC y códecs para **consultar** |
