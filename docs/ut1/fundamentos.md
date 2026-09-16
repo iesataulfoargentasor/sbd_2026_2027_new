@@ -12,7 +12,12 @@ tags:
 
     **[Inicio con Python](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página](inicio-python.md)
 
-Los datos no solo se guardan: hay que **organizarlos, recorrerlos y analizarlos**. Para hacerlo con millones de filas hacen falta dos piezas (criterio **a)**):
+Los datos no solo se guardan: hay que **organizarlos, recorrerlos y analizarlos**. Con la lista de la compra da igual cómo lo hagas; con millones de filas, la forma de organizarlos decide si algo tarda un segundo o una semana. Para trabajar a esa escala necesitas dos piezas (criterio **a)**):
+
+- **Matemática discreta:** la "gramática" para representar datos como **conjuntos, relaciones, funciones y grafos**. No es un adorno teórico: es el lenguaje en el que luego se expresan las operaciones de pandas, SQL o Spark.
+- **Algoritmos y su complejidad:** el algoritmo es la **secuencia de pasos** que resuelve la tarea; su **complejidad** dice si ese paso escala o se vuelve inviable cuando los datos crecen.
+
+Una intuición antes de empezar: buscar un número en una lista de 10 elementos es fácil, miras uno a uno y ya está. En 10 millones ya no vale "mirar uno a uno" si puedes partir por la mitad. Todo este apartado gira en torno a esa idea.
 
 Al terminar serás capaz de:
 
@@ -23,11 +28,6 @@ Al terminar serás capaz de:
 - elegir entre lista, matriz, conjunto, diccionario, árbol o grafo;
 - aplicar un grafo o un filtro lógico sencillo.
 
-- **Matemática discreta:** representar el dato como conjuntos, relaciones, funciones y grafos.
-- **Algoritmos:** la secuencia de pasos. Su **complejidad** dice si el paso escala o se vuelve inviable.
-
-Buscar un número en una lista de 10 elementos es fácil. En 10 millones ya no vale “mirar uno a uno” si puedes partir por la mitad.
-
 Sigue el apartado en el cuaderno de Colab de *Fundamentos matemáticos y algoritmos*:
 
 - Matemática discreta: [Matemática discreta aplicada a Big Data](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing)
@@ -36,9 +36,17 @@ Sigue el apartado en el cuaderno de Colab de *Fundamentos matemáticos y algorit
 
 ## Conjuntos
 
-La matemática discreta estudia objetos **contables**: bits, listas, conjuntos, relaciones y grafos. Frente al cálculo continuo, encaja de forma natural con lo que almacena un ordenador.
+### Qué es la matemática discreta (y por qué te importa)
 
-Un **conjunto** es una colección de elementos bien definidos, sin orden y sin repetidos. Operaciones que **ya usas** al cruzar datasets:
+Cuando piensas en "matemáticas" quizá te vienen curvas, funciones continuas, cálculo. Esa matemática trabaja con magnitudes que varían sin saltos: el tiempo, la temperatura, la velocidad.
+
+Pero un ordenador no guarda curvas: guarda **objetos contables y separables** — un nombre, una fila de una tabla, un clic, una lectura de un sensor. La **matemática discreta** es la rama que estudia ese tipo de objetos: bits, listas, conjuntos, relaciones y grafos. Encaja de forma natural con lo que almacena un ordenador porque es la matemática de *lo que se puede contar de uno en uno*. Por eso aparece detrás de todo lo que harás en este módulo.
+
+### Conjuntos y sus operaciones
+
+Un **conjunto** es una colección de elementos **bien definidos** (dado cualquier elemento, sabes si pertenece o no), **sin orden** (da igual el orden en que los escribas) y **sin repetidos** (si un elemento aparece dos veces, cuenta una).
+
+Las operaciones sobre conjuntos las **ya usas** — quizá sin saberlo — al cruzar datasets:
 
 | Operación | Idea | En el hotel / clientes |
 | --- | --- | --- |
@@ -46,8 +54,6 @@ Un **conjunto** es una colección de elementos bien definidos, sin orden y sin r
 | Intersección A ∩ B | Lo común | Quien compró producto X **y** Y |
 | Diferencia A − B | En A y no en B | Reservas **sin** cobro |
 | Producto cartesiano A × B | Todos los pares | Rara vez lo quieres entero: explota |
-
-En pandas, un *inner join* se parece a una intersección por clave; un *outer*, a una unión con nulos; filtrar “reservas sin cobro” es una diferencia.
 
 Ejemplo:
 
@@ -61,19 +67,49 @@ print("solo X:", A - B)
 print("todos los pares:", {(a, b) for a in A for b in B})
 ```
 
-Si `|A| = 4` y `|B| = 4`, entonces `|A × B| = 16`. Con dos tablas de un millón de filas, el producto cartesiano puede generar **10¹² pares**: nunca hagas un `CROSS JOIN` por accidente.
+### Las mismas operaciones, en tablas de datos
+
+En el análisis real, esas "bolsas de nombres" suelen ser **tablas** con más columnas (importe, fecha, cliente…), y combinarlas es el pan de cada día. La correspondencia exacta es esta:
+
+- Un **inner join** (`merge(..., how="inner")`) equivale a una **intersección por clave**: se quedan solo las filas cuyo valor de clave (por ejemplo, el `cliente`) aparece **en las dos tablas**. *Reservas que ya tienen su cobro.*
+- Un **outer join** (`how="outer"`) equivale a una **unión con nulos**: entran las filas de ambas tablas, y donde alguien no tiene pareja en la otra tabla, las columnas de esa tabla quedan vacías (`NaN`). *Todos los huéspedes, vengan de la web o de la OTA, aunque falte algún dato.*
+- Filtrar **"reservas sin cobro"** equivale a una **diferencia**: los de una tabla que **no** están en la otra. En pandas no existe el operador `-` entre tablas: se hace un *left join* y se conservan las filas cuya columna de la otra tabla quedó en `NaN`.
+
+Así que no tienes que memorizar los JOIN como una lista arbitraria de opciones de pandas: **inner es intersección, outer es unión, quedarse con los que no tienen pareja es diferencia** — y ya conoces esas tres operaciones.
+
+### El producto cartesiano: útil, pero explosivo
+
+El producto cartesiano A × B combina **cada** elemento de A con **todos** los de B. Su tamaño se calcula multiplicando: si `|A| = 4` y `|B| = 4`, entonces `|A × B| = 16` pares.
+
+Con conjuntos pequeños es una herramienta útil (generar todos los menús posibles, todas las parejas cliente-producto). Pero multiplicar es traicionero a escala: **con dos tablas de un millón de filas, el producto cartesiano genera 10¹² pares** (un billón: ni te cabe en memoria ni te da tiempo a procesarlo). Ese cruce total es lo que en SQL se llama `CROSS JOIN`. Los joins reales cruzan **por clave** precisamente para no pagar ese precio: nunca hagas un `CROSS JOIN` por accidente.
 
 ## Relaciones, funciones y lógica
 
-Una **relación** conecta elementos: *Juan es amigo de Ana*; *esta reserva pertenece a este hotel*. Formalmente, una relación entre A y B es un subconjunto de `A × B`: no todos los pares tienen por qué estar conectados.
+### Relaciones
 
-Una **función** asigna a **cada** elemento del dominio una sola salida en el codominio: `f(usuario) → edad`. Distintos usuarios pueden tener la misma edad; lo que no puede tener un usuario son dos edades distintas en la misma función. En [preproceso](preproceso.md) es recodificar, estandarizar unidades o calcular un *score*.
+Una **relación** conecta elementos: *Juan es amigo de Ana*; *esta reserva pertenece a este hotel*. Se representa con **pares ordenados**: `(Juan, Ana)` significa que Juan apunta a Ana, y no es lo mismo que `(Ana, Juan)`.
 
-La **lógica** filtra. Una proposición es verdadera o falsa. Operadores:
+Formalmente, una relación entre A y B es un **subconjunto de A × B**. Traducción: de todos los pares posibles que podrías formar, la relación **elige algunos**. Que sea subconjunto significa justo eso: *no todos los pares tienen por qué estar conectados* — Ana puede ser amiga de Juan sin que todo el grupo sea amigo entre sí.
 
-- AND (∧): las dos.
-- OR (∨): al menos una.
-- NOT (¬): lo contrario.
+En datos, una relación es cualquier tabla de pares: `amigos.csv` con columnas `persona1, persona2`, o `reservas` con `cliente, hotel`.
+
+### Funciones
+
+Una **función** es una relación con una regla extra: asigna a **cada** entrada **una sola** salida. `f(usuario) → edad`:
+
+- el **dominio** son las entradas posibles (los usuarios registrados);
+- el **codominio**, las salidas posibles (las edades);
+- distintos usuarios pueden tener la misma edad (dos entradas, la misma salida: **permitido**); lo que no puede haber es un usuario con dos edades distintas en la misma función (una entrada, dos salidas: **prohibido**).
+
+En Python, un diccionario `{"Ana": 26, "Juan": 31}` se comporta exactamente como una función: claves = dominio, valores = salida. Cuando en [preproceso](preproceso.md) recodifiques una variable (agrupar edades en tramos, convertir euros a céntimos, calcular un *score*), estarás aplicando una función a cada fila.
+
+### Lógica
+
+La **lógica** filtra. Una **proposición** es un enunciado que es verdadero o falso, sin término medio: *Ana es mayor de edad*, *este pedido supera 50 kg*. Los operadores combinan proposiciones:
+
+- **AND (∧):** las dos a la vez. *Es mayor de edad **y** ha comprado más de 5 veces.*
+- **OR (∨):** al menos una. *Es de Santander **o** de Torrelavega.*
+- **NOT (¬):** lo contrario. **No* es menor de edad.*
 
 ```text
 P: edad > 18
@@ -81,9 +117,7 @@ Q: compras > 5
 VIP = P ∧ Q
 ```
 
-En pandas: `df[(df["ciudad"] == "Madrid") & (df["edad"] > 30)]`. Esa línea **es** lógica algorítmica aplicada al dato.
-
-Tabla de verdad que evita confundir AND con OR:
+La tabla de verdad resume el funcionamiento de los tres operadores. **Se lee por filas**: cada fila es una combinación posible de P y Q (por ejemplo, la segunda fila: P falso y Q verdadero), y las columnas de la derecha dicen qué resulta de cada operador en ese caso:
 
 | P | Q | P ∧ Q | P ∨ Q | ¬P |
 | --- | --- | --- | --- | --- |
@@ -92,21 +126,35 @@ Tabla de verdad que evita confundir AND con OR:
 | V | F | F | V | F |
 | V | V | V | V | F |
 
+Fíjate en la diferencia clave: P ∧ Q solo es verdadero en **un** caso de los cuatro (cuando ambas son verdaderas); P ∨ Q es verdadero en **tres**. Por eso el AND filtra mucho más que el OR.
+
+En pandas, un filtro es literalmente esta lógica aplicada columna a columna:
+
+```python
+df[(df["ciudad"] == "Madrid") & (df["edad"] > 30)]
+```
+
+Esta línea se lee por partes: `df["ciudad"] == "Madrid"` produce, para cada fila, un verdadero o falso; el `&` combina esa columna de verdictos con la de `edad > 30`; y los corchetes seleccionan las filas cuyo verdicto combinado es verdadero. Esa línea **es** lógica algorítmica aplicada al dato.
+
 !!! warning "Paréntesis en pandas"
-    Python usa `&`, `|` y `~` con Series. Cada comparación va entre paréntesis:
+    Python usa `&`, `|` y `~` con Series (columnas). Cada comparación va entre paréntesis:
 
     ```python
     premium = df[(df["edad"] > 25) & (df["compras"] > 10)]
     ```
 
-    No uses `and` / `or` con Series: pandas no puede reducir una columna completa a un único verdadero o falso.
+    No uses `and` / `or` con Series: `and` y `or` quieren un único verdadero-o-falso, y una columna son millones de ellos — pandas no sabe reducirlos a uno y lanza error.
 
 ## Grafos
 
-Un grafo se escribe `G = (V, E)`:
+### Qué es un grafo
 
-- `V` (*vertices*): nodos u objetos;
-- `E` (*edges*): aristas o relaciones.
+Un grafo es la estructura matemática que modela *"cosas conectadas entre sí"*. Se escribe `G = (V, E)`:
+
+- `V` (*vertices*): los **nodos**, las cosas — personas, ciudades, productos;
+- `E` (*edges*): las **aristas**, las conexiones entre pares de nodos — amistades, carreteras, "se compró junto a".
+
+Una red de amistades es un grafo: personas (nodos) unidas por amistades (aristas). Lo mismo que un mapa de carreteras (ciudades y conexiones) o un catálogo ("clientes que compraron X también compraron Y").
 
 Encaja cuando la pregunta es *quién se conecta con quién*: comunidades en redes, rutas logísticas y productos que se compran juntos.
 
@@ -124,7 +172,9 @@ graph LR
   J --> L
 ```
 
-En Python, una lista de adyacencia evita almacenar todas las parejas:
+### La lista de adyacencia
+
+Podrías guardar el grafo como una bolsa de pares, pero para responder *"¿a quién conoce Ana?"* tendrías que revolver la bolsa entera. La **lista de adyacencia** reorganiza la información **por nodo**: un diccionario donde cada clave es un nodo y su valor, el conjunto de sus vecinos. Consultar los vecinos de Ana pasa a ser inmediato:
 
 ```python
 red = {
@@ -137,11 +187,16 @@ red = {
 vecinos_de_ana = red["Ana"]
 ```
 
-No hace falta Gephi en esta UT. Sí reconocer que una tabla de aristas (`origen`, `destino`, `peso`) representa un grafo y que un *join* muchos-a-muchos puede generar muchas conexiones.
+No hace falta Gephi (una herramienta visual especializada en grafos) en esta UT. Sí reconocer dos cosas: que una tabla de aristas con columnas (`origen`, `destino`, `peso`) — como una tabla de tramos de carretera — representa un grafo; y que un *join* muchos-a-muchos entre dos tablas puede generar muchas conexiones (cada fila de una empareja con muchas de la otra).
 
 ## Lógica algorítmica
 
-Un algoritmo es una secuencia **ordenada**, **finita**, **no ambigua** y con **entradas y salidas**.
+Un **algoritmo** es una receta: una secuencia de pasos con cuatro propiedades. Cada una excluye un defecto concreto:
+
+- **ordenada** — hay un primer paso y se sabe cuál viene después (no es una lista de consejos sueltos);
+- **finita** — termina en algún momento (un bucle infinito no es un algoritmo);
+- **no ambigua** — cada paso se puede ejecutar sin interpretaciones ("remueve bien" no vale; "remueve 30 segundos" sí);
+- **con entradas y salidas** — recibe datos y produce un resultado.
 
 ```text
 Inicio
@@ -152,7 +207,7 @@ Inicio
 Fin
 ```
 
-Una traducción segura:
+Una traducción segura a Python:
 
 ```python
 def media(numeros):
@@ -165,14 +220,18 @@ def media(numeros):
     return total / len(numeros)
 ```
 
-Eso también puede escribirse `df["importe"].mean()`. La llamada de pandas es más corta, pero el motor todavía tiene que recorrer los valores.
+Eso también puede escribirse `df["importe"].mean()`. La llamada de pandas es más corta, pero el motor todavía tiene que recorrer los valores: la función no ha desaparecido, solo está escondida.
 
 !!! note "«Determinista», con precisión"
-    Para iniciarse, significa que cada paso está claramente definido. En informática también existen **algoritmos aleatorizados**; siguen siendo algoritmos aunque la misma entrada pueda recorrer caminos distintos.
+    Para iniciarse, significa que cada paso está claramente definido y la misma entrada produce siempre el mismo camino. En informática también existen **algoritmos aleatorizados** (que usan el azar deliberadamente); siguen siendo algoritmos aunque la misma entrada pueda recorrer caminos distintos.
 
 ## Complejidad (Big-O)
 
-La complejidad mide **tiempo o memoria** en función del tamaño de entrada `n`. No medimos los segundos concretos de tu portátil —dependen del hardware y la implementación—, sino **cómo crece** el trabajo cuando aumentan filas, nodos o eventos.
+### La idea: no cuánto tarda, sino cómo crece
+
+Dos soluciones igual de correctas pueden tardar cantidades de tiempo absurdamente distintas. La **complejidad** mide **tiempo o memoria** en función del tamaño de entrada `n` (filas, nodos, eventos).
+
+No medimos los segundos concretos de tu portátil —dependen del hardware y la implementación—, sino **cómo crece el trabajo** cuando `n` crece. La pregunta clave es siempre la misma: *si duplico los datos, ¿qué le pasa al trabajo?* ¿Se duplica? ¿Se cuadruplica? ¿Ni se inmuta?
 
 | Orden | Nombre | Intuición | Ejemplo |
 | --- | --- | --- | --- |
@@ -182,8 +241,6 @@ La complejidad mide **tiempo o memoria** en función del tamaño de entrada `n`.
 | O(n log n) | Casi lineal | Divide y combina | Ordenación eficiente |
 | O(n²) | Cuadrático | Cada uno con todos | Comparar cada reserva con todas las demás |
 
-Con 1 000 000 de elementos, lineal son ~10⁶ pasos; binaria, ~20; `n log₂n`, ~20 millones; cuadrática, ~10¹². Por eso un doble bucle “para detectar duplicados” **no** es el plan en Big Data: usas `drop_duplicates`, una tabla hash o una ventana.
-
 ```mermaid
 flowchart LR
   A["O(1)"] --> B["O(log n)"]
@@ -192,7 +249,18 @@ flowchart LR
   D --> E["O(n²)"]
 ```
 
-O(1) es una raya plana. O(log n) crece muy despacio. O(n) sube proporcionalmente. O(n²) se vuelve inviable.
+La cadena anterior va **de mejor a peor escalado**: O(1) es una raya plana. O(log n) crece muy despacio. O(n) sube proporcionalmente. O(n²) se vuelve inviable.
+
+### De dónde salen las cifras
+
+Con 1 000 000 de elementos:
+
+- **Lineal** son ~10⁶ pasos: un pase, un paso por elemento.
+- **Binaria** son ~20 pasos: cada paso descarta la mitad (10⁶ → 5·10⁵ → 2,5·10⁵ → …) y como 2²⁰ ≈ 1 048 576, unas 20 mitades bastan.
+- **`n log₂ n`** son ~20 millones (10⁶ × 20).
+- **Cuadrática** son ~10¹²: cada elemento contra todos los demás (10⁶ × 10⁶).
+
+Por eso un doble bucle "para detectar duplicados" **no** es el plan en Big Data. Las alternativas que usarás: `drop_duplicates` de pandas, una **tabla hash** (un diccionario grande que "recuerda" los elementos ya vistos y permite comprobar si algo está en O(1) esperado) o una **ventana** (funciones de ventana: agrupar filas y comparar dentro de cada grupo ordenado, en lugar de contra toda la tabla).
 
 ### Lineal frente a binaria
 
@@ -217,7 +285,7 @@ def busqueda_binaria(datos_ordenados, objetivo):
     return -1
 ```
 
-Para 16 elementos, binaria necesita como máximo unas 4 comparaciones; para un millón, unas 20.
+Para 16 elementos, binaria necesita como máximo unas 4 comparaciones (2⁴ = 16); para un millón, unas 20.
 
 !!! warning "La búsqueda binaria no ordena gratis"
     Exige una colección **ya ordenada**. Si primero ordenas, pagas O(n log n). Para **una sola búsqueda**, recorrer O(n) puede ser más barato; para miles de consultas sobre la misma colección, ordenar o indexar sí compensa.
@@ -241,14 +309,16 @@ En el ejemplo Dask, el acceso por índice no es una búsqueda hash. La llamada a
 
 ## Combinatoria (visión aplicada)
 
-Estudia cuántas formas hay de ordenar o elegir:
+La combinatoria estudia **cuántas formas** hay de ordenar o elegir elementos. Antes de las fórmulas, una notación: `n!` (*factorial de n*) es el producto de todos los enteros desde n hasta 1: `4! = 4·3·2·1 = 24`. Es, por ejemplo, el número de formas de ordenar 4 personas en una fila.
 
-- **Producto cartesiano:** todos los pares entre conjuntos; `|A × B| = |A| · |B|`.
-- **Permutaciones:** ordenar todos los elementos; `n!`.
-- **Variaciones:** elegir y ordenar `k`; `n! / (n-k)!`.
-- **Combinaciones:** elegir `k` sin importar el orden; `n! / (k!(n-k)!)`.
+Los cuatro conceptos, cada uno con su pregunta característica:
 
-¿Código PIN `123` y `321` cuentan distinto? Sí: importa el orden. ¿Un comité formado por Ana, Luis y Marta cambia por escribir Marta, Ana y Luis? No: es la misma combinación.
+- **Producto cartesiano:** todos los pares entre conjuntos; `|A × B| = |A| · |B|`. *¿Cuántos menús puedo formar con un entrante y un plato?*
+- **Permutaciones:** ordenar **todos** los elementos; `n!`. *¿De cuántas formas ordeno la cola completa?*
+- **Variaciones:** elegir y ordenar `k` de `n`; `n! / (n-k)!`. *¿Cuántos podios (1º, 2º, 3º) hay con 8 corredores?*
+- **Combinaciones:** elegir `k` de `n` **sin importar el orden**; `n! / (k!(n-k)!)`. *¿Cuántos equipos de 3 salen de 8 personas?*
+
+El detalle que distingue los dos últimos: ¿importa el orden? ¿Código PIN `123` y `321` cuentan distinto? **Sí**: importa el orden (variaciones). ¿Un comité formado por Ana, Luis y Marta cambia por escribir Marta, Ana y Luis? **No**: es la misma combinación.
 
 ```python
 from itertools import combinations, permutations, product
@@ -261,11 +331,13 @@ ordenes = list(permutations(["A", "B", "C"])) # 3! = 6
 parejas = list(combinations(["A", "B", "C"], 2))
 ```
 
-Aplicación: escenarios, optimización, “clientes que compraron A también compraron B”. Cuaderno: [combinatoria](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing).
+Aplicación: escenarios, optimización, "clientes que compraron A también compraron B". Cuaderno: [combinatoria](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing).
 
-### Teoría de grupos (reconocimiento)
+### Teoría de grupos (solo reconocimiento)
 
-Un grupo es un conjunto con una operación **cerrada** y asociativa, con elemento neutro e inverso para cada elemento. La teoría formal es avanzada; aparece en cifrado y en simetrías. Conviene precisar que **vectores y matrices no son por sí solos teoría de grupos**. En UT1 basta reconocer el concepto.
+Este concepto aparece en algunos temarios, así que conviene haberlo oído. Un **grupo** es un conjunto con una operación que cumple cuatro propiedades: operar dos elementos da otro elemento del mismo conjunto (*cierre*); el orden de agrupar no cambia el resultado (*asociatividad*); hay un elemento que no altera nada — como el 0 en la suma (*neutro*); y cada elemento tiene otro que lo deshace — como −x deshace +x (*inverso*). Los números enteros con la suma forman un grupo.
+
+La teoría formal es avanzada y aparece en cifrado y simetrías; **no** la aplicarás en esta UT. Y una precisión que evita un error típico: **vectores y matrices no son, por sí solos, teoría de grupos** (eso es álgebra lineal, otra cosa). Basta con reconocer el concepto.
 
 ## Representar la información
 
@@ -315,7 +387,7 @@ print("total por producto:", compras.sum(axis=0))
 | Sí | No | No |
 | No | Sí o no | No |
 
-Es la misma regla que `edad > 18 AND compras > 5`, expresada para que negocio pueda revisarla sin leer Python.
+Es la misma regla que `edad > 18 AND compras > 5`, expresada para que negocio pueda revisarla sin leer Python: cada fila de la tabla es un caso, y la última columna dice qué decide la regla.
 
 !!! example "En voz alta"
     Tienes 5 millones de logs y quieres las visitas de una IP. ¿Recorres el fichero cada vez (O(n) por consulta) o indexas/particionas por IP?
@@ -441,7 +513,7 @@ En la matriz de compras hay empate entre **Ana y Luis** (6 unidades). El cuadern
 5. **Teoría de grupos.** La operación debe cumplir el **cierre**; además, álgebra lineal no es sinónimo de teoría de grupos.
 6. **Dataset.** Un dataset no se limita a filas y columnas. Una colección de imágenes o grafos también puede ser un dataset.
 7. **Gráfico de complejidad.** La curva O(n²) está dividida por 100 y el eje vertical corta las curvas al llegar a 100. Sirve como intuición, pero no para comparar valores reales; por eso aquí se dan órdenes y cifras explícitas.
-8. En la actividad de matriz, “quién compró más productos” significa **más unidades en total**, no más categorías distintas.
+8. En la actividad de matriz, "quién compró más productos" significa **más unidades en total**, no más categorías distintas.
 
 ## Referencias para consultar
 
