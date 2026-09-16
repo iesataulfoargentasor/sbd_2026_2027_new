@@ -436,6 +436,9 @@ Actúa como analista: extrae el pronóstico horario de **Santander**:
 - [ ] Número de marcas de tiempo = número de temperaturas.
 - [ ] Interpretación de dos o tres líneas.
 
+!!! note "Dos ciudades distintas, a propósito"
+    El **ejemplo resuelto** del eXe usa Castro Urdiales (`43.3828`, `−3.2204`). La **actividad que entregas** pide Santander (`43.440829950828544`, `−3.8223838944785076`). Cambiar las coordenadas demuestra que no te limitas a ejecutar la solución.
+
 ## 11. Errores y precisiones del eXe
 
 1. **“La API proporciona datos estructurados”.** Más preciso: la respuesta JSON es **semiestructurada**, aunque su contrato sea predecible.
@@ -445,6 +448,15 @@ Actúa como analista: extrae el pronóstico horario de **Santander**:
 5. **`dt.strftime()` es presentación:** convierte la fecha de nuevo a texto. Conserva el `datetime` si vas a ordenar o calcular.
 6. **`groupby().count()` cuenta no nulos por columna.** Para número de filas usa `groupby().size()` o `value_counts()`.
 7. La cifra **80/20** es orientativa, no una métrica universal.
+
+## 12. Referencias para consultar
+
+El paquete eXe no incorpora bibliografía propia. Para implementar los ejemplos, usa la documentación oficial:
+
+- [pandas — documentación](https://pandas.pydata.org/docs/)
+- [Open-Meteo API](https://open-meteo.com/en/docs)
+- [Requests — guía rápida](https://requests.readthedocs.io/en/latest/user/quickstart/)
+- [Beautiful Soup 4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
 !!! success "Al terminar 1.3"
     Puedes responder en un minuto: **qué pregunta**, **qué fuente**, **qué método**, **qué campos**, **qué controles** y **qué tabla o resumen** entregas. Ese razonamiento vale más que decir únicamente el nombre de una librería.
