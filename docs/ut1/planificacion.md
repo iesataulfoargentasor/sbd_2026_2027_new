@@ -71,6 +71,29 @@ Cuando el trabajo vive en un repositorio:
 
 Así el criterio e) deja rastro: se ve el objetivo, el orden y el tiempo. No hace falta la API GraphQL de Projects; el tablero de la clase vale.
 
+Vídeo del eXe (issues en GitHub): [YouTube 7eeHBaPnUGM](https://youtu.be/7eeHBaPnUGM).
+
+### Ciclo de vida de una issue (guion de aula)
+
+1. Crear el repositorio (o clonar el de prácticas).
+2. Abrir una issue con título concreto y descripción (objetivo, criterio de hecho).
+3. Asignar responsable y etiqueta (`bug`, `enhancement`, `documentation`…).
+4. Crear un **Project** y añadir la issue como tarjeta.
+5. Mover *Por hacer → En progreso → Hecho* cuando el código o el CSV lo justifique.
+6. Cerrar la issue con un comentario de evidencia (enlace al commit, al Colab o al CSV).
+
+### Ejemplo de issue (copiar y adaptar)
+
+```text
+Título: Unificar ciudades del CSV de clientes
+
+Descripción:
+- Fuente: clientes_actividad.csv
+- Hecho cuando: no queden Madird/Mdrid/Valenca/Barcleona
+- Evidencia: CSV limpio + recuento por ciudad
+Criterio RA1: e) (prioridad) + b) (extracción/limpieza)
+```
+
 !!! tip "Enlace con 1.3"
     La actividad de limpieza de clientes **se planifica aquí** y se ejecuta en pandas. Entrega típica: enlace al Project (o captura del tablero) + notebook o script + CSV limpio + recuento.
 

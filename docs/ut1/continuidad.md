@@ -25,5 +25,6 @@ La frontera no es el logo. Hadoop, Spark, Kafka o AWS pueden aparecer en BDA y e
 3. Tablero de GitHub Project (objetivo y prioridades).
 4. Capturas Athena + párrafo de coste/calidad.
 5. Parquet de prueba, si lo generaste.
+6. Copias en Drive de los Colab que hayas ejecutado ([índice](cuadernos.md)).
 
 RA2 parte de **indicadores y gráficos** sobre esos datasets. RA3 profundiza en importar y almacenar para explotar. RA4, en visualizar y en programar transformaciones con más recorrido. No hace falta repetir la cabecera de Glue ni el `drop_duplicates` de clientes.

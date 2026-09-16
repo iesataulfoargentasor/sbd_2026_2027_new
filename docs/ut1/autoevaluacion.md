@@ -14,4 +14,4 @@ Son casos **prácticos** (qué eliges y por qué). No puntúan en Moodle: al pul
 <div class="dwec-quiz" data-dwec-quiz data-src="../../assets/quizzes/ut1.json"></div>
 
 !!! tip "Cómo usarlo"
-    Responde las 20 (A–D) y corrige. Si fallas, el enlace *Repasar…* te lleva al apartado. Puedes **volver a intentar** las veces que quieras.
+    Responde las 20 (A–D) y corrige. Si fallas, el enlace *Repasar…* te lleva al apartado. Puedes **volver a intentar** las veces que quieras. Los ejercicios de código están en los [cuadernos Colab](cuadernos.md), no en este test.

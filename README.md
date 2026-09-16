@@ -21,6 +21,6 @@ GitHub Actions comprueba y publica el sitio en GitHub Pages desde `main`. Las en
 
 ## Procedencia
 
-Adaptado a partir de los paquetes eXeLearning de aula de SBD UT1 (licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)), del PDF *Preproceso*, del laboratorio AWS Academy (S3 + Glue + Athena) y de la práctica de planificación con GitHub Projects. Se conserva la apariencia Material del sitio de BDA (paleta, CSS, motor de cuestionario y logo del centro). Los paquetes HTML originales no se publican en este repositorio.
+Adaptado a partir de los paquetes eXeLearning de aula de SBD UT1 (licencia [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)), del PDF *Preproceso*, del laboratorio AWS Academy (S3 + Glue + Athena) y de la práctica de planificación con GitHub Projects. Los **cuadernos de Google Colab** de esos eXe están enlazados en los apuntes ([índice](https://iesataulfoargentasor.github.io/sbd_2026_2027_new/ut1/cuadernos/)). Se conserva la apariencia Material del sitio de BDA (paleta, CSS, motor de cuestionario y logo del centro). Los paquetes HTML originales no se publican en este repositorio.
 
 Logotipos y recursos de terceros conservan sus derechos de origen. No se atribuye una licencia nueva a recursos ajenos.

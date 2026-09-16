@@ -14,10 +14,13 @@ En BDA caracterizaste el almacén, la ingesta y el formato de la carga. Aquí el
 
 Lee cada apartado **en orden**. En todos hay un caso (hotel, clientes, logs de una tienda, meteorología de Castro Urdiales) y una pregunta del estilo “¿qué harías con el dato y por qué?”. Si puedes explicárselo a un compañero sin mirar la tabla, el apartado está asimilado. La [autoevaluación](autoevaluacion.md) comprueba vocabulario. Ninguna sustituye a Moodle.
 
+Los cuadernos de Google Colab de los eXe están en [Cuadernos Colab](cuadernos.md) y también junto a la teoría de cada apartado. Ábrelos en tu Drive antes de ejecutar.
+
 ## Qué vas a trabajar
 
 | Apartado | Criterio | Qué te llevas |
 | --- | --- | --- |
+| [1.0 Marco Big Data](marco-big-data.md) | vocabulario | 3–7 V, ciencia de datos, BI, warehouse/lake, roles (paquete *Introducción a Big Data*) |
 | [1.1 Integrar, procesar y analizar](ciclo-analisis.md) | **b)** | Dato → información → decisión; ETL; batch/streaming; tipos de análisis |
 | [1.2 Fundamentos matemáticos y algoritmos](fundamentos.md) | **a)** | Conjuntos, lógica, grafos y complejidad (por qué un algoritmo no escala) |
 | [1.3 Extracción de información](extraccion.md) | **b)** | SQL, API, scraping y texto; primer pandas |
@@ -26,6 +29,7 @@ Lee cada apartado **en orden**. En todos hay un caso (hotel, clientes, logs de u
 | [1.6 Planificación con GitHub Projects](planificacion.md) | **e)** | Objetivos, prioridades, mini-sprints e issues |
 | [1.7 Laboratorio AWS](laboratorio-aws.md) | **f)** / **g)** | S3 + Glue + Athena; coste por dato escaneado y calidad del esquema |
 | [Entorno Docker](docker.md) | apoyo | Contenedores para reproducir el entorno, no un CE propio |
+| [Cuadernos Colab](cuadernos.md) | prácticas | Todos los enlaces de los eXe (alumnado y solución de profesorado) |
 | [Autoevaluación](autoevaluacion.md) | — | 20 preguntas de la unidad (no puntúa en Moodle) |
 
 ## Del Moodle a esta unidad
@@ -34,7 +38,9 @@ Cada paquete eXeLearning (o PDF) de la UT1 de Moodle queda asociado al mismo CE.
 
 | En Moodle | CE | Dónde lo trabajas aquí |
 | --- | --- | --- |
+| Introducción a Big Data SBD | vocabulario | [1.0](marco-big-data.md) |
 | Introducción al procesamiento y análisis | **b)** | [1.1](ciclo-analisis.md) |
+| Técnicas de análisis de datos en Big Data (vídeo + eXe combinado) | **b)** / **a)** | [1.1](ciclo-analisis.md), [1.2](fundamentos.md) y [Cuadernos](cuadernos.md) |
 | Fundamentos matemáticos y algoritmos | **a)** | [1.2](fundamentos.md) |
 | Técnicas y procesos de extracción | **b)** / **d)** | [1.3](extraccion.md) |
 | Preproceso de datos (PDF) | **b)** / **d)** | [1.4](preproceso.md) |
@@ -45,4 +51,4 @@ Cada paquete eXeLearning (o PDF) de la UT1 de Moodle queda asociado al mismo CE.
 | Manual Docker | apoyo | [Entorno Docker](docker.md) |
 
 !!! info "Frontera con BDA"
-    No repetimos las 5 V, el diseño del lago ni Pentaho. Si hace falta el marco, está en los apuntes de BDA. Aquí la evidencia es **código, consulta y justificación**, no un `.ktr`.
+    El diseño del lago y Pentaho se quedan en BDA. El paquete *Introducción a Big Data* se recupera en [1.0](marco-big-data.md) para no perder el material de Moodle. Aquí la evidencia es **código, consulta y justificación**, no un `.ktr`.

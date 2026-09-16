@@ -14,7 +14,11 @@ Los datos no solo se guardan: hay que **organizarlos, recorrerlos y analizarlos*
 
 Buscar un número en una lista de 10 elementos es fácil. En 10 millones ya no vale “mirar uno a uno” si puedes partir por la mitad.
 
-Cuadernos de aula (opcionales): [conjuntos y grafos](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing), [búsqueda lineal y binaria](https://colab.research.google.com/drive/1QMJKYknyyv_-pyOQ5WaNdqCZZ2u8KyPS?usp=sharing).
+Sigue el apartado en Colab (paquete *Fundamentos matemáticos y algoritmos*):
+
+- Matemática discreta: [1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing)
+- Combinatoria: [1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing)
+- Miniproyecto del tema: [1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj](https://colab.research.google.com/drive/1YYxgnXcdUw0_qgwGdYeGwvOjxh-dLlsj?usp=sharing)
 
 ## Conjuntos
 
@@ -90,16 +94,64 @@ flowchart LR
 
 O(1) es una raya plana. O(log n) se aplana pronto. O(n) sube sin parar. O(n²) se vuelve inviable.
 
+Cuadernos de complejidad del eXe:
+
+- Teoría y notación: [1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu](https://colab.research.google.com/drive/1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu?usp=sharing)
+- Búsqueda lineal frente a binaria: [1QMJKYknyyv_-pyOQ5WaNdqCZZ2u8KyPS](https://colab.research.google.com/drive/1QMJKYknyyv_-pyOQ5WaNdqCZZ2u8KyPS?usp=sharing)
+- Tiempos en listas pequeñas y enormes: [1mZfjK-IH2qmyKHnUe2LU6kiarKepmveX](https://colab.research.google.com/drive/1mZfjK-IH2qmyKHnUe2LU6kiarKepmveX?usp=sharing)
+
 !!! failure "Trampa de aula"
     «Como pandas es rápido, la complejidad da igual.» pandas **esconde** el bucle. Si tu idea es O(n²), el clúster también pagará shuffle y tiempo. El criterio a) es elegir la operación, no el logo.
 
+## Combinatoria (visión aplicada)
+
+Estudia cuántas formas hay de ordenar o elegir:
+
+- Producto cartesiano: todos los pares entre conjuntos.
+- Permutaciones: el orden **sí** importa.
+- Combinaciones: el orden **no** importa.
+
+Aplicación: escenarios, optimización, “clientes que compraron A también compraron B”. Cuaderno: [combinatoria](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing).
+
+La teoría de grupos (asociatividad, neutro, inverso) aparece más adelante en cifrado y en álgebra lineal de ML; en UT1 basta el nombre.
+
 ## Representar la información
 
-Listas, conjuntos, diccionarios, tablas (DataFrame) y grafos son **estructuras**. Eliges la que hace barata la pregunta: filtrar por clave → diccionario; agregar por ciudad → tabla; “quién conoce a quién” → grafo.
+Un **dataset** es un conjunto estructurado: cada fila es una observación (cliente, compra, sensor) y cada columna un atributo. En Big Data puede tener millones de filas: por eso pandas, Spark o Hadoop.
+
+| Estructura | Idea | Ejemplo |
+| --- | --- | --- |
+| Vector | Secuencia ordenada | Temperaturas `[20, 21, 23, 22]` |
+| Matriz | Tabla filas × columnas | Usuario × producto en un recomendador |
+| Tabla de decisión | Reglas en forma tabular | Edad>18 ∧ compras>5 → VIP |
+| Árbol | Jerarquía | Categorías de Amazon |
+| Grafo | Relaciones | Red social, rutas |
+| Tabla hash | Búsqueda ~O(1) | `dict` de Python |
+
+Cuaderno: [vectores, matrices y estructuras](https://colab.research.google.com/drive/1W1yXeDfUYtK2BtPVmWIHRrnu7oD1EihK?usp=sharing).
 
 !!! example "En voz alta"
-    Tienes 5 millones de logs y quieres las visitas de una IP. ¿Recorres el fichero cada vez (O(n) por consulta) o indexas/particionas por IP? Esa es la pregunta de complejidad aplicada al análisis.
+    Tienes 5 millones de logs y quieres las visitas de una IP. ¿Recorres el fichero cada vez (O(n) por consulta) o indexas/particionas por IP?
 
-## Actividad breve
+## Actividades del eXe (hacer en Colab)
 
-Estudio de logística (el mismo caso de integración): modela **conjuntos** (clientes, pedidos entregados, retrasados) y **una** relación (pedido–ruta). Di qué operación responde “pedidos retrasados de clientes VIP”. No hace falta programarlo todavía; en [1.4](preproceso.md) lo conviertes en un join.
+**1. Conjuntos y lógica.** A = {Ana, Juan, Marta, Luis} compraron X; B = {Marta, Luis, Sofía, Pedro} compraron Y. Calcula A ∪ B, A ∩ B, A − B. Con una tabla de edad y compras, marca *Premium* si edad > 25 **y** compras > 10.
+
+**2. Matriz.** 4 clientes × 3 productos: ¿quién compró más en total? ¿qué producto es el más popular?
+
+**3. Combinatoria.** Entrantes {Sopa, Ensalada, Gazpacho, Croquetas} × platos {Pollo, Pescado, Pasta}. ¿Cuántos menús (1+1)? Solución esperada: **12**.
+
+**4. Árbol.** Si edad > 25 y compras > 5 → descuento; si no, no. Dibuja el árbol y aplícalo a unos clientes.
+
+## Estudio de logística
+
+Completa las celdas `# --- TU CÓDIGO AQUÍ ---` del cuaderno de conjuntos, relaciones, funciones, lógica y grafos:
+
+[1cWbe73qRxhDEDg5FCM-Fdwj8GvIVLj58](https://colab.research.google.com/drive/1cWbe73qRxhDEDg5FCM-Fdwj8GvIVLj58?usp=sharing)
+
+## Solución de referencia (profesorado)
+
+- [14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd](https://colab.research.google.com/drive/14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd?usp=sharing)
+- [1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij](https://colab.research.google.com/drive/1H0_0yrT77FVNvCoxepL4bRy-dHlhf6ij?usp=sharing)
+
+Índice de todos los cuadernos: [Cuadernos Colab](cuadernos.md).

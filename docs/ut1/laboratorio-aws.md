@@ -11,7 +11,7 @@ Una tienda online quiere saber **qué páginas se visitan más**, **desde qué p
 
 Eso cierra **f)** (elegir e integrar sistemas) y **g)** (coste y calidad).
 
-El laboratorio se hace en **AWS Academy** (Learner Lab), con la región y el rol que indique el profesor (`LabRole` suele ser el de aula). No copies claves de cuentas personales al cuaderno ni al git.
+El laboratorio se hace en **AWS Academy** (Learner Lab), con la región y el rol que indique el profesor (`LabRole` suele ser el de aula). No copies claves de cuentas personales al cuaderno ni al git. **No hay Colab de este laboratorio**: el CSV se genera en local ([generar_logs.py](../assets/practicas/generar_logs.py)) y el resto es consola.
 
 ## Mini-mapa
 

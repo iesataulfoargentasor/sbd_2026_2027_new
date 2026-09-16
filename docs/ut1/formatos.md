@@ -46,9 +46,21 @@ Binario compacto; el **esquema va en JSON** en la cabecera del fichero. Partible
 }
 ```
 
-En Python, para volumen, **fastavro** suele ir mejor que la librería de referencia. Snappy prioriza **velocidad**; gzip, tamaño. En Big Data suele ganar el códec rápido.
+En Python, para volumen, **fastavro** suele ir mejor que la librería de referencia (`avro-python3`): parte del código está en Cython. Snappy prioriza **velocidad**; gzip, tamaño. En Big Data suele ganar el códec rápido.
 
-Esquema de aula: [empleado.avsc](../assets/practicas/empleado.avsc).
+Esquema de aula: [empleado.avsc](../assets/practicas/empleado.avsc) (copia de apoyo: [empleado.avsc en GitHub de IABD](https://aitor-medrano.github.io/iabd/de/resources/empleado.avsc)).
+
+Vídeo del eXe (Avro, Parquet, ORC): [YouTube DafzYp5XRmA](https://youtu.be/DafzYp5XRmA).
+
+### Cuadernos Avro (hacer los tres)
+
+Copia cada cuaderno a tu Drive. En los dos primeros **adjunta** `empleado.avsc`; en el tercero, el CSV de ventas.
+
+| Cuaderno | Qué haces | Enlace |
+| --- | --- | --- |
+| Avro (librería de referencia) | Serializar / deserializar con `avro-python3` y `empleado.avsc` | [1zxfPwEdHjaYHjkKjPOwXuj9fXGD8Anc1](https://colab.research.google.com/drive/1zxfPwEdHjaYHjkKjPOwXuj9fXGD8Anc1?usp=sharing) |
+| Fastavro | El mismo caso, más rápido | [1z0ZsCX2Ws-3kSFLQEJS74CDkkot--Y-n](https://colab.research.google.com/drive/1z0ZsCX2Ws-3kSFLQEJS74CDkkot--Y-n?usp=sharing) |
+| Fastavro + pandas | Leer [pdi_sales.csv](https://aitor-medrano.github.io/iabd/de/resources/pdi_sales.csv) (separador `;`), filtrar Alemania y escribir Avro | [1zaM4132cmUIsOWL5rbiCre5dCIyVL1RC](https://colab.research.google.com/drive/1zaM4132cmUIsOWL5rbiCre5dCIyVL1RC?usp=sharing) |
 
 ## Parquet (columnas)
 
@@ -83,6 +95,32 @@ Columnar, muy ligado a **Hive** (*Optimized Row Columnar*): *stripes* con índic
 !!! tip "Puente con el laboratorio"
     En [1.7](laboratorio-aws.md) Athena escanea S3. Un CSV con cabecera mal leída (`col1`…`col5`) es un fallo de **calidad**. El mismo volumen en Parquet es un fallo de **coste** si lo dejas en texto “porque es simple”.
 
-## Actividad
+## Actividad 1 — Parquet (aula)
 
 Convierte [clientes.csv](../assets/practicas/clientes.csv) a Parquet y lee **solo** `ciudad`. Compara tamaño en disco (o di, en el lab, por qué Athena preferiría ese fichero).
+
+## Actividad 2 — Kaggle, vuelos (criterio c)
+
+El eXe de formatos pide un notebook en [Kaggle](https://www.kaggle.com/) sobre [retrasos y cancelaciones de vuelos 2009–2018](https://www.kaggle.com/datasets/yuanyuwendymu/airline-delay-and-cancellation-data-2009-2018). Elige **un** CSV anual (campos separados por `,`) y genera:
+
+| Fichero | Contenido |
+| --- | --- |
+| `air<año>.parquet` | El CSV completo en Parquet |
+| `air<año>.orc` | El CSV en ORC |
+| `air<año>_snappy.orc` | ORC con códec Snappy |
+| `air<año>_small.avro` | Solo `FL_DATE`, `OP_CARRIER`, `DEP_DELAY` en Avro |
+| `air<año>_small.parquet` | Las mismas tres columnas en Parquet |
+
+En pandas, el recorte de columnas es:
+
+```python
+df_small = df[["FL_DATE", "OP_CARRIER", "DEP_DELAY"]]
+```
+
+Anota tamaños (`os.path.getsize`) y tiempos (`time.time()`) en una celda Markdown. Con cuenta gratuita, Kaggle da más RAM (hasta ~30 GB / 73 GB de disco); sin cuenta, ~1 GB y el dataset no cabe.
+
+Si el portátil o Kaggle se quedan cortos, usa una muestra de 100 000 filas y **documenta** el recorte. El criterio c) es **elegir formato por la pregunta**, no completar el dataset entero.
+
+Entrega: captura del cuaderno o el `.ipynb` descargado (si Kaggle pide datos personales para compartir, adjunta el fichero en Moodle).
+
+Índice: [Cuadernos Colab](cuadernos.md).

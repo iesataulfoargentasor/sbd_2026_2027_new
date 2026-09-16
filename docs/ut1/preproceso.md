@@ -7,7 +7,7 @@ tags:
 
 # 1.4. Preproceso de datos
 
-El preproceso convierte el bruto en algo **interpretable y relacionable**. Es el paso en el que más tiempo se invierte. Cierra **b)** (conocimiento a partir del volumen) y **d)** (un conjunto complejo, cruzado).
+El preproceso convierte el bruto en algo **interpretable y relacionable**. Es el paso en el que más tiempo se invierte (el eXe de extracción estima **~80 %** del proyecto). Cierra **b)** (conocimiento a partir del volumen) y **d)** (un conjunto complejo, cruzado). El PDF de aula *Preproceso de datos* y el apartado *data wrangling* de extracción son la misma receta: limpiar, normalizar, transformar e integrar.
 
 Hay dos entornos. En UT1 **ejecutas** el monolítico (pandas, un equipo). El de clúster (Spark) lo **reconoces**: misma receta, otras APIs, otro coste.
 
@@ -108,3 +108,5 @@ En un clúster **no** haces el mismo `for`. Spark usa expresiones de columna, `d
     2. Sobre el papel: si el mismo CSV ocupara 200 GB, ¿qué operación de pandas **no** copiarías tal cual a Spark y por qué?
 
 El detalle de MLlib (scalers, `StringIndexer`) no es evidencia de esta UT1. Sí lo es dejar un dataset **relacionado** y documentar las reglas.
+
+La limpieza de [clientes_actividad.csv](../assets/practicas/clientes_actividad.csv) se planifica en [1.6](planificacion.md) y se ejecuta con pandas (actividad 1 de [1.3](extraccion.md)). El ETL inicial de Colab está en [1.1](ciclo-analisis.md).

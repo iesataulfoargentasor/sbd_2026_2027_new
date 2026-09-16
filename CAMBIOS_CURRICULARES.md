@@ -12,7 +12,9 @@ La asociación eXeLearning/PDF → CE se conserva. Los paquetes HTML, vídeos y 
 
 | Material de aula | CE | Página |
 | --- | --- | --- |
+| Introducción a Big Data SBD | vocabulario | `docs/ut1/marco-big-data.md` |
 | Introducción al procesamiento y análisis | b | `docs/ut1/ciclo-analisis.md` |
+| Técnicas de análisis de datos en Big Data (eXe combinado + vídeo) | a, b | 1.1, 1.2 y `docs/ut1/cuadernos.md` |
 | Fundamentos matemáticos y algoritmos | a | `docs/ut1/fundamentos.md` |
 | Técnicas y procesos de extracción | b, d | `docs/ut1/extraccion.md` |
 | Preproceso (PDF) | b, d | `docs/ut1/preproceso.md` |
@@ -21,11 +23,13 @@ La asociación eXeLearning/PDF → CE se conserva. Los paquetes HTML, vídeos y 
 | Laboratorio AWS S3/Glue/Athena | f, g | `docs/ut1/laboratorio-aws.md` |
 | Manual Docker | apoyo | `docs/ut1/docker.md` |
 | Vídeo ETL Colab | b | integrado en 1.1 y 1.3 |
+| Todos los Colab de los eXe | prácticas | `docs/ut1/cuadernos.md` (y enlaces en cada apartado) |
 
 ## Decisiones didácticas
 
 - Estilo y tema copiados del sitio de BDA (Material, paleta del centro, motor de test).
-- Frontera: BDA diseña el almacén y PDI; SBD ejecuta pandas, API, SQL Athena y justifica coste/calidad.
+- Frontera: BDA diseña el almacén y PDI; SBD ejecuta pandas, API, SQL Athena y justifica coste/calidad. El paquete *Introducción a Big Data* se publica como 1.0 (marco), no como copia del diseño de BDA.
+- Todos los enlaces de Google Colab de los eXe (alumnado y *Solución profesor*) están en `docs/ut1/cuadernos.md` y repetidos junto a la teoría.
 - Preproceso Spark se presenta como reconocimiento, no como laboratorio obligatorio de clúster.
 - El fallo `col1`…`col5` del crawler se documenta con classifier `Contains header: PRESENT`.
 - Autoevaluación: 20 preguntas. Entregas en Moodle.

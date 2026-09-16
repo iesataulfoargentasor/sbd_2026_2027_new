@@ -35,9 +35,9 @@ Filtrar, ordenar y agregar (`GROUP BY`) **es** extracción. Encaja cuando el ori
 
 ### APIs
 
-Una API es una puerta: pides (request) y te traen JSON (response). Datos **actualizados** y, si está bien hecha, estructurados. Encaja con Open-Meteo, pasarelas de pago, el canal de reservas.
+Una API es una puerta: pides (request) y te traen JSON (response). Datos **actualizados** y, si está bien hecha, estructurados. Encaja con Open-Meteo, pasarelas de pago, el canal de reservas. En el eXe: una API es un “camarero digital”.
 
-Práctica profesional: **caché** (no pidas lo mismo cien veces) y **reintento** (la red falla).
+Práctica profesional: **caché** (no pidas lo mismo cien veces) y **reintento** (la red falla). El cuaderno de Open-Meteo usa `openmeteo_requests`, `requests_cache` y `retry_requests`.
 
 ### Web scraping
 
@@ -60,11 +60,19 @@ Lo extraído suele venir sucio. **Preparar** no es un software: es el oficio.
 | Normalización | Un solo formato | Fechas a `datetime`; decimales con punto |
 | Transformación | Columnas nuevas, códigos | Sí/No → 1/0; nacimiento → edad |
 
-Si el dato está mal, el gráfico miente. El criterio b) no se cierra con un JSON crudo.
+Si el dato está mal, el gráfico miente. El criterio b) no se cierra con un JSON crudo. En un proyecto de datos se estima que **el 80 % del tiempo** se va en preparar y solo el 20 % en el análisis. El detalle de imputación, joins y escala está en [1.4](preproceso.md).
 
 ## Herramientas básicas
 
-Excel sirve para **ver** 200 filas. El flujo de aula es **pandas** (y, a escala, Spark: [1.4](preproceso.md)). Lectura, filtro, `groupby`, escritura CSV/Parquet.
+| Herramienta | Para qué en esta UT |
+| --- | --- |
+| Excel / Google Sheets | Filtros, buscar y reemplazar, tablas dinámicas sobre **pocas** filas |
+| **pandas** | Leer CSV/Excel/JSON, limpiar, `groupby`, escribir CSV/Parquet |
+| `requests` | Llamar a una API y obtener JSON |
+| BeautifulSoup | Parsear HTML (scraping) |
+| ETL de escritorio (Pentaho, Talend, NiFi) | Mover volumen a diario en empresa; **no** es la evidencia de SBD-RA1 (eso está en BDA) |
+
+Excel sirve para **ver** 200 filas. El flujo de aula es **pandas** (y, a escala, Spark: [1.4](preproceso.md)).
 
 ## Ejemplo 1 — CSV de clientes (estructurado)
 
@@ -78,7 +86,10 @@ filtrado = df[(df["ciudad"] == "Madrid") & (df["edad"] > 30)]
 print(filtrado)
 ```
 
-Eso es extracción por filtro (lógica ∧ del [1.2](fundamentos.md)). Cuaderno de referencia de aula: [Colab del filtro](https://colab.research.google.com/drive/1CPaRcZNcPMXLAwHdfv6KEuQpBUz1G1j_?usp=sharing).
+Eso es extracción por filtro (lógica ∧ del [1.2](fundamentos.md)).
+
+- Cuaderno alumnado: [1CPaRcZNcPMXLAwHdfv6KEuQpBUz1G1j_](https://colab.research.google.com/drive/1CPaRcZNcPMXLAwHdfv6KEuQpBUz1G1j_?usp=sharing)
+- CSV de ejemplo: [clientes.csv (raw)](https://raw.githubusercontent.com/josedavidmi/iabd-sbd/refs/heads/main/clientes.csv)
 
 ## Ejemplo 2 — API meteorológica (semiestructurado)
 
@@ -107,7 +118,18 @@ print(hourly.head())
 print(hourly["temperature_2m"].max(), hourly["temperature_2m"].min())
 ```
 
-La API garantiza estructura; **tú** transformas a tabla. Cuaderno de aula: [Open-Meteo](https://colab.research.google.com/drive/13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H?usp=sharing).
+La API garantiza estructura; **tú** transformas a tabla.
+
+- Cuaderno Open-Meteo: [13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H](https://colab.research.google.com/drive/13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H?usp=sharing)
+- CSV de actividad (raw): [clientes_actividad.csv](https://raw.githubusercontent.com/josedavidmi/iabd-sbd/refs/heads/main/clientes_actividad.csv)
+
+## Cuaderno de síntesis del tema
+
+El eXe *Técnicas y procesos de extracción de información* cierra con un cuaderno que recorre CSV, API y limpieza:
+
+[1JvpH-IoMbgZzOoRdAXq2zTusWKUXLk74](https://colab.research.google.com/drive/1JvpH-IoMbgZzOoRdAXq2zTusWKUXLk74?usp=sharing)
+
+El ETL inicial de clientes (generar, extraer, transformar, cargar) está en [1.1](ciclo-analisis.md). Índice: [Cuadernos Colab](cuadernos.md).
 
 ## Actividad 1 — Limpieza con pandas (b y d)
 

@@ -34,8 +34,24 @@ El método más habitual sigue tres verbos. Las siglas **ETL** (extraer → tran
 
 **ELT** cambia el orden: cargas el bruto y transformas en el destino (Spark, Athena, el warehouse). En esta UT practicas **ETL en Python** (pandas). En BDA viste el mismo oficio en Pentaho; no repitas Spoon: cambia el motor.
 
-!!! tip "Primer flujo (nivel inicial)"
-    Genera o descarga un CSV con errores (fechas mezcladas, duplicados, nulos) → extrae → unifica y deduplica → carga un CSV limpio → un recuento (clientes por ciudad, edad media). Ese es el vídeo de aula en Colab. La evidencia de RA1 no es “abrir el cuaderno”: es **el fichero limpio y el resumen**.
+## Actividad práctica (nivel inicial) — ETL en Colab
+
+Paquete eXe *Introducción al procesamiento y análisis de información*, apartado 6. El vídeo de Moodle (*Técnicas de análisis de datos en Big Data*) explica el mismo flujo.
+
+Tenéis que desarrollar, en Google Colab, un ETL mínimo:
+
+1. Se genera un CSV de clientes con errores (fechas en distintos formatos, duplicados, valores faltantes).
+2. **Extracción:** abrir y leer el fichero (Excel o Python).
+3. **Transformación:** unificar fechas, eliminar duplicados, corregir erratas.
+4. **Carga:** guardar el resultado limpio en un CSV nuevo.
+5. Un recuento sencillo: clientes por ciudad y edad media.
+
+Eso convierte dato bruto en información útil. La evidencia no es “haber abierto Colab”: es el fichero limpio y el resumen.
+
+- Cuaderno de alumnado: [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)
+- Solución de referencia (profesorado): [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)
+
+El listado completo de cuadernos de la unidad está en [Cuadernos Colab](cuadernos.md).
 
 ## Procesamiento: el reloj
 
@@ -46,7 +62,16 @@ El método más habitual sigue tres verbos. Las siglas **ETL** (extraer → tran
 
 El lote encaja con el cierre de cobros del hotel. El flujo, con el fraude de una tarjeta o el semáforo de habitación libre. Streaming **no** es latencia cero: tiene un plazo objetivo.
 
-Warehouse, lake, Lambda y Kappa son recetas de **dónde** y **cómo** se combinan esos caminos. El diseño profundo está en BDA; aquí basta elegir el reloj de **tu consulta**.
+El paquete de introducción cita cuatro recetas (visión general, sin desplegarlas):
+
+| Receta | Idea |
+| --- | --- |
+| Data warehouse | Dato estructurado, listo para informe |
+| Data lake | Cualquier tipo, como llegó |
+| **Lambda** | Un camino batch y un camino streaming **en paralelo** |
+| **Kappa** | Casi todo entra por streaming; el histórico se reprocesa con el mismo flujo |
+
+El detalle de warehouse y lake está en el [marco](marco-big-data.md). Aquí eliges el **reloj de tu consulta**.
 
 ## Análisis: tres tipos, no tres productos
 

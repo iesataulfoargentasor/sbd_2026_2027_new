@@ -18,7 +18,7 @@ Esta unidad desarrolla el **RA1** del módulo *Sistemas de Big Data* (código **
 | CE | Criterio (texto oficial) | Dónde se trabaja en la UT1 |
 | --- | --- | --- |
 | **a)** | Se han identificado conceptos básicos de matemática discreta, lógica algorítmica y complejidad computacional, y su aplicación para el tratamiento automático de la información por medio de sistemas computacionales. | [1.2 Fundamentos](fundamentos.md) |
-| **b)** | Se ha extraído de forma automática información y conocimiento a partir de grandes volúmenes de datos. | [1.1](ciclo-analisis.md), [1.3](extraccion.md) y [1.4](preproceso.md) |
+| **b)** | Se ha extraído de forma automática información y conocimiento a partir de grandes volúmenes de datos. | [1.1](ciclo-analisis.md), [1.3](extraccion.md) y [1.4](preproceso.md) — [cuadernos](cuadernos.md) |
 | **c)** | Se han combinado diferentes fuentes y tipos de datos. | [1.5 Formatos](formatos.md) (y joins en [1.4](preproceso.md)) |
 | **d)** | Se ha construido un conjunto de datos complejos y se han relacionado entre sí. | [1.3](extraccion.md) y [1.4](preproceso.md) |
 | **e)** | Se han establecido objetivos y prioridades, secuenciación y organización del tiempo de realización. | [1.6 Planificación](planificacion.md) |
@@ -40,13 +40,13 @@ El RA2 (cuadros de mando), el RA3 (almacenar para explotar) y el RA4 (visualizar
 !!! note "Cómo se evalúa"
     Los criterios son el referente. En las prácticas se pide **ejecutar** (pandas, SQL en Athena) y **explicar** (por qué esa fuente, ese formato, ese servicio). Las entregas formales siguen en Moodle.
 
-    Para practicar por tu cuenta: [autoevaluación de la UT1](autoevaluacion.md).
+    Para practicar por tu cuenta: [cuadernos Colab](cuadernos.md) y [autoevaluación de la UT1](autoevaluacion.md).
 
 ## Evidencias que cierran RA1
 
 | CE | Evidencia observable |
 | --- | --- |
-| a | Explicar con un ejemplo por qué un algoritmo O(n²) no vale para millones de filas, y aplicar una operación de conjuntos o un filtro lógico. |
+| a | Explicar con un ejemplo por qué un algoritmo O(n²) no vale para millones de filas, y aplicar una operación de conjuntos o un filtro lógico ([1.2](fundamentos.md); vocabulario en [1.0](marco-big-data.md)). |
 | b | Extraer de CSV/API (o SQL) y producir un resumen (conteo, máximo, filtro) sin copiar a mano. |
 | c | Justificar CSV frente a Parquet/Avro según si vas a **leer tres columnas** o a **pasar mensajes**. |
 | d | Unir o concatenar al menos dos fuentes y dejar un dataset coherente (claves, duplicados, tipos). |

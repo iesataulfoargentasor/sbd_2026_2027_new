@@ -26,10 +26,12 @@ El sitio desarrolla **UT1 (SBD-RA1)**. Consulta [qué retomaremos después](ut1/
 
 ### U.T. 1. Integración, procesamiento y análisis de información
 
-Del dato bruto a una consulta útil: ciclo de análisis, fundamentos, extracción, preproceso, formatos, planificación y laboratorio en la nube.
+Del dato bruto a una consulta útil: marco Big Data, ciclo de análisis, fundamentos, extracción, preproceso, formatos, planificación y laboratorio en la nube.
 
 - [La unidad](ut1/index.md)
 - [RA1 y criterios de evaluación](ut1/ra1.md)
+- [Cuadernos de Google Colab](ut1/cuadernos.md)
+- [1.0 Marco Big Data](ut1/marco-big-data.md)
 - [1.1 Integrar, procesar y analizar](ut1/ciclo-analisis.md)
 - [1.2 Fundamentos matemáticos y algoritmos](ut1/fundamentos.md)
 - [1.3 Extracción de información](ut1/extraccion.md)
@@ -47,7 +49,7 @@ Del dato bruto a una consulta útil: ciclo de análisis, fundamentos, extracció
 - La **búsqueda** del encabezado localiza un concepto (`Parquet`, `Athena`, `pandas`…).
 
 !!! tip "Cómo estudiar"
-    Lee el apartado, ejecuta los fragmentos (Colab o local), cierra el [laboratorio AWS](ut1/laboratorio-aws.md) y responde la [autoevaluación](ut1/autoevaluacion.md). El test no sustituye a las pruebas del aula.
+    Lee el apartado, abre el [cuaderno Colab](ut1/cuadernos.md) correspondiente (copia a tu Drive), cierra el [laboratorio AWS](ut1/laboratorio-aws.md) y responde la [autoevaluación](ut1/autoevaluacion.md). El test no sustituye a las pruebas del aula.
 
 !!! info "Origen del material"
     Estos apuntes parten del temario de aula (eXeLearning UT1, PDF de preproceso, laboratorio AWS, GitHub Projects; licencia de partida [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) en los paquetes eXe). Se han reorganizado para el curso **2026/2027**.

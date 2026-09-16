@@ -36,7 +36,19 @@ source .venv/bin/activate
 pip install pandas pyarrow faker
 ```
 
-Usa Docker cuando el profesor entregue un `compose.yaml` (laboratorio, Spark local, etc.). El manual de aula *Manual para Docker en Big Data* permanece en Moodle como referencia de capturas; no se duplica aquí.
+Usa Docker cuando el profesor entregue un `compose.yaml` (laboratorio, Spark local, etc.). El *Manual para Docker en Big Data* de Moodle permanece como referencia de capturas; no se duplica el ZIP aquí.
+
+Comandos que sí verás en ese manual (memoriza el oficio, no la flag):
+
+```sh
+docker pull python:3.12-slim
+docker run --rm -it -v "$PWD":/work -w /work python:3.12-slim bash
+docker compose up -d
+docker compose ps
+docker compose down
+```
+
+El volumen (`-v`) monta tus CSV. El contenedor se tira (`--rm`) cuando sales: el dato tiene que estar **fuera**, en el host o en S3.
 
 !!! tip "Criterio f), sin marear"
     Elegir S3 + Glue + Athena **es** integrar sistemas. Elegir Docker es **cómo** ejecutas el cliente. No los mezcles en la misma frase de examen como si fueran el mismo oficio.
