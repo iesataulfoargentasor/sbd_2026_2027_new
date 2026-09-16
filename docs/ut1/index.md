@@ -27,7 +27,7 @@ Empieza por **[Inicio con Python](inicio-python.md)** (el Colab de portada del e
 | [1.3 Extracción de información](extraccion.md) | **b)** | SQL, API, scraping y texto; primer pandas |
 | [1.4 Preproceso de datos](preproceso.md) | **b)** / **d)** | Limpieza, nulos, duplicados, joins y receta monolítica frente a clúster |
 | [1.5 Formatos de datos](formatos.md) | **c)** | Filas frente a columnas; Avro, Parquet y ORC para **consultar** |
-| [1.6 Planificación con GitHub Projects](planificacion.md) | **e)** | Objetivos, prioridades, mini-sprints e issues |
+| [1.6 Planificación con GitHub Projects](planificacion.md) | **e)** | Objetivos, mini-sprints, plantillas Colab e issues |
 | [1.7 Laboratorio AWS](laboratorio-aws.md) | **f)** / **g)** | S3 + Glue + Athena; coste por dato escaneado y calidad del esquema |
 | [Modelado](modelado.md) | **a)** | Diagramas, grafos, árboles (anexo Word Tema 4) |
 | [Tiempo real](tiempo-real.md) | reconocimiento | Kafka, MQTT, Grafana; el reloj del streaming (Tema 5) |
