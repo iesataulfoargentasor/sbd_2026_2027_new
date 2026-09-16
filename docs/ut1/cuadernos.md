@@ -56,14 +56,17 @@ Estos enlaces están en las páginas *Solución Profesor* de los eXe. Úsalos **
 
 El índice de cada apartado enlaza el mismo cuaderno junto a la teoría, para no tener que volver aquí.
 
-## Vídeos de los eXe
+## Vídeos de aula
+
+Hace falta la cuenta de Educantabria. Los de YouTube son públicos; los de SharePoint son los de Moodle.
 
 | Paquete | Recurso |
 | --- | --- |
-| Formato de datos | [Avro, Parquet y ORC](https://youtu.be/DafzYp5XRmA) |
-| GitHub Projects | [Issues en GitHub](https://youtu.be/7eeHBaPnUGM) |
-| Técnicas de análisis (Moodle) | Vídeo ETL en Colab (el cuaderno es el de [Inicio con Python](inicio-python.md)) |
-| Manual Docker | [Hadoop con Docker (Tomás Fernández Pena)](https://youtu.be/f6FJ91f-qpA) |
+| Técnicas de análisis / ETL en Colab | [SharePoint (Educantabria)](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/EeKBcqViPHZMn0uMthdtUJkBkyb1SHk3crRjD2Rrd8gEPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b1SA87) · [página Inicio con Python](inicio-python.md) |
+| Laboratorio AWS (S3, Glue, Athena) | [SharePoint (Educantabria)](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/IQA_J2q1KXh9TbFUekUIK95zAY6sW6S5HnwHYyYyzhuF5Rc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dsJfm6) · [1.7 Laboratorio](laboratorio-aws.md) |
+| Formato de datos | [Avro, Parquet y ORC (YouTube)](https://youtu.be/DafzYp5XRmA) |
+| GitHub Projects | [Issues en GitHub (YouTube)](https://youtu.be/7eeHBaPnUGM) |
+| Manual Docker | [Hadoop con Docker (YouTube)](https://youtu.be/f6FJ91f-qpA) |
 
 ## Datos de apoyo (fuera de este repo)
 

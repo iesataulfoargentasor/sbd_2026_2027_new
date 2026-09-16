@@ -34,6 +34,12 @@ Eso convierte dato bruto en información útil. La evidencia no es “haber abie
 
 La teoría que envuelve esta práctica (valor del dato, ETL, batch/streaming, descriptivo/predictivo/prescriptivo) está en [1.1 Integrar, procesar y analizar](ciclo-analisis.md).
 
+## Vídeo de aula (Moodle / SharePoint)
+
+El eXe *Técnicas de análisis de datos en Big Data* se acompaña de esta grabación (cuenta Educantabria):
+
+**[Vídeo: técnicas de análisis y ETL en Colab](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/EeKBcqViPHZMn0uMthdtUJkBkyb1SHk3crRjD2Rrd8gEPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b1SA87)**
+
 ## Solución de referencia (profesorado)
 
 Página *Solución Profesor* del mismo eXe. Úsala **después** de intentar el cuaderno, o en corrección.

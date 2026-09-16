@@ -41,7 +41,9 @@ El método más habitual sigue tres verbos. Las siglas **ETL** (extraer → tran
 
 ## Actividad práctica (nivel inicial) — ETL en Colab
 
-Apartado 6 del eXe (*Inicio con Python*). El mismo cuaderno está en la **portada** de *Técnicas de análisis de datos en Big Data* y en la de *Fundamentos*. El vídeo de Moodle explica el mismo flujo.
+Apartado 6 del eXe (*Inicio con Python*). El mismo cuaderno está en la **portada** de *Técnicas de análisis de datos en Big Data* y en la de *Fundamentos*.
+
+Vídeo de aula (Educantabria / SharePoint): [técnicas de análisis y ETL en Colab](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/EeKBcqViPHZMn0uMthdtUJkBkyb1SHk3crRjD2Rrd8gEPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b1SA87).
 
 Tenéis que desarrollar, en Google Colab, un ETL mínimo:
 

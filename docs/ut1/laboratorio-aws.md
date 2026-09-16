@@ -13,6 +13,8 @@ Eso cierra **f)** (elegir e integrar sistemas) y **g)** (coste y calidad).
 
 El laboratorio se hace en **AWS Academy** (Learner Lab), con la región y el rol que indique el profesor (`LabRole` suele ser el de aula). No copies claves de cuentas personales al cuaderno ni al git. **No hay Colab de este laboratorio**: el CSV se genera en local ([generar_logs.py](../assets/practicas/generar_logs.py)) y el resto es consola.
 
+Vídeo de aula (Educantabria / SharePoint): [laboratorio de logs web en AWS (S3, Glue, Athena)](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/IQA_J2q1KXh9TbFUekUIK95zAY6sW6S5HnwHYyYyzhuF5Rc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dsJfm6).
+
 ## Mini-mapa
 
 | Servicio | Qué es | En la práctica |

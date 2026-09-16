@@ -44,15 +44,15 @@ Cada paquete eXeLearning (o PDF) de la UT1 de Moodle queda asociado al mismo CE.
 | --- | --- | --- |
 | Introducción a Big Data SBD | vocabulario | [1.0](marco-big-data.md) |
 | Introducción al procesamiento y análisis | **b)** | [1.1](ciclo-analisis.md) |
-| Técnicas de análisis de datos en Big Data (vídeo + eXe combinado + Word Temas 4–7) | **a)**–**g)** | [Inicio con Python](inicio-python.md), [1.1](ciclo-analisis.md), [1.2](fundamentos.md), [modelado](modelado.md), [tiempo real](tiempo-real.md), [costes](costes-calidad.md) |
+| Técnicas de análisis de datos en Big Data (vídeo SharePoint + eXe combinado + Word Temas 4–7) | **a)**–**g)** | [Inicio con Python](inicio-python.md), [1.1](ciclo-analisis.md), [1.2](fundamentos.md), [modelado](modelado.md), [tiempo real](tiempo-real.md), [costes](costes-calidad.md) |
 | Manual Docker (clúster Hadoop) | apoyo / **f)** | [Entorno Docker](docker.md) |
 | Fundamentos matemáticos y algoritmos | **a)** | [1.2](fundamentos.md) |
 | Técnicas y procesos de extracción | **b)** / **d)** | [1.3](extraccion.md) |
 | Preproceso de datos (PDF) | **b)** / **d)** | [1.4](preproceso.md) |
 | Formato de datos SBD | **c)** | [1.5](formatos.md) |
 | Planificación con GitHub Projects | **e)** | [1.6](planificacion.md) |
-| Laboratorio logs web AWS (S3, Glue, Athena) | **f)** / **g)** | [1.7](laboratorio-aws.md) |
-| Vídeo ETL en Colab | **b)** | Primer flujo en [1.1](ciclo-analisis.md) y [1.3](extraccion.md) |
+| Laboratorio logs web AWS (S3, Glue, Athena) | **f)** / **g)** | [1.7](laboratorio-aws.md) (vídeo SharePoint en la misma página) |
+| Vídeo ETL en Colab (SharePoint) | **b)** | [Inicio con Python](inicio-python.md) y [1.1](ciclo-analisis.md) |
 
 !!! info "Frontera con BDA"
     El diseño del lago y Pentaho se quedan en BDA. El paquete *Introducción a Big Data* se recupera en [1.0](marco-big-data.md) para no perder el material de Moodle. Aquí la evidencia es **código, consulta y justificación**, no un `.ktr`.
