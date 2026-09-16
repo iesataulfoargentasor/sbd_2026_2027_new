@@ -6,13 +6,13 @@ tags:
 
 # Entorno Docker (apoyo) y clúster Hadoop
 
-Guion de aula: eXe *Manual para Docker en Big Data* (clúster Hadoop en contenedores) y el PDF *Despliegue de un clúster mediante contenedores Docker* (Tomás Fernández Pena, CC BY-SA 4.0).
+Guía de entorno Docker y clúster Hadoop. Referencia complementaria: *Despliegue de un clúster mediante contenedores Docker* (Tomás Fernández Pena, CC BY-SA 4.0).
 
 Docker **no** es un criterio propio del RA1. Este material es un **laboratorio de Hadoop en contenedores**: NameNode, YARN, DataNodes y un MapReduce de ejemplo. Sirve para **reproducir** un entorno distribuido en un solo PC y para el criterio **f)** (elegir e integrar sistemas) cuando el profesor lo pide.
 
 Los ficheros pesados del aula (`Hadoop_cluster_profesor.zip`, `Hadoop_con_Docker.pdf`) **no** se copian a git; se descargan desde Moodle. Aquí queda la chuleta, la arquitectura, el guion paso a paso, el vídeo y el enunciado.
 
-Licencia de partida del eXe: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Licencia: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## 1. Qué problema resuelve
 
@@ -160,7 +160,7 @@ Más: [YARN Commands](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-y
 
 Modelo *data-parallel*: los datos de entrada son pares clave/valor en HDFS; **Map** procesa bloques en paralelo en los nodos donde viven; **Reduce** agrega resultados.
 
-Ejemplo **WordCount** (del PDF):
+Ejemplo **WordCount**:
 
 ```text
 map(key, value):
@@ -173,11 +173,11 @@ reduce(key, values):
 
 En la actividad no programas WordCount: ejecutas el ejemplo **`pi`** del JAR de MapReduce, que aproxima π con Monte Carlo.
 
-## 4. Chuleta Docker (del eXe)
+## 4. Chuleta Docker
 
 ### 4.1. Comandos básicos e instalación
 
-**Linux (Ubuntu)** — del eXe:
+**Linux (Ubuntu):**
 
 ```sh
 sudo apt update
@@ -229,7 +229,7 @@ CMD [ "comando", "parametros" ]
 | `COPY` | Copia ficheros del host al contenedor |
 | `CMD` | Comando por defecto al **arrancar** el contenedor |
 
-Ejemplo del eXe (Python en Ubuntu):
+Ejemplo práctico (Python en Ubuntu):
 
 ```dockerfile
 FROM ubuntu:20.04
@@ -242,17 +242,17 @@ Construir: `docker build -t mi-imagen .` (el `.` es el directorio del Dockerfile
 
 ### 4.5. Docker Compose
 
-En instalaciones recientes el plugin se invoca como **`docker compose`** (con espacio). El eXe escribe `docker-compose` (binario antiguo); en muchos equipos funcionan **ambos**.
+En instalaciones recientes el plugin se invoca como **`docker compose`** (con espacio). La variante `docker-compose` corresponde al binario antiguo; en muchos equipos funcionan **ambos**.
 
 ```sh
 docker compose up -d             # levantar servicios en segundo plano
 docker compose down              # parar y eliminar contenedores del stack
 docker compose stop              # parar sin borrar
 docker compose start             # reiniciar servicios parados
-docker compose up --scale dnnm=4 -d   # escalar workers (ver guion del PDF)
+docker compose up --scale dnnm=4 -d   # escalar workers (ver guion práctico)
 ```
 
-Linux (paquete aparte, eXe): `sudo apt install docker-compose`.
+Linux (paquete independiente): `sudo apt install docker-compose`.
 
 ### 4.6. Redes y volúmenes
 
@@ -294,7 +294,7 @@ docker network create mi-red
 
 ## 5. Materiales de Moodle
 
-Descarga desde el eXe (sección *Archivos*):
+Descarga los archivos de apoyo desde el aula virtual:
 
 | Fichero | Contenido |
 | --- | --- |
@@ -416,14 +416,14 @@ rm fich300M
 exit
 ```
 
-En la UI: **Utilities → Browse the filesystem**. Preguntas del PDF:
+En la UI: **Utilities → Browse the filesystem**. Preguntas de comprobación:
 
 - ¿En cuántos bloques se ha partido el fichero (~300 MB)?
 - ¿En qué DataNodes viven las réplicas?
 
 ### Parte F — Probar MapReduce (π)
 
-Dentro del ResourceManager (comando del PDF; equivalente al del eXe):
+Dentro del ResourceManager:
 
 ```sh
 docker container exec -ti resourcemanager /bin/bash
@@ -438,7 +438,7 @@ En `http://localhost:8088` el job debe quedar **FINISHED**. Anota:
 - ¿Cuántos contenedores MapReduce se lanzaron?
 - Valor aproximado de π impreso en consola.
 
-Variante del enunciado eXe (más map tasks / más precisión):
+Variante de la actividad (más map tasks / más precisión):
 
 ```sh
 hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples.jar pi 16 10000
@@ -509,7 +509,7 @@ services:
 
 [Instalación de Apache Hadoop con Docker](https://youtu.be/f6FJ91f-qpA) (Tomás Fernández Pena, USC). Resume NameNode, DataNodes, YARN, Compose y la prueba MapReduce (π).
 
-**Resumen del vídeo** (eXe *Ayuda para la actividad*):
+**Resumen del vídeo de ayuda para la actividad:**
 
 | Bloque | Idea clave |
 | --- | --- |
@@ -530,7 +530,7 @@ services:
 - Reconocer HDFS, YARN y MapReduce (sección 3).
 - Equipo con **≥ 8 GB de RAM** y Docker Desktop (macOS/Windows) o Docker en Linux.
 
-### Instrucciones (enunciado eXe)
+### Instrucciones de la actividad
 
 1. **Entorno:** instala Docker; comprueba `docker --version`.
 2. **Imágenes:** Dockerfile sobre Ubuntu que instale Hadoop; configura **NameNode** y **Resource Manager**.
@@ -554,7 +554,7 @@ hadoop jar /path/to/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples.jar 
 - [ ] `Dockerfile`(s) y `docker-compose.yml` utilizados.
 - [ ] Resultado del cálculo de π (consola o captura).
 
-### Criterios de evaluación (eXe)
+### Criterios de evaluación
 
 | Criterio | Qué se mira |
 | --- | --- |
@@ -584,11 +584,11 @@ hadoop jar /path/to/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples.jar 
 | `permission denied` en Linux | Usuario fuera del grupo docker | `sudo` o añade tu usuario al grupo `docker` |
 | Confundes “contenedor” | Jerga YARN vs Docker | YARN reparte **JVMs**; Docker empaqueta **SO+Java+Hadoop** |
 
-**Erratas del material original:**
+**Errores frecuentes:**
 
 - El comentario del Dockerfile base dice “versión 3.1.1” pero instala **3.3.6** (el `ENV` manda).
-- El eXe mezcla `docker-compose` (v1) y `docker compose` (plugin v2); usa el que tengas instalado.
-- El enunciado eXe usa `hadoop jar`; en Hadoop 3 con YARN es más habitual `yarn jar` (ambos pueden funcionar según configuración).
+- Existen las variantes `docker-compose` (v1) y `docker compose` (plugin v2); usa el que tengas instalado.
+- La actividad usa `hadoop jar`; en Hadoop 3 con YARN es más habitual `yarn jar` (ambos pueden funcionar según configuración).
 - “Nodos maestros” en plural: en este lab hay **un** NameNode y **un** ResourceManager; la alta disponibilidad (varios NN) no entra en UT1.
 
 ## 10. Criterio f) en el RA1

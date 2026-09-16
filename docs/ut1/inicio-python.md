@@ -8,9 +8,7 @@ tags:
 
 # Inicio con Python (cuaderno de arranque)
 
-Este es el Google Colab que el eXe *Técnicas de análisis de datos en Big Data* (y el de *Introducción al procesamiento*) pide **consultar antes** de cualquier práctica del tema.
-
-En la portada del eXe aparece así: *«Para poder realizar las prácticas o ejemplos prácticos que se mencionan en este tema, te sugiero que antes consultes este GoogleColab»*. El mismo enlace se repite al abrir *Fundamentos matemáticos y algorítmicos* y en la actividad 6 (*Inicio con Python*).
+Consulta este cuaderno de Google Colab **antes** de realizar las prácticas del tema.
 
 ## Cuaderno del alumnado
 
@@ -36,13 +34,13 @@ La teoría que envuelve esta práctica (valor del dato, ETL, batch/streaming, de
 
 ## Vídeo de aula (Moodle / SharePoint)
 
-El eXe *Técnicas de análisis de datos en Big Data* se acompaña de esta grabación (cuenta Educantabria):
+Esta grabación sirve de apoyo al tema (cuenta Educantabria):
 
 **[Vídeo: técnicas de análisis y ETL en Colab](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/EeKBcqViPHZMn0uMthdtUJkBkyb1SHk3crRjD2Rrd8gEPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b1SA87)**
 
 ## Solución de referencia (profesorado)
 
-Página *Solución Profesor* del mismo eXe. Úsala **después** de intentar el cuaderno, o en corrección.
+Consulta la solución del profesor. Úsala **después** de intentar el cuaderno, o en corrección.
 
 **[Solución profesorado](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing)**
 

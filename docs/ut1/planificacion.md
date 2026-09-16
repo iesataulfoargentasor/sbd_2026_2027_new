@@ -7,15 +7,15 @@ tags:
 
 # 1.6. Planificar el análisis (GitHub Projects)
 
-Guion de aula: eXe *Planificación de proyectos de análisis de datos* (RA1, criterio **e)**) y el Word del mismo paquete (plantillas de mini-sprint, rúbrica y actividad Open-Meteo).
+Este apartado trabaja el criterio **e)** mediante mini-sprints, una rúbrica y una actividad con Open-Meteo.
 
 El criterio **e)** no pregunta si sabes Scrum de memoria. Pregunta si **cierras un trabajo de datos a tiempo**: objetivos, prioridades, orden y reloj. Programar pandas sin eso suele dejar el cuaderno a medias y el resumen —lo único que el cliente usa— no existe.
 
-Licencia de partida del eXe: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Licencia: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
 <figure markdown="block">
 ![Equipo de análisis delante de un tablero con columnas To do, In progress y Done.](../assets/practicas/planificacion/equipo-tablero.jpg){ width="100%" }
-<figcaption>Portada del eXe: el análisis no es solo el código. Hay un tablero, un objetivo y un tiempo cerrado. En clase ese tablero será una celda Markdown o un GitHub Project.</figcaption>
+<figcaption>El análisis no es solo el código. Hay un tablero, un objetivo y un tiempo cerrado. En clase ese tablero será una celda Markdown o un GitHub Project.</figcaption>
 </figure>
 
 ## 1. Por qué planificar
@@ -30,7 +30,7 @@ El criterio **e)** pide: *establecer objetivos y prioridades, secuenciación y o
 
 <figure markdown="block">
 ![Gráfico de tarta titulado Consecuencias de no planificar: tiempo perdido 35 %, no se termina lo esencial 30 %, código desorganizado 25 %, frustración del equipo 10 %.](../assets/practicas/planificacion/consecuencias-no-planificar.png){ width="90%" }
-<figcaption>Figura del eXe. Los porcentajes son <strong>didácticos</strong> (no salen de una encuesta): el mensaje es que lo primero que se come el reloj es lo accesorio, y lo que falla al entregar es lo esencial.</figcaption>
+<figcaption>Los porcentajes son <strong>didácticos</strong> (no salen de una encuesta): el mensaje es que lo primero que se come el reloj es lo accesorio, y lo que falla al entregar es lo esencial.</figcaption>
 </figure>
 
 Ejemplo de aula. Limpiar [clientes_actividad.csv](../assets/practicas/clientes_actividad.csv) parece “una tarde”. Sin plan: tres personas pican el mismo `replace`, nadie genera el recuento por ciudad y el gráfico se come los 55 minutos. Con plan: el grupo sabe qué es **imprescindible** y qué es **ornamento**.
@@ -41,7 +41,7 @@ Un proyecto típico encaja en estas fases. Planificar es decidir **qué** haces 
 
 <figure markdown="block">
 ![Flujo vertical: definición del problema, recogida de datos, limpieza y preparación, análisis y modelado, interpretación y comunicación, documentación, con una flecha de vuelta a la definición.](../assets/practicas/planificacion/ciclo-vida-proyecto.png){ width="55%" }
-<figcaption>Ciclo del eXe. La flecha de vuelta existe: al documentar o al ver el gráfico, a veces redefines la pregunta. No es un fallo; es no analizar un dataset sucio “porque ya habíamos empezado el plot”.</figcaption>
+<figcaption>La flecha de vuelta existe: al documentar o al ver el gráfico, a veces redefines la pregunta. No es un fallo; es no analizar un dataset sucio “porque ya habíamos empezado el plot”.</figcaption>
 </figure>
 
 | Fase | Pregunta | En esta UT |
@@ -65,11 +65,11 @@ Un objetivo responde a: *¿qué debe ser capaz de hacer mi cuaderno cuando esté
 | “Mirar el tiempo.” | “Temperaturas horarias de Castro Urdiales: máxima y mínima del día en un DataFrame.” |
 | “Usar una API.” | “Combinar el CSV de clientes con Open-Meteo y un resumen por categoría.” |
 
-Tres rasgos (mapa del eXe). Un objetivo **claro** es a la vez:
+Tres rasgos. Un objetivo **claro** es a la vez:
 
 <figure markdown="block">
 ![Mapa mental: Objetivo claro se parte en concreto (dataset, tratamiento, resultado), realista (tiempo de la asignatura, recursos) y medible (métrica, gráfico, tabla resumen).](../assets/practicas/planificacion/objetivo-claro.png){ width="100%" }
-<figcaption>Figura del eXe. Ignora los dos puntos decorativos de las etiquetas. Concreto = dataset + tratamiento + resultado. Realista = cabe en 1–2 sesiones con lo que ya sabes. Medible = existe la tabla, el gráfico o el recuento; no “lo dejé más o menos limpio”.</figcaption>
+<figcaption>Ignora los dos puntos decorativos de las etiquetas. Concreto = dataset + tratamiento + resultado. Realista = cabe en 1–2 sesiones con lo que ya sabes. Medible = existe la tabla, el gráfico o el recuento; no “lo dejé más o menos limpio”.</figcaption>
 </figure>
 
 Eso es el *definition of done* del sprint de aula.
@@ -95,7 +95,7 @@ Si el reloj llega a cero, las esenciales tienen que estar **hechas**. El gráfic
 
 ### Eisenhower (urgente × importante)
 
-El eXe sugiere esta matriz. En aula, “urgente” = *si no lo hago en esta sesión, el entregable se cae*.
+Utiliza esta matriz para priorizar las tareas. En aula, “urgente” = *si no lo hago en esta sesión, el entregable se cae*.
 
 |  | **Urgente** | **No urgente** |
 | --- | --- | --- |
@@ -108,7 +108,7 @@ Importante y urgente primero; bonito y no urgente, después. No confundas *el co
 
 Regla: **primero aseguro los datos, luego analizo.** Un gráfico de `Madird` miente.
 
-El eXe traía un diagrama de Gantt con todas las barras el mismo día (`2025-11-28`): **no muestra orden**. Aquí el orden sí depende:
+El diagrama de Gantt debe mostrar la secuencia y las dependencias entre tareas:
 
 ```mermaid
 flowchart TD
@@ -132,7 +132,7 @@ flowchart TD
 8. Visualizaciones o informes (deseable).
 9. Redactar conclusiones.
 
-Antes de programar: **escribe esta lista en una celda Markdown**. Debajo de cada número, un ejemplo mínimo de pandas (o de la librería que toque). El eXe pide un Colab **tuyo** con ese esqueleto; no hay un enlace fijo de profesorado para esta página.
+Antes de programar: **escribe esta lista en una celda Markdown**. Debajo de cada número, un ejemplo mínimo de pandas (o de la librería que toque). Crea un Colab **tuyo** con ese esqueleto.
 
 ## 6. Organización del tiempo
 
@@ -144,7 +144,7 @@ Estrategias mínimas:
 2. Estimar cada bloque (aunque sea a ojo).
 3. Reservar el **final** para probar y revisar, no para empezar el gráfico.
 
-Ejemplo del eXe: **2 × 55 min**.
+Ejemplo: **2 × 55 min**.
 
 ```mermaid
 flowchart LR
@@ -174,7 +174,7 @@ En software y datos se usa [Scrum](https://es.wikipedia.org/wiki/Scrum_(desarrol
 
 <figure markdown="block">
 ![Requisitos alimentan el sprint backlog; durante el sprint hay bucles de reunión diaria y una reunión más larga; al final hay un entregable.](../assets/practicas/planificacion/scrum-sprint.png){ width="85%" }
-<figcaption>Figura del eXe. En Scrum de libro el bucle corto es el <em>daily</em> (15 min) y al <strong>cierre del sprint</strong> hay revisión y retrospectiva. La etiqueta «reunión mensual» del dibujo no es el modelo de aula ni el único ritmo posible: el sprint dura lo que el equipo acuerda (aquí, 1–2 sesiones).</figcaption>
+<figcaption>En Scrum de libro el bucle corto es el <em>daily</em> (15 min) y al <strong>cierre del sprint</strong> hay revisión y retrospectiva. La etiqueta «reunión mensual» del dibujo no es el modelo de aula ni el único ritmo posible: el sprint dura lo que el equipo acuerda (aquí, 1–2 sesiones).</figcaption>
 </figure>
 
 En clase usamos **mini-sprints**:
@@ -206,7 +206,7 @@ Eso **es** el criterio e) en pequeño: se ve el objetivo, el orden y el tiempo.
 
 Cuando el trabajo vive en un repositorio, el tablero de papel pasa a GitHub.
 
-Vídeo del eXe (haz lo mismo en **tu** repo): [YouTube 7eeHBaPnUGM](https://youtu.be/7eeHBaPnUGM).
+Vídeo (haz lo mismo en **tu** repo): [YouTube 7eeHBaPnUGM](https://youtu.be/7eeHBaPnUGM).
 
 1. Un **issue** por tarea (“Unificar ciudades”), no un issue único titulado “el trabajo”.
 2. Un **Project** con *Por hacer / En progreso / Hecho*.
@@ -239,7 +239,7 @@ Criterio RA1: e) (prioridad) + b) (extracción/limpieza)
 
 ## 7. Cómo se evalúa e) en las prácticas
 
-Del Word de aula. No es un examen de definiciones de Scrum.
+La actividad evalúa la planificación práctica del trabajo.
 
 **Antes de programar** (celda Markdown al inicio, o issues + Project):
 

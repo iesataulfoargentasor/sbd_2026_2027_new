@@ -23,7 +23,7 @@ La referencia curricular en Cantabria es la [Orden EDU/48/2024, de 8 de octubre,
 El sitio desarrolla **UT1 (SBD-RA1)**. Consulta [qué retomaremos después](ut1/continuidad.md).
 
 !!! warning "Antes de las prácticas — Inicio con Python"
-    El eXe *Técnicas de análisis de datos en Big Data* abre con este cuaderno. Cópialo a tu Drive y ejecútalo **antes** de fundamentos, extracción o Avro.
+    Comienza con este cuaderno de Python. Cópialo a tu Drive y ejecútalo **antes** de fundamentos, extracción o Avro.
 
     **[Inicio con Python (Google Colab)](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página del cuaderno](ut1/inicio-python.md) · [todos los Colab](ut1/cuadernos.md)
 
@@ -60,5 +60,5 @@ Del dato bruto a una consulta útil: marco Big Data, ciclo de análisis, fundame
 !!! tip "Cómo estudiar"
     Lee el apartado, abre el [cuaderno Colab](ut1/cuadernos.md) correspondiente (copia a tu Drive), cierra el [laboratorio AWS](ut1/laboratorio-aws.md) y responde la [autoevaluación](ut1/autoevaluacion.md). El test no sustituye a las pruebas del aula.
 
-!!! info "Origen del material"
-    Estos apuntes parten del temario de aula (eXeLearning UT1, PDF de preproceso, laboratorio AWS, GitHub Projects; licencia de partida [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) en los paquetes eXe). Se han reorganizado para el curso **2026/2027**.
+!!! info "Licencia"
+    [Creative Commons Reconocimiento–CompartirIgual 4.0](https://creativecommons.org/licenses/by-sa/4.0/).

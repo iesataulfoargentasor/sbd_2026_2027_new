@@ -5,9 +5,9 @@ tags:
   - RA1
 ---
 
-# 1.0. Marco: qué es Big Data (paquete de introducción)
+# 1.0. Marco: qué es Big Data
 
-Este apartado incorpora el paquete eXe *UT1 Introducción a Big Data SBD*. En BDA ya diseñaste el almacén; aquí el marco sirve para **situar el análisis**: de dónde sale el valor, quién lo extrae y en qué tipo de almacén consultas.
+En BDA ya diseñaste el almacén; aquí el marco sirve para **situar el análisis**: de dónde sale el valor, quién lo extrae y en qué tipo de almacén consultas.
 
 Los datos son el “petróleo del siglo XXI” (Clive Humby, 2006), pero en los 2020 **almacenar no basta**: hay que comprenderlos y gestionarlos. *Big* implica volúmenes que un solo equipo no sostiene: hace falta computación distribuida o nube. Aun así, mucho problema de empresa local se resuelve con *small data*; las técnicas de esta UT también sirven a esa escala.
 
@@ -74,11 +74,11 @@ El arquitecto elige el tablero; el ingeniero mueve el dato; el científico extra
 - Mapas: rutas con histórico y tráfico en vivo.
 - Redes sociales: sentimiento sobre un producto o tendencia.
 
-## Actividad de aula (paquete Introducción a Big Data)
+## Actividad de aula
 
 **Parte 1 — Reflexión.** ¿Cuál de las V te parece la más importante y por qué? ¿Qué servicio de tu día a día sería difícil de sustituir y qué V le duele?
 
-**Parte 2 — Landscape.** En el [mapa Firstmark](https://mad.firstmark.com/) (vista [card](https://mad.firstmark.com/card)), elige tres herramientas. Anota **categoría** y **una alternativa** de la misma fila. El eXe (solución profesorado) trabaja estas:
+**Parte 2 — Landscape.** En el [mapa Firstmark](https://mad.firstmark.com/) (vista [card](https://mad.firstmark.com/card)), elige tres herramientas. Anota **categoría** y **una alternativa** de la misma fila. Como referencia, puedes estudiar estas:
 
 | Herramienta | Categoría | Alternativa |
 | --- | --- | --- |
@@ -91,10 +91,10 @@ El arquitecto elige el tablero; el ingeniero mueve el dato; el científico extra
 
 También valen Kafka, Spark o Athena si van a salir en el ciclo.
 
-## Bibliografía (eXe)
+## Bibliografía
 
 - [Introducción al Big Data (Aitor Medrano)](https://aitor-medrano.github.io/iabd/de/bigdata.html)
 - [Introducing Data Science](https://www.manning.com/books/introducing-data-science) (Cielen, Meysman, Ali)
 
 !!! info "No sustituye a BDA"
-    Las 5 V y el lake/warehouse se *imparten* como diseño en BDA. Aquí el paquete se recupera para no perder el material de Moodle y para hablar el mismo idioma cuando extraigas y consultes.
+    Las 5 V y el lake/warehouse se *imparten* como diseño en BDA. Aquí se utilizan estos conceptos para interpretar las fuentes y las consultas.

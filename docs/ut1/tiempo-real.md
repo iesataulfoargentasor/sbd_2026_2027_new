@@ -7,7 +7,7 @@ tags:
 
 # Análisis, registro y almacenamiento en tiempo real
 
-Anexo Word del eXe *Técnicas de análisis* (Tema 5). El Anexo VI pide **reconocer** el análisis en tiempo real. En UT1 no despliegas Kafka en producción; sí eliges el **reloj** ([1.1](ciclo-analisis.md)).
+El Anexo VI pide **reconocer** el análisis en tiempo real. En UT1 no despliegas Kafka en producción; sí eliges el **reloj** ([1.1](ciclo-analisis.md)).
 
 ## Batch frente a streaming
 

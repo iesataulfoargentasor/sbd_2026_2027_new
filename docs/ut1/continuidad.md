@@ -31,4 +31,4 @@ RA2 parte de **indicadores y gráficos** sobre esos datasets. RA3 profundiza en 
 
 ## Proyecto integrador (anexo Word Tema 7)
 
-El eXe combinado cierra UT1 con un pipeline opcional (invernadero u otro caso): objetivo → ETL → modelo → streaming o micro-lotes → almacén → Grafana → informe de coste/calidad → presentación de 10 min. Cubre **a)–g)**. En esta entrega se reconoce el mapa; la evidencia mínima de RA1 sigue siendo pandas + Athena + tablero, no un invernadero Kafka obligatorio.
+Como ampliación, UT1 propone un pipeline opcional (invernadero u otro caso): objetivo → ETL → modelo → streaming o micro-lotes → almacén → Grafana → informe de coste/calidad → presentación de 10 min. Cubre **a)–g)**. En esta entrega se reconoce el mapa; la evidencia mínima de RA1 sigue siendo pandas + Athena + tablero, no un invernadero Kafka obligatorio.

@@ -7,7 +7,7 @@ tags:
 
 # 1.3. Extracción de información
 
-Guion de aula: eXe *Técnicas y procesos de extracción de información*. Licencia de partida [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Aprenderás a extraer información de ficheros, bases de datos, APIs y páginas web.
 
 Tener datos no significa tener información útil. **Extraer información** es:
 
@@ -20,10 +20,10 @@ Eso desarrolla el criterio **b)**. Relacionar después varias fuentes extraídas
 
 <figure markdown="block">
 ![Estudiante trabajando con una tabla, código y gráfico; sobre él aparecen los símbolos de una API, una nube, una base de datos e Internet.](../assets/practicas/extraccion/portada-extraccion.jpg){ width="72%" }
-<figcaption>Portada del eXe. La fuente puede ser un fichero, una base de datos, una API o una web; el resultado útil es una tabla verificable, no la descarga en bruto.</figcaption>
+<figcaption>La fuente puede ser un fichero, una base de datos, una API o una web; el resultado útil es una tabla verificable, no la descarga en bruto.</figcaption>
 </figure>
 
-Cuaderno de síntesis que aparece en la portada del eXe: [Técnicas y procesos de extracción de información](https://colab.research.google.com/drive/1JvpH-IoMbgZzOoRdAXq2zTusWKUXLk74?usp=sharing).
+Cuaderno de síntesis: [Técnicas y procesos de extracción de información](https://colab.research.google.com/drive/1JvpH-IoMbgZzOoRdAXq2zTusWKUXLk74?usp=sharing).
 
 ## 1. Objetivos de aprendizaje
 
@@ -49,7 +49,7 @@ Los datos cotidianos —notas, compras, ventas, encuestas, publicaciones o logs�
 | **Semiestructurado** | Claves o etiquetas; el esquema puede variar | JSON, XML, logs | Campos seleccionados y tabulados |
 | **No estructurado** | No trae columnas de negocio | Texto libre, imagen, audio, HTML visual | Entidades, palabras, producto/precio |
 
-Ejemplo del eXe:
+Ejemplo:
 
 - **Fuente:** una web de noticias.
 - **Extracción:** titular, fecha y autor de cada noticia.
@@ -109,7 +109,7 @@ ORDER BY total_clientes DESC;
 
 ### 3.2. APIs
 
-Una API es el “**camarero digital**” del eXe: haces un pedido (*request*) y recibes una respuesta (*response*), normalmente JSON.
+Una API es el “**camarero digital**”: haces un pedido (*request*) y recibes una respuesta (*response*), normalmente JSON.
 
 Ventajas:
 
@@ -119,7 +119,7 @@ Ventajas:
 
 Una respuesta JSON sigue siendo **semiestructurada**, no una tabla. La API garantiza un contrato, pero tú eliges campos y construyes el DataFrame.
 
-Ejemplos: Open-Meteo, OpenWeather, Google Maps y servicios de reservas. El ejemplo de X/Twitter del eXe exige hoy autenticación, permisos y respetar sus condiciones; no presupongas acceso gratuito.
+Ejemplos: Open-Meteo, OpenWeather, Google Maps y servicios de reservas. El ejemplo de X/Twitter exige hoy autenticación, permisos y respetar sus condiciones; no presupongas acceso gratuito.
 
 Buenas prácticas:
 
@@ -159,7 +159,7 @@ hourly = pd.DataFrame(
 
 ### 3.3. Web scraping
 
-El *scraping* lee el **HTML** de una página y extrae elementos. Caso del eXe: nombre y precio de productos → CSV para comparar tiendas o estudiar cambios.
+El *scraping* lee el **HTML** de una página y extrae elementos. Caso: nombre y precio de productos → CSV para comparar tiendas o estudiar cambios.
 
 Herramientas:
 
@@ -206,7 +206,7 @@ Trabaja con comentarios, reseñas, correos o publicaciones. Puede:
 - detectar temas;
 - reconocer entidades (personas, lugares, productos).
 
-Ejemplo del eXe: opiniones de un producto —¿predominan las positivas? ¿se repiten “envío”, “calidad” o “precio”?—.
+Ejemplo: opiniones de un producto —¿predominan las positivas? ¿se repiten “envío”, “calidad” o “precio”?—.
 
 En esta UT basta **reconocer el método y tabular una salida**; no entrenas un modelo de lenguaje.
 
@@ -220,7 +220,7 @@ Lo extraído suele llegar con errores, incompleto, en formatos distintos o dupli
 | **Normalización** | Un solo formato | Fechas a `datetime`; decimal con punto |
 | **Transformación** | Nuevas columnas, agrupaciones, códigos | Sí/No → 1/0; nacimiento → edad |
 
-Dato didáctico del eXe: se suele citar que **aproximadamente el 80 %** del tiempo de un proyecto se dedica a preparar y el 20 % al análisis. No es una ley universal; la idea importante es: **si el dato está mal, el análisis también**.
+Dato didáctico: se suele citar que **aproximadamente el 80 %** del tiempo de un proyecto se dedica a preparar y el 20 % al análisis. No es una ley universal; la idea importante es: **si el dato está mal, el análisis también**.
 
 El detalle completo —nulos, *joins*, outliers, escalado y versión PySpark— está en [1.4 Preproceso](preproceso.md).
 
@@ -269,7 +269,7 @@ El `&` es la conjunción de [1.2](fundamentos.md). Se seleccionan **filas y colu
 
 ## 7. Ejemplo 2 — Open-Meteo semiestructurado { #ejemplo-2-api-meteorologica-semiestructurado }
 
-El eXe usa el cliente generado por Open-Meteo: la respuesta separa marcas temporales y valores de temperatura. Hay que unir ambos arrays en un DataFrame.
+El cliente generado por Open-Meteo devuelve los datos de esta forma: la respuesta separa marcas temporales y valores de temperatura. Hay que unir ambos arrays en un DataFrame.
 
 Instalación en Colab:
 
@@ -330,7 +330,7 @@ Cuaderno: [13w9YOpfMhjh49lAb3UY2MOpfw_UVrA1H](https://colab.research.google.com/
 
 ## 8. Ejemplo 3 — Web no estructurada
 
-Objetivo del eXe: productos y precios de una tienda.
+Objetivo: productos y precios de una tienda.
 
 1. Identifica la página y comprueba si existe API.
 2. Inspecciona el HTML y localiza selectores.
@@ -437,9 +437,9 @@ Actúa como analista: extrae el pronóstico horario de **Santander**:
 - [ ] Interpretación de dos o tres líneas.
 
 !!! note "Dos ciudades distintas, a propósito"
-    El **ejemplo resuelto** del eXe usa Castro Urdiales (`43.3828`, `−3.2204`). La **actividad que entregas** pide Santander (`43.440829950828544`, `−3.8223838944785076`). Cambiar las coordenadas demuestra que no te limitas a ejecutar la solución.
+    El **ejemplo resuelto** usa Castro Urdiales (`43.3828`, `−3.2204`). La **actividad que entregas** pide Santander (`43.440829950828544`, `−3.8223838944785076`). Cambiar las coordenadas demuestra que no te limitas a ejecutar la solución.
 
-## 11. Errores y precisiones del eXe
+## 11. Errores y precisiones
 
 1. **“La API proporciona datos estructurados”.** Más preciso: la respuesta JSON es **semiestructurada**, aunque su contrato sea predecible.
 2. **OpenWeather / X / Google Maps** pueden requerir clave, plan de pago o permisos. Open-Meteo es el caso de aula porque permite esta consulta pública.
@@ -451,7 +451,7 @@ Actúa como analista: extrae el pronóstico horario de **Santander**:
 
 ## 12. Referencias para consultar
 
-El paquete eXe no incorpora bibliografía propia. Para implementar los ejemplos, usa la documentación oficial:
+Para implementar los ejemplos, usa la documentación oficial:
 
 - [pandas — documentación](https://pandas.pydata.org/docs/)
 - [Open-Meteo API](https://open-meteo.com/en/docs)

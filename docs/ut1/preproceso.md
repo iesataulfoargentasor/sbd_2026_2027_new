@@ -7,15 +7,15 @@ tags:
 
 # 1.4. Preproceso de datos
 
-Guion de aula: documentos *PREPROCESO* y *PREPROCESO_NEW* de Moodle (el segundo amplía la parte de pandas con código, receta y errores frecuentes; el bloque de clúster es el mismo en los dos) y el apartado *data wrangling* del eXe de extracción.
+Trabajaremos la limpieza, integración y transformación de datos con pandas y sus equivalentes en PySpark.
 
-El preproceso convierte el bruto en algo **fácil de interpretar y de relacionar**. Es el primer paso del análisis y **el que más tiempo consume** (el eXe de extracción lo estima en torno al **80 %** del proyecto). Sin él, cualquier modelo o informe posterior hereda la basura.
+El preproceso convierte el bruto en algo **fácil de interpretar y de relacionar**. Es el primer paso del análisis y **el que más tiempo consume** (como referencia didáctica, puede ocupar alrededor del **80 %** del proyecto; no es una proporción fija). Sin él, cualquier modelo o informe posterior hereda la basura.
 
 Cierra el criterio **b)** (sacar conocimiento del volumen) y el **d)** (dejar un conjunto **complejo y relacionado**).
 
 ## Dos entornos, la misma receta
 
-El material de aula insiste en esta distinción, y es la que marca la frontera de la UT1:
+Esta distinción marca el alcance de la UT1:
 
 | Entorno | Qué es | En esta unidad |
 | --- | --- | --- |
@@ -173,7 +173,7 @@ low, high = Q1 - 1.5 * IQR, Q3 + 1.5 * IQR
 df[col] = df[col].clip(lower=low, upper=high)   # capar
 ```
 
-!!! warning "El material dice «es importante su eliminación». Con matices"
+!!! warning "No elimines los valores atípicos automáticamente"
     Un outlier **no** es automáticamente un error. En detección de fraude, en averías o en picos de tráfico, el outlier **es** la señal que buscas. Mira el caso antes de borrarlo, y si lo capas o lo quitas, **déjalo escrito** en el cuaderno.
 
 ## 2. Integración
@@ -262,7 +262,7 @@ for col in ["A", "B"]:
 Equivalente en scikit-learn: `StandardScaler`.
 
 !!! note "`std()` y `std(ddof=0)` no dan lo mismo"
-    pandas usa por defecto `ddof=1` (desviación **muestral**); NumPy y `StandardScaler` usan `ddof=0` (poblacional). Con muchas filas la diferencia es mínima, pero **elige una y sé consistente**, porque el material de aula usa las dos formas en páginas distintas.
+    pandas usa por defecto `ddof=1` (desviación **muestral**); NumPy y `StandardScaler` usan `ddof=0` (poblacional). Con muchas filas la diferencia es mínima, pero **elige una y sé consistente**. Evita mezclar ambas formas en un mismo análisis.
 
 Pista rápida del documento:
 
@@ -678,16 +678,16 @@ El detalle fino de MLlib **no** es evidencia de esta UT1. Sí lo es dejar un dat
     3. ¿Dónde pondrías el `badRecordsPath` y qué harías con lo que caiga ahí?
     4. ¿`broadcast` o `sort-merge` para cruzar con un maestro de 5 MB?
 
-## Erratas y avisos del material original
+## Errores frecuentes y recomendaciones
 
-Si copias el código de los Word tal cual, esto te va a saltar:
+Revisa estos puntos antes de ejecutar el código:
 
 1. **Guion largo en lugar de signo menos.** En la fórmula min-max aparece `df['A'].max() –df['A'].min()`: ese `–` es un guion tipográfico y Python lanza `SyntaxError`. Tiene que ser `-`.
 2. **Mediana calculada sobre la columna sin convertir.** En la mini-receta, `pd.to_numeric(df['edad'], errors='coerce').fillna(df['edad'].median())` calcula la mediana de la columna **original** (que puede seguir siendo texto). Convierte primero, asigna, y **después** imputa, como está en la [mini-receta de esta página](#mini-receta-de-punta-a-punta).
 3. **«Es importante su eliminación» (outliers).** Demasiado tajante; el propio documento se corrige después con «cuidado con perder señal». Mira el caso antes de borrar.
-4. **`std()` frente a `std(ddof=0)`.** El material usa las dos en páginas distintas para el mismo z-score. Elige una.
-5. **`AvroWriter`, `hdfs_client` y compañía** no aparecen aquí, pero sí en el eXe de [formatos](formatos.md#9-erratas-del-material-original): son de la API de HDFS, no de un fichero local.
-6. **La página «Ejemplo sencillo en Google Colab» está vacía** (sin URL). Se sustituye por [Inicio con Python](inicio-python.md).
+4. **`std()` frente a `std(ddof=0)`.** Elige una convención para calcular el z-score y úsala de forma consistente.
+5. **`AvroWriter`, `hdfs_client` y compañía** no aparecen aquí, pero sí en el apartado de [formatos](formatos.md#9-comprobaciones-y-errores-frecuentes): son de la API de HDFS, no de un fichero local.
+6. **Práctica inicial.** Utiliza el cuaderno [Inicio con Python](inicio-python.md) para comprobar el flujo de preparación.
 7. Erratas de tecleo del documento: «no podemos encontrar con dos posibles entornos» (*nos*), «peo en el que los datos», «Conviertimos a timestamp», «distribuídamente».
 
 !!! success "Al terminar 1.4"

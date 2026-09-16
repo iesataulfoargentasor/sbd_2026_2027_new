@@ -7,7 +7,7 @@ tags:
 
 # Modelado, razonamiento y resolución de problemas
 
-Anexo Word del eXe *Técnicas de análisis de datos en Big Data* (Tema 4). El Anexo VI cita *modelado, razonamiento, resolución de problemas*. Aquí se **reconoce** el oficio; el detalle de Dijkstra o de un clúster queda para más adelante.
+El Anexo VI cita *modelado, razonamiento, resolución de problemas*. Aquí se **reconoce** el oficio; el detalle de Dijkstra o de un clúster queda para más adelante.
 
 ## Objetivos
 

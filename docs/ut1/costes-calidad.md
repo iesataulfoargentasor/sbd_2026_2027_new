@@ -7,7 +7,7 @@ tags:
 
 # Costes y calidad del análisis
 
-Anexo Word del eXe *Técnicas de análisis* (Tema 6) y criterio **g)**. El [laboratorio AWS](laboratorio-aws.md) lo concreta: Athena cobra por **dato escaneado** y Glue tiene que reconocer la cabecera.
+Este apartado trabaja el criterio **g)**. El [laboratorio AWS](laboratorio-aws.md) lo concreta: Athena cobra por **dato escaneado** y Glue tiene que reconocer la cabecera.
 
 ## Coste
 

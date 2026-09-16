@@ -7,13 +7,13 @@ tags:
 
 # 1.5. Formatos de datos para el análisis
 
-Guion de aula: eXe *Formato de Datos* (criterio **c)**). Licencia de partida [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Este apartado trabaja el criterio **c)**: formatos de datos para el análisis.
 
 En BDA elegiste el formato de **la carga**. Aquí eliges el formato para **consultar y combinar**. Un mal formato no se nota en 200 filas; en Athena se paga **cada lunes**.
 
 A medida que los datos recorren los distintos [pipelines](https://es.wikipedia.org/wiki/Arquitectura_en_pipeline_(inform%C3%A1tica)), toca gestionar la [serialización](https://es.wikipedia.org/wiki/Serializaci%C3%B3n) entre formatos y convertir de uno a otro sin perder tiempo ni información. Ese es el oficio de este apartado.
 
-Vídeo introductorio del eXe (Avro, Parquet, ORC): [YouTube DafzYp5XRmA](https://youtu.be/DafzYp5XRmA).
+Vídeo introductorio (Avro, Parquet, ORC): [YouTube DafzYp5XRmA](https://youtu.be/DafzYp5XRmA).
 
 ## 1. Propiedades de un buen formato
 
@@ -32,7 +32,7 @@ La última es la que más gente olvida. Un JSON gigante con un único array `[..
 
 <figure markdown="block">
 ![Tabla comparativa de CSV, XML/JSON, SequenceFile y Avro frente a seis propiedades: independencia del lenguaje, expresivo, eficiente, dinámico, standalone y divisible.](../assets/practicas/formatos/propiedades-formatos.png){ width="100%" }
-<figcaption>Figura del eXe. Los pulgares no son una nota: son un “esto lo cumple / esto no”. Avro los cumple todos; CSV falla en expresividad y eficiencia, y los interrogantes de <em>standalone</em> y divisible dependen de cómo lo generes.</figcaption>
+<figcaption>Los pulgares no son una nota: son un “esto lo cumple / esto no”. Avro los cumple todos; CSV falla en expresividad y eficiencia, y los interrogantes de <em>standalone</em> y divisible dependen de cómo lo generes.</figcaption>
 </figure>
 
 !!! info "¿Y SequenceFile?"
@@ -89,7 +89,7 @@ Un JSON estándar reparte los pares clave-valor en varias líneas. **JSONL** (JS
 ```
 
 !!! warning "`None` es de Python, no de JSON"
-    El material de aula escribe `"edad": None`. En un fichero JSON el valor vacío se escribe **`null`** (minúscula). `None` solo vale dentro del código Python; un parser de JSON lo rechaza.
+    En un fichero JSON el valor vacío se escribe **`null`** (minúscula). `None` solo vale dentro del código Python; un parser de JSON lo rechaza.
 
 ### Por qué gana el columnar en análisis
 
@@ -107,7 +107,7 @@ Athena cobra del orden de **5 USD por TB escaneado** (consulta el precio vigente
 
 <figure markdown="block">
 ![Tabla: 4 TB de CSV escanea 4 TB y cuesta 20 dólares; CSV en GZIP ocupa 1 TB y cuesta 5 dólares; Parquet ocupa 1 TB pero escanea solo 0,25 TB y cuesta 1,25 dólares.](../assets/practicas/formatos/coste-athena-escaneo.png){ width="100%" }
-<figcaption>Figura del eXe (vía openbridge). Mismo dataset de cuatro columnas, misma pregunta sobre <strong>una</strong> columna. Gzip baja el <em>almacenamiento</em>; Parquet baja además el <strong>dato escaneado</strong>, y eso es lo que factura Athena: de 20 $ a 1,25 $.</figcaption>
+<figcaption>Figura de Openbridge. Mismo dataset de cuatro columnas, misma pregunta sobre <strong>una</strong> columna. Gzip baja el <em>almacenamiento</em>; Parquet baja además el <strong>dato escaneado</strong>, y eso es lo que factura Athena: de 20 $ a 1,25 $.</figcaption>
 </figure>
 
 Fíjate en el detalle: el CSV comprimido ocupa lo mismo que el Parquet (1 TB), pero **escanea 1 TB** porque hay que descomprimir el fichero entero. El Parquet escanea 0,25 TB: solo la columna preguntada.
@@ -127,7 +127,7 @@ Características:
 
 <figure markdown="block">
 ![Un fichero Avro: cabecera con los 4 bytes ASCII Obj, metadatos con avro.schema y avro.codec y un marcador de sincronía de 16 bytes; después bloques con el número de objetos, su tamaño, los objetos serializados y el marcador.](../assets/practicas/formatos/avro-estructura.png){ width="100%" }
-<figcaption>Figura del eXe. La <strong>cabecera</strong> lleva el esquema (<code>avro.schema</code>) y el códec (<code>avro.codec</code>). Los <strong>bloques</strong> repiten un marcador de sincronía de 16 bytes: ese marcador es lo que permite cortar el fichero y repartirlo entre nodos.</figcaption>
+<figcaption>La <strong>cabecera</strong> lleva el esquema (<code>avro.schema</code>) y el códec (<code>avro.codec</code>). Los <strong>bloques</strong> repiten un marcador de sincronía de 16 bytes: ese marcador es lo que permite cortar el fichero y repartirlo entre nodos.</figcaption>
 </figure>
 
 ### Tipos de datos
@@ -150,7 +150,7 @@ Esquema de aula, [empleado.avsc](../assets/practicas/empleado.avsc):
 }
 ```
 
-`"type": ["null", "int"]` es un **union**: `edad` admite entero **o** vacío. Sin ese union, un registro sin `edad` falla al escribir. El eXe usa el namespace `SeveroOchoa` y campos en mayúscula (`Nombre`, `Altura`, `Edad`); mira las [erratas](#9-erratas-del-material-original) antes de copiarlo.
+`"type": ["null", "int"]` es un **union**: `edad` admite entero **o** vacío. Sin ese union, un registro sin `edad` falla al escribir. Los nombres de campo deben coincidir exactamente entre el esquema y los registros; consulta las [comprobaciones](#9-comprobaciones-y-errores-frecuentes).
 
 ### Avro y Python (librería de referencia)
 
@@ -225,7 +225,7 @@ with open("empleadosf.avro", "rb") as f:
 
 ### Fastavro con pandas
 
-Caso del eXe: leer un CSV de ventas, quedarse con Alemania y persistir en Avro. CSV de apoyo: [pdi_sales.csv](https://aitor-medrano.github.io/iabd/de/resources/pdi_sales.csv) (separador `;`).
+Caso: leer un CSV de ventas, quedarse con Alemania y persistir en Avro. CSV de apoyo: [pdi_sales.csv](https://aitor-medrano.github.io/iabd/de/resources/pdi_sales.csv) (separador `;`).
 
 ```python
 import pandas as pd
@@ -279,7 +279,7 @@ La idea es simple: los algoritmos buscan **redundancia y repetición** y recodif
 
 <figure markdown="block">
 ![Tabla de algoritmos: Gzip velocidad media y compresión media; Bzip2 velocidad lenta y compresión alta; Snappy velocidad alta y compresión media.](../assets/practicas/formatos/codecs-velocidad-compresion.png){ width="75%" }
-<figcaption>Figura del eXe. <strong>Snappy</strong> es el habitual en Big Data: comprime medio y va rápido. <strong>Bzip2</strong> aprieta más pero se arrastra. Elige según lo que te duela: disco o reloj.</figcaption>
+<figcaption><strong>Snappy</strong> es el habitual en Big Data: comprime medio y va rápido. <strong>Bzip2</strong> aprieta más pero se arrastra. Elige según lo que te duela: disco o reloj.</figcaption>
 </figure>
 
 En fastavro el códec es un parámetro:
@@ -293,7 +293,7 @@ fastavro.writer(f, schema, records, codec="snappy")    # más rápido
 
 ### Tamaños reales (ventas de Alemania)
 
-Cifras del eXe, con el mismo subconjunto de datos:
+Cifras, con el mismo subconjunto de datos:
 
 | Fichero | Tamaño |
 | --- | --- |
@@ -411,12 +411,12 @@ Eso cierra el círculo del apartado 3: el fichero de entrada **tiene** que ser J
 
 [Apache ORC](https://orc.apache.org/) (*Optimized Row Columnar*) es columnar como Parquet, pero optimizado para **Hive**: alta compresión (zlib), tipos simples de Hive (`datetime`, `decimal`…) y complejos (`struct`, `list`, `map`, `union`), compatible con HiveQL.
 
-!!! note "El eXe titula esta página «OCR»"
-    Es un desliz de tecleo del material. El formato es **ORC**. *OCR* es reconocimiento óptico de caracteres: otra cosa.
+!!! note "ORC y OCR son conceptos distintos"
+    El formato es **ORC**. *OCR* significa reconocimiento óptico de caracteres.
 
 <figure markdown="block">
 ![Fichero ORC dividido en tiras (stripes) de 250 MB; cada tira tiene índice, datos de fila y pie de tira, y el fichero termina con un pie general y un postscript. A la derecha, el desglose de las tiras en columnas.](../assets/practicas/formatos/orc-estructura.png){ width="60%" }
-<figcaption>Figura del eXe. Las <strong>tiras</strong> (por defecto en torno a 250 MB) llevan índice, datos y pie con estadísticas cacheadas (recuento, máximos, mínimos, suma de cada columna). Esas estadísticas son lo que permite descartar una tira entera sin leerla.</figcaption>
+<figcaption>Las <strong>tiras</strong> (por defecto en torno a 250 MB) llevan índice, datos y pie con estadísticas cacheadas (recuento, máximos, mínimos, suma de cada columna). Esas estadísticas son lo que permite descartar una tira entera sin leerla.</figcaption>
 </figure>
 
 Con pandas (desde la versión 1.5):
@@ -459,7 +459,7 @@ Cada formato tiene su punto fuerte:
 
 <figure markdown="block">
 ![Comparativa de Avro, Parquet y ORC en evolución de esquema, compresión, divisibilidad, plataformas compatibles, orientación fila/columna y lectura/escritura.](../assets/practicas/formatos/comparativa-avro-parquet-orc.png){ width="85%" }
-<figcaption>Figura del eXe (análisis de Nexla, 2018). Fíjate en las dos últimas filas, que resumen el apartado: Avro es <strong>fila</strong> y está orientado a <strong>escritura</strong>; Parquet y ORC son <strong>columna</strong> y están orientados a <strong>lectura</strong>. Los círculos son valoraciones relativas: los tres son divisibles, ORC simplemente lo hace con más holgura.</figcaption>
+<figcaption>Figura del análisis de Nexla (2018). Fíjate en las dos últimas filas, que resumen el apartado: Avro es <strong>fila</strong> y está orientado a <strong>escritura</strong>; Parquet y ORC son <strong>columna</strong> y están orientados a <strong>lectura</strong>. Los círculos son valoraciones relativas: los tres son divisibles, ORC simplemente lo hace con más holgura.</figcaption>
 </figure>
 
 ### Cómo elegir (guion de aula)
@@ -476,17 +476,17 @@ Cada formato tiene su punto fuerte:
 !!! tip "Puente con el laboratorio"
     En [1.7](laboratorio-aws.md) Athena escanea S3. Un CSV con cabecera mal leída (`col1`…`col5`) es un fallo de **calidad**. El mismo volumen en texto, cuando ya sabes que el informe pide tres columnas, es un fallo de **coste**. Los dos se evalúan en el criterio **g)** ([costes y calidad](costes-calidad.md)).
 
-## 9. Erratas del material original
+## 9. Comprobaciones y errores frecuentes
 
-Repasadas en clase. Si copias el código del eXe tal cual, te van a saltar:
+Antes de ejecutar el código, revisa estas comprobaciones:
 
-1. **Esquema Avro con mayúsculas.** El `empleado.avsc` del eXe declara `Nombre`, `Altura`, `Edad`, pero el código escribe `{"nombre": ..., "altura": ..., "edad": ...}`. Los nombres de campo **distinguen mayúsculas**: no coinciden. El [empleado.avsc de este repo](../assets/practicas/empleado.avsc) usa minúsculas en los dos sitios.
+1. **Esquema Avro con mayúsculas.** Si un esquema declara `Nombre`, `Altura`, `Edad`, pero el código escribe `{"nombre": ..., "altura": ..., "edad": ...}`. Los nombres de campo **distinguen mayúsculas**: no coinciden. El [empleado.avsc de este repo](../assets/practicas/empleado.avsc) usa minúsculas en los dos sitios.
 2. **`Edad` sin `null`.** Con `{ "name": "Edad", "type": "int" }` el registro de Juan (que no trae edad) falla al escribir. Hace falta el union `["null", "int"]` con `default: null`.
 3. **`None` en ficheros JSON.** Se escribe `null`.
 4. **Alturas y edades cruzadas** en el ejemplo de PyArrow: `"altura": [180, 44]` y `"edad": [None, 34]` deja a Juan midiendo 44. Además declara `altura` como `int32` cuando en el resto del tema es `float`.
 5. **Los tamaños de compresión no son del CSV.** 6,9 MiB es el **Avro sin comprimir**; el CSV son 9,7 MiB. Las cifras de 1,9 y 2,8 MiB son gzip y Snappy sobre ese Avro.
 6. **Los ejemplos de `AvroWriter(hdfs_client, …)` y `write_dataframe(hdfs_client, …)`** son de la API de **HDFS**, no de fastavro en local ni en Colab. Para un fichero normal, el códec va como parámetro de `fastavro.writer`.
-7. **La página del eXe titulada «OCR»** habla de **ORC**.
+7. **ORC y OCR.** ORC es un formato de datos; OCR es reconocimiento óptico de caracteres.
 
 ## Actividad 1 — Parquet (aula)
 
@@ -494,7 +494,7 @@ Convierte [clientes.csv](../assets/practicas/clientes.csv) a Parquet y lee **sol
 
 ## Actividad 2 — Kaggle, retrasos de vuelos (criterio c)
 
-*(RA1 / CE c — 2 puntos en el enunciado del eXe.)*
+*(RA1 / CE c — 2 puntos en el enunciado.)*
 
 Con Python y [Kaggle](https://www.kaggle.com/), crea un notebook a partir del dataset de [retrasos y cancelaciones de vuelos 2009–2018](https://www.kaggle.com/datasets/yuanyuwendymu/airline-delay-and-cancellation-data-2009-2018). Elige **un** fichero anual (campos separados por `,`), transforma los datos y persiste:
 
@@ -535,7 +535,7 @@ El tamaño también se ve en el panel derecho de Kaggle, en *Output*.
 
 Solución de referencia (profesorado): [notebook Kaggle dmiprof01](https://www.kaggle.com/code/dmiprof01/fork-of-trabajo-actividad-de-formato-de-datos).
 
-## Bibliografía (eXe)
+## Bibliografía
 
 - [Formatos de datos (Aitor Medrano, IABD)](https://aitor-medrano.github.io/iabd/de/formatos.html)
 - [An Introduction to Big Data Formats (Nexla, PDF)](https://webcdn.nexla.com/n3x_ctx/uploads/2018/05/An-Introduction-to-Big-Data-Formats-Nexla.pdf)

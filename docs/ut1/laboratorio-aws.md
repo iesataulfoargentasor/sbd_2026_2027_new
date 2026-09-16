@@ -7,7 +7,7 @@ tags:
 
 # 1.7. Laboratorio: logs web en AWS (S3 + Glue + Athena)
 
-Esta página es el guion de trabajo de Moodle *Laboratorio: Análisis básico de logs web en AWS (S3 + Glue + Athena)* (12 páginas). El Word *Descripción del problema* va más abajo, entero: es el fallo que casi todo el mundo se encuentra (`col1`…`col5` en vez de la cabecera del CSV).
+En este laboratorio analizarás logs web con S3, Glue y Athena. También resolverás un problema habitual de integración: que Glue detecte `col1`…`col5` en lugar de la cabecera del CSV.
 
 Se hace en **AWS Academy** (Learner Lab), con la región y el rol que indique el profesor (`LabRole` suele ser el de aula). No copies claves de cuentas personales al cuaderno ni al git. **No hay Colab de este laboratorio**: el CSV se genera en tu máquina y el resto es consola de AWS.
 
@@ -20,7 +20,7 @@ Vídeo de aula (Educantabria / SharePoint): [laboratorio de logs web en AWS (S3,
 
 ## Qué vas a montar
 
-La figura del PDF (portada y conceptos) es el mapa de la práctica. Léela antes de pulsar nada en la consola.
+La figura muestra el recorrido de la práctica. Léela antes de pulsar nada en la consola.
 
 <figure markdown="block">
 ![Arquitectura del laboratorio en AWS Cloud: los usuarios consultan Amazon Athena; Athena lee el AWS Glue Data Catalog y los objetos de AWS S3; el AWS Glue Crawler recorre S3 y actualiza el catálogo.](../assets/practicas/laboratorio-aws/arquitectura-s3-glue-athena.png){ width="100%" }
@@ -80,7 +80,7 @@ Hay que entender **qué es cada pieza** antes de crearlas. Si no, el asistente d
 
 - Sin catálogo, S3 solo tiene archivos sueltos. Athena no puede hacer `SELECT url` sobre un objeto que no tiene ficha.
 - Con catálogo, Athena puede decir `SELECT * FROM bd_logs_db.logs_raw` aunque físicamente eso sea un CSV (o varios) en un bucket.
-- El crawler **adivina**. A veces adivina mal la cabecera: salen `col1`…`col5`. Eso no es un detalle: es el problema de calidad del Word de aula y el criterio **g)**.
+- El crawler **adivina**. A veces adivina mal la cabecera: salen `col1`…`col5`. Eso no es un detalle: es un problema de calidad relacionado con el criterio **g)**.
 
 **Para qué lo usamos aquí**
 
@@ -168,7 +168,7 @@ Conviene un entorno virtual, pero no es obligatorio en aula.
 
 ### Script
 
-Descarga [generar_logs.py](../assets/practicas/generar_logs.py) o crea el archivo con este contenido (es el del PDF de Moodle):
+Descarga [generar_logs.py](../assets/practicas/generar_logs.py) o crea el archivo con este contenido:
 
 ```python
 from faker import Faker
@@ -275,7 +275,7 @@ S3 **no** interpreta columnas. Ha guardado un objeto. El significado (cabecera, 
 
 ## Parte 2 — Base de datos y crawler en AWS Glue
 
-Orden que evita el problema de aula: **crear el classifier CSV antes de lanzar el crawler**. El PDF original metía el classifier a mitad del asistente (porque ese texto salió del Word cuando el grupo se encontró `col1`). Aquí va en el sitio correcto. Si **ya** lanzaste el crawler y ves `col1`…`col5`, salta a [el problema de la cabecera](#el-problema-de-aula-glue-no-lee-la-cabecera).
+Orden que evita el problema de aula: **crear el classifier CSV antes de lanzar el crawler**. Si **ya** lanzaste el crawler y ves `col1`…`col5`, salta a [el problema de la cabecera](#el-problema-de-aula-glue-no-lee-la-cabecera).
 
 ### 5.1. Crear la base de datos en el Data Catalog
 
@@ -351,7 +351,7 @@ Si ves `col1`…`col5`, **no sigas a Athena como si nada**: las consultas `GROUP
 
 ## El problema de aula: Glue no lee la cabecera
 
-Texto de trabajo del Word *Descripción del problema* (el PDF lo incrustó a medias en el paso del crawler). Ocurre en clase **a menudo**.
+Este problema de reconocimiento de la cabecera ocurre **a menudo** al catalogar los datos.
 
 Creas la tabla con el crawler, vas a **Tables**, abres `logs_raw` (o similar) y **no** aparecen `timestamp`, `ip`, `url`, `country`, `user_agent`. Solo `col1`, `col2`, `col3`, `col4`, `col5`.
 

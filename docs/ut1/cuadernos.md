@@ -7,19 +7,19 @@ tags:
 
 # Cuadernos de Google Colab de la UT1
 
-Todos los enlaces salen de los paquetes eXeLearning de Moodle. Ábrelos con la cuenta de Educantabria (o la que indique el profesor). Si Colab pide “hacer una copia”, **cópialo a tu Drive** antes de ejecutar.
+Abre los cuadernos con la cuenta de Educantabria (o la que indique el profesor). Si Colab pide “hacer una copia”, **cópialo a tu Drive** antes de ejecutar.
 
 La [autoevaluación](autoevaluacion.md) no sustituye estos cuadernos. Las entregas formales siguen en Moodle.
 
 ## Primero: Inicio con Python
 
-Portada del eXe *Técnicas de análisis de datos en Big Data*: consultar **este** cuaderno antes de las prácticas. El mismo enlace está en la portada de fundamentos y en la actividad 6 (*Inicio con Python*). Página dedicada: [Inicio con Python](inicio-python.md).
+Consulta este cuaderno antes de las prácticas de análisis y fundamentos. Página dedicada: [Inicio con Python](inicio-python.md).
 
 **[https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)**
 
 ## Alumnado (hacer en clase)
 
-| Paquete eXe | Para qué | Cuaderno |
+| Tema | Para qué | Cuaderno |
 | --- | --- | --- |
 | Técnicas de análisis / Introducción | **Inicio con Python** (ETL inicial: CSV sucio → limpio → recuento) | [14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing) |
 | Fundamentos | Matemática discreta aplicada a datos | [1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing) |
@@ -45,9 +45,9 @@ Datos de apoyo en GitHub de aula:
 
 ## Solución de referencia (profesorado)
 
-Estos enlaces están en las páginas *Solución Profesor* de los eXe. Úsalos **después** de intentar el cuaderno de alumnado, o en corrección.
+Estos cuadernos contienen las soluciones del profesor. Úsalos **después** de intentar el cuaderno de alumnado, o en corrección.
 
-| Paquete | Cuaderno |
+| Tema | Cuaderno |
 | --- | --- |
 | Inicio con Python (ETL inicial) | [1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r](https://colab.research.google.com/drive/1wm6x06U3FGy7VEgpXbaTIcTo3-Q4mp2r?usp=sharing) |
 | Fundamentos | [14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd](https://colab.research.google.com/drive/14PapYsQgCl1E8a2Nm1mKHrGNOTQ14dVd?usp=sharing) |
@@ -60,7 +60,7 @@ El índice de cada apartado enlaza el mismo cuaderno junto a la teoría, para no
 
 Hace falta la cuenta de Educantabria. Los de YouTube son públicos; los de SharePoint son los de Moodle.
 
-| Paquete | Recurso |
+| Tema | Recurso |
 | --- | --- |
 | Técnicas de análisis / ETL en Colab | [SharePoint (Educantabria)](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/EeKBcqViPHZMn0uMthdtUJkBkyb1SHk3crRjD2Rrd8gEPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b1SA87) · [página Inicio con Python](inicio-python.md) |
 | Laboratorio AWS (S3, Glue, Athena) | [SharePoint (Educantabria)](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/IQA_J2q1KXh9TbFUekUIK95zAY6sW6S5HnwHYyYyzhuF5Rc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=dsJfm6) · [1.7 Laboratorio](laboratorio-aws.md) |

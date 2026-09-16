@@ -8,7 +8,7 @@ tags:
 # 1.1. Integrar, procesar y analizar
 
 !!! warning "Inicio con Python (antes de seguir)"
-    El eXe *Técnicas de análisis de datos en Big Data* pide este cuaderno **en la portada**, antes de las prácticas:
+    Consulta este cuaderno antes de las prácticas:
 
     **[Inicio con Python](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página del cuaderno](inicio-python.md)
 
@@ -41,7 +41,7 @@ El método más habitual sigue tres verbos. Las siglas **ETL** (extraer → tran
 
 ## Actividad práctica (nivel inicial) — ETL en Colab
 
-Apartado 6 del eXe (*Inicio con Python*). El mismo cuaderno está en la **portada** de *Técnicas de análisis de datos en Big Data* y en la de *Fundamentos*.
+El cuaderno *Inicio con Python* prepara las herramientas básicas para las prácticas de análisis y fundamentos.
 
 Vídeo de aula (Educantabria / SharePoint): [técnicas de análisis y ETL en Colab](https://educantabria-my.sharepoint.com/:v:/g/personal/jose_martin_educantabria_es/EeKBcqViPHZMn0uMthdtUJkBkyb1SHk3crRjD2Rrd8gEPQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=b1SA87).
 
@@ -69,7 +69,7 @@ El listado completo de cuadernos de la unidad está en [Cuadernos Colab](cuadern
 
 El lote encaja con el cierre de cobros del hotel. El flujo, con el fraude de una tarjeta o el semáforo de habitación libre. Streaming **no** es latencia cero: tiene un plazo objetivo.
 
-El paquete de introducción cita cuatro recetas (visión general, sin desplegarlas):
+Estas son cuatro arquitecturas habituales (visión general, sin desplegarlas):
 
 | Receta | Idea |
 | --- | --- |
@@ -99,7 +99,7 @@ Un `groupby` de pandas o un `GROUP BY` de Athena suelen ser **descriptivos**. No
 | Banca | Contrasta cada transacción | Flujo (fraude **ahora**) |
 | Industria 4.0 | El sensor avisa si la máquina se desvía | Flujo + prescriptivo (parar o no) |
 
-## Resumen del tema (eXe)
+## Resumen del tema
 
 - Los **datos** por sí solos no son útiles: hay que integrarlos, procesarlos y analizarlos.
 - La **integración** se hace con procesos como **ETL**.

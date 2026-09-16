@@ -7,8 +7,8 @@ tags:
 
 # 1.2. Fundamentos matemáticos y algoritmos
 
-!!! warning "Mismo cuaderno de arranque que el eXe"
-    Antes de los ejemplos de este tema, el eXe de *Técnicas de análisis* / *Fundamentos* pide el Colab **Inicio con Python**:
+!!! warning "Cuaderno de inicio"
+    Antes de los ejemplos de este tema, consulta el Colab **Inicio con Python**:
 
     **[14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ](https://colab.research.google.com/drive/14JeRxBG1KoCPKAJGbQyWnSoG_NuiLkxJ?usp=sharing)** · [página](inicio-python.md)
 
@@ -28,7 +28,7 @@ Al terminar serás capaz de:
 
 Buscar un número en una lista de 10 elementos es fácil. En 10 millones ya no vale “mirar uno a uno” si puedes partir por la mitad.
 
-Sigue el apartado en Colab (paquete *Fundamentos matemáticos y algoritmos*):
+Sigue el apartado en el cuaderno de Colab de *Fundamentos matemáticos y algoritmos*:
 
 - Matemática discreta: [1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl](https://colab.research.google.com/drive/1LZkMTdbtTa_XFnw_9ZzDI0HUoFlr0lpl?usp=sharing)
 - Combinatoria: [1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO](https://colab.research.google.com/drive/1lOe3pA0-L7iGGNWAmDtZwt1ZxXv4L-zO?usp=sharing)
@@ -49,7 +49,7 @@ Un **conjunto** es una colección de elementos bien definidos, sin orden y sin r
 
 En pandas, un *inner join* se parece a una intersección por clave; un *outer*, a una unión con nulos; filtrar “reservas sin cobro” es una diferencia.
 
-Ejemplo del eXe:
+Ejemplo:
 
 ```python
 A = {"Ana", "Juan", "Marta", "Luis"}       # compraron X
@@ -168,7 +168,7 @@ def media(numeros):
 Eso también puede escribirse `df["importe"].mean()`. La llamada de pandas es más corta, pero el motor todavía tiene que recorrer los valores.
 
 !!! note "«Determinista», con precisión"
-    El eXe lo presenta como requisito. Para iniciarse, significa que cada paso está claramente definido. En informática también existen **algoritmos aleatorizados**; siguen siendo algoritmos aunque la misma entrada pueda recorrer caminos distintos.
+    Para iniciarse, significa que cada paso está claramente definido. En informática también existen **algoritmos aleatorizados**; siguen siendo algoritmos aunque la misma entrada pueda recorrer caminos distintos.
 
 ## Complejidad (Big-O)
 
@@ -223,9 +223,9 @@ Para 16 elementos, binaria necesita como máximo unas 4 comparaciones; para un m
     Exige una colección **ya ordenada**. Si primero ordenas, pagas O(n log n). Para **una sola búsqueda**, recorrer O(n) puede ser más barato; para miles de consultas sobre la misma colección, ordenar o indexar sí compensa.
 
 !!! note "Tabla hash: O(1) esperado"
-    `set` y `dict` suelen buscar en O(1), pero no garantizan literalmente un paso ni O(1) en el peor caso: hay colisiones, redimensionados y coste de calcular el *hash*. La afirmación del eXe es una buena intuición, no una garantía absoluta.
+    `set` y `dict` suelen buscar en O(1), pero no garantizan literalmente un paso ni O(1) en el peor caso: hay colisiones, redimensionados y coste de calcular el *hash*. El coste constante es una intuición útil del caso promedio, no una garantía absoluta.
 
-Cuadernos de complejidad del eXe:
+Cuadernos de complejidad:
 
 - Teoría y notación: [1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu](https://colab.research.google.com/drive/1InYuv7O8DWM0g4mFHRIpw3-LGPrfYlxu?usp=sharing)
 - Búsqueda lineal frente a binaria: [1QMJKYknyyv_-pyOQ5WaNdqCZZ2u8KyPS](https://colab.research.google.com/drive/1QMJKYknyyv_-pyOQ5WaNdqCZZ2u8KyPS?usp=sharing)
@@ -260,7 +260,7 @@ Aplicación: escenarios, optimización, “clientes que compraron A también com
 
 ### Teoría de grupos (reconocimiento)
 
-Un grupo es un conjunto con una operación **cerrada** y asociativa, con elemento neutro e inverso para cada elemento. La teoría formal es avanzada; aparece en cifrado y en simetrías. El eXe la relaciona también con álgebra lineal, pero conviene precisar que **vectores y matrices no son por sí solos teoría de grupos**. En UT1 basta reconocer el concepto.
+Un grupo es un conjunto con una operación **cerrada** y asociativa, con elemento neutro e inverso para cada elemento. La teoría formal es avanzada; aparece en cifrado y en simetrías. Conviene precisar que **vectores y matrices no son por sí solos teoría de grupos**. En UT1 basta reconocer el concepto.
 
 ## Representar la información
 
@@ -315,7 +315,7 @@ Es la misma regla que `edad > 18 AND compras > 5`, expresada para que negocio pu
 !!! example "En voz alta"
     Tienes 5 millones de logs y quieres las visitas de una IP. ¿Recorres el fichero cada vez (O(n) por consulta) o indexas/particionas por IP?
 
-## Actividades del eXe (hacer en Colab)
+## Actividades (hacer en Colab)
 
 **1. Conjuntos y lógica.** Objetivo: practicar operaciones con conjuntos y aplicar una regla lógica a clientes. A = {Ana, Juan, Marta, Luis} compraron X; B = {Marta, Luis, Sofía, Pedro} compraron Y. Calcula A ∪ B, A ∩ B, A − B.
 
@@ -419,28 +419,27 @@ Evidencia:
 
 Índice de todos los cuadernos: [Cuadernos Colab](cuadernos.md).
 
-## Correcciones y precisiones del eXe
+## Correcciones y precisiones
 
-1. **Permutación frente a variación.** El material llama permutaciones a “ordenar un subconjunto”. Si se eligen `k` de `n` y el orden importa, son **variaciones**; una permutación ordena los `n` elementos.
+1. **Permutación frente a variación.** Si se eligen `k` de `n` y el orden importa, son **variaciones**; una permutación ordena los `n` elementos.
 2. **Tabla hash O(1).** Es coste esperado o promedio, no una garantía absoluta.
 3. **Búsqueda binaria.** Los ~20 pasos para un millón presuponen una lista **ordenada**; ordenar desde cero cuesta O(n log n).
 4. **Algoritmo determinista.** Es una propiedad útil para iniciarse, pero existen algoritmos aleatorizados. El requisito general es que los pasos estén definidos.
-5. **Teoría de grupos.** Faltaba mencionar el **cierre** de la operación; además, álgebra lineal no es sinónimo de teoría de grupos.
-6. **Dataset.** El eXe repite dos veces el mismo párrafo y lo limita a filas y columnas. Una colección de imágenes o grafos también puede ser un dataset.
+5. **Teoría de grupos.** La operación debe cumplir el **cierre**; además, álgebra lineal no es sinónimo de teoría de grupos.
+6. **Dataset.** Un dataset no se limita a filas y columnas. Una colección de imágenes o grafos también puede ser un dataset.
 7. **Gráfico de complejidad.** La curva O(n²) está dividida por 100 y el eje vertical corta las curvas al llegar a 100. Sirve como intuición, pero no para comparar valores reales; por eso aquí se dan órdenes y cifras explícitas.
 8. En la actividad de matriz, “quién compró más productos” significa **más unidades en total**, no más categorías distintas.
-9. **Portada del eXe.** Es decorativa y contiene texto deformado y fórmulas incoherentes; no se utiliza como referencia matemática en esta página.
 
 ## Referencias para consultar
 
-El eXe no incluye bibliografía. Para implementar los ejemplos:
+Para implementar los ejemplos:
 
 - [Python — conjuntos](https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset)
 - [Python — `itertools`](https://docs.python.org/3/library/itertools.html)
 - [Python — complejidad temporal de estructuras](https://wiki.python.org/moin/TimeComplexity)
 - [NumPy — introducción y creación de arrays](https://numpy.org/doc/stable/user/absolute_beginners.html)
 
-## Resumen del tema (eXe)
+## Resumen del tema
 
 - Matemática discreta (conjuntos, relaciones, combinatoria, grafos) modela el dato.
 - Un algoritmo es una secuencia finita de pasos con entradas y salidas.
